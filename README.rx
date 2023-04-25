@@ -9,4 +9,4 @@ You can find the source code at {{ "iaseth/readmix" | GithubLink }}.
 ## License
 {{ "LICENSE" | File }}
 
-
+{{ giveCredit() }}
