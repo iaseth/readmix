@@ -12,6 +12,12 @@ const BODY_COMMENT_PREFIX = "::";
 const readmix = require("./dist");
 const {Readmix} = readmix;
 
+const filters = require("./dist/filters").filters;
+const env = new nunjucks.Environment();
+Object.keys(filters).forEach(filterName => {
+	env.addFilter(filterName, filters[filterName]);
+});
+
 
 
 function compileDirectory (dirpath, recursive=false) {
@@ -53,7 +59,7 @@ function compileFile (inputFilepath, forceUpdate=false) {
 	const contentLinesWithoutComments = contentLines.filter(x => !x.startsWith(BODY_COMMENT_PREFIX));
 	const contentText = contentLinesWithoutComments.join("\n");
 
-	const filetext = nunjucks.renderString(contentText, {
+	const filetext = env.renderString(contentText, {
 		...Readmix, // makes all properties of Readmix globally available in template
 		Rx: Readmix, // shortcut alias for Readmix
 		Readmix

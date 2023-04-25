@@ -1,4 +1,4 @@
-
+import {filters} from './filters';
 
 
 interface ReadmixType {
