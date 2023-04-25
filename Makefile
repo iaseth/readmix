@@ -1,11 +1,22 @@
 
 default: build
 
-publish: build
-	npm publish
+readme:
+	@echo "Recompiling README ..."
+	@./cli.js README.rx
+	@echo "    Done."
+
+publish: build readme
+	@echo "Publishing to NPM ..."
+	@npm publish
+	@echo "    Done."
 
 build: clean
-	tsc
+	@echo "Compiling TS to JS ..."
+	@tsc
+	@echo "    Done."
 
 clean:
-	rm -rf dist
+	@echo "Cleaning JS ..."
+	@rm -rf dist
+	@echo "    Done."
