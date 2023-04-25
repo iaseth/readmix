@@ -1,6 +1,7 @@
 import { filters } from "./filters";
 import { utils } from "./utils";
-import { parse } from "./utils/parse";
+
+import descriptionsJson from './descriptions.json';
 
 
 
@@ -8,6 +9,8 @@ interface ReadmixType {
 	appName: string,
 	filters: any,
 	utils: any,
+
+	descriptions: any,
 
 	packageJson: any,
 	packageLockJson: any,
@@ -18,6 +21,8 @@ export const Readmix: ReadmixType = {
 	filters: filters,
 	utils: utils,
 
-	packageJson: parse("package.json"),
-	packageLockJson: parse("package-lock.json"),
+	descriptions: descriptionsJson,
+
+	packageJson: utils.parse("package.json"),
+	packageLockJson: utils.parse("package-lock.json"),
 };
