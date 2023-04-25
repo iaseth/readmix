@@ -5,6 +5,7 @@ const path = require("path");
 
 const nunjucks = require("nunjucks");
 
+const SEPARATOR = "::::";
 const Readmix = {
 	appName: "Readmix"
 };
@@ -38,7 +39,17 @@ function compileFile (inputFilepath, forceUpdate=false) {
 	console.log(`Input: ${inputFilepath}`);
 
 	const inputText = fs.readFileSync(inputFilepath, {encoding:'utf8'});
-	const filetext = nunjucks.renderString(inputText, {
+	const inputLines = inputText.split("\n");
+
+	const separatorIndex = inputLines.findIndex(x => x.startsWith(SEPARATOR));
+	const frontMatterExists = separatorIndex !== -1;
+	const frontMatterLines = frontMatterExists ? inputLines.slice(0, separatorIndex) : [""];
+	const frontMatterText = frontMatterLines.join("\n");
+
+	const contentLines = frontMatterExists ? inputLines.slice(separatorIndex+1) : inputLines;
+	const contentText = contentLines.join("\n");
+
+	const filetext = nunjucks.renderString(contentText, {
 		...Readmix, // makes all properties of Readmix globally available in template
 		Rx: Readmix, // shortcut alias for Readmix
 		Readmix
