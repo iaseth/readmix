@@ -5,21 +5,14 @@
 
 You can find the source code at [`iaseth/readmix`](https://github.com/iaseth/readmix).
 
-Every `rx` file has access to the global `Rx` object:
-```
-{
-	"appName": "Readmix",
-	"filters": {},
-	"utils": {}
-}
-```
-
-The `Rx` object has the following properties:
+Every `rx` file has access to the global `Rx` object with the following properties:
 | Prop | Value |
 | --- | --- |
 | `appName` | `Readmix` |
 | `filters` | `[object Object]` |
 | `utils` | `[object Object]` |
+| `packageJson` | `[object Object]` |
+| `packageLockJson` | `[object Object]` |
 
 
 Every `property` on the `Rx` object is also available globally.

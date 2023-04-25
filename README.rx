@@ -5,10 +5,7 @@
 
 You can find the source code at {{ "iaseth/readmix" | GithubLink }}.
 
-Every `rx` file has access to the global `Rx` object:
-{{ Rx | Print | safe }}
-
-The `Rx` object has the following properties:
+Every `rx` file has access to the global `Rx` object with the following properties:
 {{ Rx | PrintPropsTable }}
 
 Every `property` on the `Rx` object is also available globally.
@@ -26,10 +23,10 @@ In addition to default filters in `nunjucks`, `Readmix` provides you with these 
 
 
 ## dependencies
-{{ parse("package.json")["dependencies"] | PrintPropsTable }}
+{{ packageJson.dependencies | PrintPropsTable }}
 
 ## Dev dependencies
-{{ parse("package.json")["devDependencies"] | PrintPropsTable }}
+{{ packageJson.devDependencies | PrintPropsTable }}
 
 
 ## License

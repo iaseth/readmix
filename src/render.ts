@@ -1,7 +1,7 @@
 import nunjucks from 'nunjucks';
 
-import {Readmix} from './readmix';
-import {filters} from './filters';
+import { Readmix } from './readmix';
+import { filters } from './filters';
 import { utils } from './utils';
 
 
