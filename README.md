@@ -58,6 +58,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | `appName` | `Readmix` |
 | `filters` | `Object [12]` |
 | `mixins` | `Object [4]` |
+| `utils` | `Object [0]` |
 | `descriptions` | `Object [4]` |
 | `packageJson` | `Object [14]` |
 | `packageLockJson` | `Object [5]` |

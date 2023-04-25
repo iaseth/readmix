@@ -12,6 +12,8 @@ function getIndentation (level: number) {
 }
 
 export function Indent (text: string, level=0) : string {
+	if (level === 0) return text;
+
 	const indentation = getIndentation(level);
 
 	const indentedLines = text.split("\n").map((line, idx) => {
