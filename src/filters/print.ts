@@ -6,11 +6,16 @@ export function Print (obj: any) : string {
 	return "```\n" + jsonString + "\n```";
 }
 
-export function PrintPropsTable (obj: any) : string {
+export function PrintPropsTable (obj: any, headers = true) : string {
 	const keys = Object.keys(obj);
 	const propNames = keys.filter(k => typeof obj[k] !== "function");
-	let text = "| Prop | Value |\n";
-	text += "| --- | --- |\n";
+
+	let text = "| --- | --- |\n";
+	if (headers) {
+		text += "| Prop | Value |\n";
+		text += "| --- | --- |\n";
+	}
+
 	propNames.forEach(propName => {
 		const value = obj[propName];
 		const valueType = typeof value;

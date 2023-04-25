@@ -9,6 +9,7 @@ You can find the source code at [`iaseth/readmix`](https://github.com/iaseth/rea
 ## Props
 
 Every `rx` file has access to the global `Rx` object with the following properties:
+| --- | --- |
 | Prop | Value |
 | --- | --- |
 | `appName` | `Readmix` |
@@ -24,15 +25,15 @@ So, you can just write `appName` instead of `Rx.appName`.
 
 ## Utility Functions
 
-In addition to properties, the `Rx` object also contains the following utility `functions`:
+In addition to props, the `Rx` object also contains a `utils` object with the following utility `functions`:
 | Function | Args |
 | --- | --- |
 | `giveCredit()` | 0 |
 | `parse()` | 1 |
 
 
-Every `function` on the `Rx` object is also available globally.
-So, you can just write `giveCredit()` instead of `Rx.giveCredit()`.
+Every `function` on the `Rx.utils` object is also available globally.
+So, you can just write `giveCredit()` instead of `Rx.utils.giveCredit()` or `utils.giveCredit()`.
 
 
 ## Filters
@@ -51,16 +52,15 @@ In addition to default filters in `nunjucks`, `Readmix` provides you with these 
 | `NpmLink` | 0 |
 | `NpmPackageLink` | 0 |
 
+Each `filter` is available globally.
 
 
 ## Dependencies
-| Prop | Value |
 | --- | --- |
 | `nunjucks` | `^3.2.4` |
 
 
 ## Dev dependencies
-| Prop | Value |
 | --- | --- |
 | `@types/node` | `^18.16.0` |
 | `@types/nunjucks` | `^3.2.2` |
