@@ -17,7 +17,22 @@ So, you can just say `appName` instead of `Rx.appName`.
 In addition to properties, the `Rx` object also contains the following `functions`:
 | Function | Args |
 | --- | --- |
-| giveCredit() | 0 |
+| `giveCredit()` | 0 |
+
+
+
+In addition to default filters in `nunjucks`, `Readmix` provides you with these additional `filters`:
+| Filter | Args |
+| --- | --- |
+| `Print` | 0 |
+| `PrintFunctionsTable` | 0 |
+| `PrintFiltersTable` | 0 |
+| `File` | 0 |
+| `CodeFile` | 0 |
+| `GithubLink` | 0 |
+| `GithubRepoLink` | 0 |
+| `NpmLink` | 0 |
+| `NpmPackageLink` | 0 |
 
 
 

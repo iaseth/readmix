@@ -13,7 +13,20 @@ export function PrintFunctionsTable (obj: any) : string {
 	text += "| --- | --- |\n";
 	funcNames.forEach(funcName => {
 		const func = obj[funcName];
-		text += `| ${funcName}() | ${func.length} |\n`
+		text += `| \`${funcName}()\` | ${func.length} |\n`;
+	});
+
+	return text;
+}
+
+export function PrintFiltersTable (filters: any) : string {
+	const keys = Object.keys(filters);
+	const funcNames = keys.filter(k => typeof filters[k] === "function");
+	let text = "| Filter | Args |\n";
+	text += "| --- | --- |\n";
+	funcNames.forEach(funcName => {
+		const func = filters[funcName];
+		text += `| \`${funcName}\` | ${func.length - 1} |\n`;
 	});
 
 	return text;

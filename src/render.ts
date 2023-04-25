@@ -14,7 +14,8 @@ export function renderString (inputText: string) : string {
 	const outputText = env.renderString(inputText, {
 		...Readmix, // makes all properties of Readmix globally available in template
 		Rx: Readmix, // shortcut alias for Readmix
-		Readmix
+		Readmix,
+		filters
 	});
 	return outputText;
 }
