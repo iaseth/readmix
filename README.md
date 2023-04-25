@@ -23,6 +23,48 @@ Every `property` on the `Rx` object is also available globally.
 So, you can just write `appName` instead of `Rx.appName`.
 
 
+
+## Features
+* Allows you to write comments in your `markdown` files:
+	+ First way to add comments:
+		```
+// This is a comment.
+```
+
+	+ Another way to add comments:
+		```
+:: This is another comment.
+```
+
+
+* Easily insert the contents of any file inside your `README`:
+	+ This will insert the comments of your `LICENSE` file:
+		```
+{{ "LICENSE" | File }}
+```
+
+	+ This will insert the contents of `tsconfig.json` file into a code-block:
+		```
+{{ "tsconfig.json" | CodeFile | safe }}
+```
+
+	+ Here, `File` and `CodeFile` are filters provided by `Readmix`, while `safe` is a `nunjucks` filter that marks the input as safe and disables `escaping`.
+
+* Easy access to `package.json` and `package-lock.json`:
+	+ This will print the app version:
+		```
+{{ packageJson.version }}
+```
+
+	+ This will print the app name:
+		```
+{{ packageLockJson.name }}
+```
+
+	+ `packageJson` and `packageLockJson` are available in every `rx` file assuming the corresponding `JSON` files are present.
+
+
+
 ## Filters
 
 In addition to default filters in `nunjucks`, `Readmix` provides you with these additional `filters`:
