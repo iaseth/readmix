@@ -1,6 +1,9 @@
 
 default: build
 
+publish: build
+	npm publish
+
 build: clean
 	tsc
 

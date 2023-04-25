@@ -1,16 +1,10 @@
 import fs from 'fs';
 import path from 'path';
+import { GithubRepoLink } from './github';
+import { NpmPackageLink } from './npm';
 
 
 const a3 = "```\n";
-
-function GithubRepoLink (repoName: string): string {
-	return `[\`${repoName}\`](https://github.com/${repoName})`;
-}
-
-function NpmPackageLink (packageName: string): string {
-	return `[\`${packageName}\`](https://www.npmjs.com/package/${packageName})`;
-}
 
 function File (filepath: string): string {
 	if (fs.existsSync(filepath)) {

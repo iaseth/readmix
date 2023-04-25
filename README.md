@@ -31,5 +31,5 @@ SOFTWARE.
 
 ## Credit
 
-This file was generated using [`readmix`](https://www.npmjs.com/package/readmix)
+This file was generated using [`readmix`](https://github.com/iaseth/readmix).
 
