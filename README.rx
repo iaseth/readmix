@@ -11,9 +11,9 @@ You can find the source code at {{ "iaseth/readmix" | GithubLink }}.
 * Allows you to write comments in your `markdown` files:
 
 	* First way to add comments:
-		// This is a comment.
+		{{ "// This is a comment." | CodeBlock }}
 	* Another way to add comments:
-		:: This is another comment.
+		{{ ":: This is another comment." | CodeBlock }}
 
 * Easily insert the contents of any file inside your `README`:
 
