@@ -1,6 +1,6 @@
 {
   "name": "readmix",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -9,9 +9,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["readme", "markdown", "json", "css", "yaml"],
+  "keywords": [
+    "readme",
+    "markdown",
+    "json",
+    "css",
+    "yaml"
+  ],
   "author": "iaseth",
   "homepage": "https://github.com/iaseth/readmix",
   "repository": "iaseth/readmix",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "nunjucks": "^3.2.4"
+  }
 }
