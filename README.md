@@ -12,14 +12,44 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | Prop | Value |
 | --- | --- |
 | `appName` | `Readmix` |
-| `filters` | `Object [10]` |
+| `filters` | `Object [11]` |
 | `utils` | `Object [4]` |
+| `descriptions` | `Object [3]` |
 | `packageJson` | `Object [14]` |
 | `packageLockJson` | `Object [5]` |
 
 
 Every `property` on the `Rx` object is also available globally.
 So, you can just write `appName` instead of `Rx.appName`.
+
+
+## Filters
+
+In addition to default filters in `nunjucks`, `Readmix` provides you with these additional `filters`:
+| Filter | Args |
+| --- | --- |
+| `Print` | 0 |
+| `PrintPropsTable` | 0 |
+| `PrintFunctionsTable` | 0 |
+| `PrintFiltersTable` | 0 |
+| `File` | 0 |
+| `CodeFile` | 0 |
+| `CodeBlock` | 0 |
+| `GithubLink` | 0 |
+| `GithubRepoLink` | 0 |
+| `NpmLink` | 0 |
+| `NpmPackageLink` | 0 |
+
+Each `filter` is available globally.
+
+
+### Example usage
+You can use the `File` filter to include the contents of your `LICENSE` file inside your `README`:
+
+```
+{{ "LICENSE" | File }}
+```
+
 
 
 ## Utility Functions
@@ -36,24 +66,13 @@ In addition to props, the `Rx` object also contains a `utils` object with the fo
 Every `function` on the `Rx.utils` object is also available globally.
 So, you can just write `giveCredit()` instead of `Rx.utils.giveCredit()` or `utils.giveCredit()`.
 
+### Example usage
+You can use the `giveCredit()` util to include a section giving credit to `Readmix`:
 
-## Filters
+```
+{{ giveCredit() }}
+```
 
-In addition to default filters in `nunjucks`, `Readmix` provides you with these additional `filters`:
-| Filter | Args |
-| --- | --- |
-| `Print` | 0 |
-| `PrintPropsTable` | 0 |
-| `PrintFunctionsTable` | 0 |
-| `PrintFiltersTable` | 0 |
-| `File` | 0 |
-| `CodeFile` | 0 |
-| `GithubLink` | 0 |
-| `GithubRepoLink` | 0 |
-| `NpmLink` | 0 |
-| `NpmPackageLink` | 0 |
-
-Each `filter` is available globally.
 
 
 ## Dependencies
