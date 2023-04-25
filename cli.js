@@ -12,7 +12,7 @@ const BODY_COMMENT_PREFIX = "::";
 const readmix = require("./dist");
 const {Readmix} = readmix;
 
-const filters = require("./dist/filters").filters;
+const filters = readmix.filters;
 const env = new nunjucks.Environment();
 Object.keys(filters).forEach(filterName => {
 	env.addFilter(filterName, filters[filterName]);
