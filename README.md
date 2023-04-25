@@ -57,10 +57,14 @@ Each `filter` is available globally.
 
 ## Dependencies
 | --- | --- |
+| Package | Version |
+| --- | --- |
 | `nunjucks` | `^3.2.4` |
 
 
 ## Dev dependencies
+| --- | --- |
+| Package | Version |
 | --- | --- |
 | `@types/node` | `^18.16.0` |
 | `@types/nunjucks` | `^3.2.2` |

@@ -32,10 +32,10 @@ Each `filter` is available globally.
 
 
 ## Dependencies
-{{ packageJson.dependencies | PrintPropsTable(false) }}
+{{ packageJson.dependencies | PrintPropsTable(["Package", "Version"]) }}
 
 ## Dev dependencies
-{{ packageJson.devDependencies | PrintPropsTable(false) }}
+{{ packageJson.devDependencies | PrintPropsTable(["Package", "Version"]) }}
 
 
 ## License
