@@ -39,16 +39,16 @@ function compileFile (inputFilepath, forceUpdate=false) {
 
 	const inputText = fs.readFileSync(inputFilepath, {encoding:'utf8'});
 	const inputLines = inputText.split("\n");
+	const inputLinesWithoutComments = inputLines.filter(x => !x.startsWith(HEAD_COMMENT_PREFIX) && !x.startsWith(BODY_COMMENT_PREFIX));
 
-	const separatorIndex = inputLines.findIndex(x => x.startsWith(SEPARATOR));
+	const separatorIndex = inputLinesWithoutComments.findIndex(x => x.startsWith(SEPARATOR));
 	const frontMatterExists = separatorIndex !== -1;
-	const frontMatterLines = frontMatterExists ? inputLines.slice(0, separatorIndex) : [""];
-	const frontMatterLinesWithoutComments = frontMatterLines.filter(x => !x.startsWith(HEAD_COMMENT_PREFIX));
-	const frontMatterText = frontMatterLinesWithoutComments.join("\n");
 
-	const contentLines = frontMatterExists ? inputLines.slice(separatorIndex+1) : inputLines;
-	const contentLinesWithoutComments = contentLines.filter(x => !x.startsWith(BODY_COMMENT_PREFIX));
-	const contentText = contentLinesWithoutComments.join("\n");
+	const frontMatterLines = frontMatterExists ? inputLinesWithoutComments.slice(0, separatorIndex) : [""];
+	const frontMatterText = frontMatterLines.join("\n");
+
+	const contentLines = frontMatterExists ? inputLinesWithoutComments.slice(separatorIndex+1) : inputLinesWithoutComments;
+	const contentText = contentLines.join("\n");
 
 	const filetext = readmix.renderString(contentText);
 	fs.writeFileSync(outputFilepath, filetext);
