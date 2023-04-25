@@ -3,6 +3,12 @@
 const fs = require("fs");
 const path = require("path");
 
+const nunjucks = require("nunjucks");
+
+const Readmix = {
+	appName: "Readmix"
+};
+
 
 
 function compileDirectory (dirpath, recursive=false) {
@@ -23,15 +29,20 @@ function compileDirectory (dirpath, recursive=false) {
 	}
 }
 
-function compileFile (filepath) {
-	// console.log(`compileFile: ${filepath}`);
-	if (!filepath.endsWith(".rx")) {
+function compileFile (inputFilepath, forceUpdate=false) {
+	// console.log(`compileFile: ${inputFilepath}`);
+	if (!inputFilepath.endsWith(".rx")) {
 		return; // skip files without "rx" extension
 	}
-	const outputFilepath = filepath.slice(0, -3) + ".md";
-	console.log(`Input: ${filepath}`);
+	const outputFilepath = inputFilepath.slice(0, -3) + ".md";
+	console.log(`Input: ${inputFilepath}`);
 
-	const filetext = "";
+	const inputText = fs.readFileSync(inputFilepath, {encoding:'utf8'});
+	const filetext = nunjucks.renderString(inputText, {
+		...Readmix, // makes all properties of Readmix globally available in template
+		Rx: Readmix, // shortcut alias for Readmix
+		Readmix
+	});
 	fs.writeFileSync(outputFilepath, filetext);
 	console.log(`\tsaved: ${outputFilepath}`);
 }
