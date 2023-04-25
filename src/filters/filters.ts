@@ -1,3 +1,4 @@
+import { CodeBlock } from './code';
 import { CodeFile, File } from './files';
 import { GithubRepoLink } from './github';
 import { NpmPackageLink } from './npm';
@@ -17,6 +18,8 @@ export const filters = {
 
 	File,
 	CodeFile,
+
+	CodeBlock,
 
 	GithubLink,
 	GithubRepoLink,
