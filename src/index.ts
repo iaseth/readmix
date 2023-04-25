@@ -1,3 +1,3 @@
 
 export * from './readmix';
-export {filters} from './filters';
+export {renderString} from './render';

@@ -3,20 +3,11 @@
 const fs = require("fs");
 const path = require("path");
 
-const nunjucks = require("nunjucks");
-
 const SEPARATOR = "::::";
 const HEAD_COMMENT_PREFIX = "//";
 const BODY_COMMENT_PREFIX = "::";
 
 const readmix = require("./dist");
-const {Readmix} = readmix;
-
-const filters = readmix.filters;
-const env = new nunjucks.Environment();
-Object.keys(filters).forEach(filterName => {
-	env.addFilter(filterName, filters[filterName]);
-});
 
 
 
@@ -59,11 +50,7 @@ function compileFile (inputFilepath, forceUpdate=false) {
 	const contentLinesWithoutComments = contentLines.filter(x => !x.startsWith(BODY_COMMENT_PREFIX));
 	const contentText = contentLinesWithoutComments.join("\n");
 
-	const filetext = env.renderString(contentText, {
-		...Readmix, // makes all properties of Readmix globally available in template
-		Rx: Readmix, // shortcut alias for Readmix
-		Readmix
-	});
+	const filetext = readmix.renderString(contentText);
 	fs.writeFileSync(outputFilepath, filetext);
 	console.log(`\tsaved: ${outputFilepath}`);
 }

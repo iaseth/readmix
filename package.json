@@ -1,6 +1,6 @@
 {
   "name": "readmix",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -22,5 +22,8 @@
   "license": "MIT",
   "dependencies": {
     "nunjucks": "^3.2.4"
+  },
+  "devDependencies": {
+    "@types/nunjucks": "^3.2.2"
   }
 }
