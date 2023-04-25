@@ -6,6 +6,9 @@ const path = require("path");
 const nunjucks = require("nunjucks");
 
 const SEPARATOR = "::::";
+const HEAD_COMMENT_PREFIX = "//";
+const BODY_COMMENT_PREFIX = "::";
+
 const Readmix = {
 	appName: "Readmix"
 };
@@ -44,10 +47,12 @@ function compileFile (inputFilepath, forceUpdate=false) {
 	const separatorIndex = inputLines.findIndex(x => x.startsWith(SEPARATOR));
 	const frontMatterExists = separatorIndex !== -1;
 	const frontMatterLines = frontMatterExists ? inputLines.slice(0, separatorIndex) : [""];
-	const frontMatterText = frontMatterLines.join("\n");
+	const frontMatterLinesWithoutComments = frontMatterLines.filter(x => !x.startsWith(HEAD_COMMENT_PREFIX));
+	const frontMatterText = frontMatterLinesWithoutComments.join("\n");
 
 	const contentLines = frontMatterExists ? inputLines.slice(separatorIndex+1) : inputLines;
-	const contentText = contentLines.join("\n");
+	const contentLinesWithoutComments = contentLines.filter(x => !x.startsWith(BODY_COMMENT_PREFIX));
+	const contentText = contentLinesWithoutComments.join("\n");
 
 	const filetext = nunjucks.renderString(contentText, {
 		...Readmix, // makes all properties of Readmix globally available in template
