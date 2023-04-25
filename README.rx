@@ -11,11 +11,14 @@ Every `rx` file has access to the global `Rx` object:
 The `Rx` object has the following properties:
 {{ Rx | PrintPropsTable }}
 
-Every property on the `Rx` object is also available globally.
-So, you can just say `appName` instead of `Rx.appName`.
+Every `property` on the `Rx` object is also available globally.
+So, you can just write `appName` instead of `Rx.appName`.
 
 In addition to properties, the `Rx` object also contains the following utility `functions`:
 {{ Rx | PrintFunctionsTable }}
+
+Every `function` on the `Rx` object is also available globally.
+So, you can just write `giveCredit()` instead of `Rx.giveCredit()`.
 
 
 In addition to default filters in `nunjucks`, `Readmix` provides you with these additional `filters`:
@@ -23,10 +26,10 @@ In addition to default filters in `nunjucks`, `Readmix` provides you with these 
 
 
 ## dependencies
-{{ parse("package.json")["dependencies"] | Print | safe }}
+{{ parse("package.json")["dependencies"] | PrintPropsTable }}
 
 ## Dev dependencies
-{{ parse("package.json")["devDependencies"] | Print | safe }}
+{{ parse("package.json")["devDependencies"] | PrintPropsTable }}
 
 
 ## License

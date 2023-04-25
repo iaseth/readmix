@@ -13,13 +13,13 @@ Every `rx` file has access to the global `Rx` object:
 ```
 
 The `Rx` object has the following properties:
-| Function | Args |
+| Prop | Value |
 | --- | --- |
-| `appName` | Readmix |
+| `appName` | `Readmix` |
 
 
-Every property on the `Rx` object is also available globally.
-So, you can just say `appName` instead of `Rx.appName`.
+Every `property` on the `Rx` object is also available globally.
+So, you can just write `appName` instead of `Rx.appName`.
 
 In addition to properties, the `Rx` object also contains the following utility `functions`:
 | Function | Args |
@@ -28,9 +28,12 @@ In addition to properties, the `Rx` object also contains the following utility `
 | `parse()` | 1 |
 
 
+Every `function` on the `Rx` object is also available globally.
+So, you can just write `giveCredit()` instead of `Rx.giveCredit()`.
+
 
 In addition to default filters in `nunjucks`, `Readmix` provides you with these additional `filters`:
-| Filter | Value |
+| Filter | Args |
 | --- | --- |
 | `Print` | 0 |
 | `PrintPropsTable` | 0 |
@@ -46,19 +49,17 @@ In addition to default filters in `nunjucks`, `Readmix` provides you with these 
 
 
 ## dependencies
-```
-{
-	"nunjucks": "^3.2.4"
-}
-```
+| Prop | Value |
+| --- | --- |
+| `nunjucks` | `^3.2.4` |
+
 
 ## Dev dependencies
-```
-{
-	"@types/node": "^18.16.0",
-	"@types/nunjucks": "^3.2.2"
-}
-```
+| Prop | Value |
+| --- | --- |
+| `@types/node` | `^18.16.0` |
+| `@types/nunjucks` | `^3.2.2` |
+
 
 
 ## License
