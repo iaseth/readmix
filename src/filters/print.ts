@@ -13,7 +13,14 @@ export function PrintPropsTable (obj: any) : string {
 	text += "| --- | --- |\n";
 	propNames.forEach(propName => {
 		const value = obj[propName];
-		text += `| \`${propName}\` | \`${value}\` |\n`;
+		const valueType = typeof value;
+		switch (valueType) {
+			case "object":
+				text += `| \`${propName}\` | \`Object [${Object.keys(value).length}]\` |\n`;
+				break;
+			default:
+				text += `| \`${propName}\` | \`${value}\` |\n`;
+		}
 	});
 
 	return text;

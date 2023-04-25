@@ -12,10 +12,10 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | Prop | Value |
 | --- | --- |
 | `appName` | `Readmix` |
-| `filters` | `[object Object]` |
-| `utils` | `[object Object]` |
-| `packageJson` | `[object Object]` |
-| `packageLockJson` | `[object Object]` |
+| `filters` | `Object [10]` |
+| `utils` | `Object [2]` |
+| `packageJson` | `Object [14]` |
+| `packageLockJson` | `Object [5]` |
 
 
 Every `property` on the `Rx` object is also available globally.
