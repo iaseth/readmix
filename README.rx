@@ -1,6 +1,8 @@
 
 # readmix
 
-{{ "readmix" | NpmPackageLink }} is a command-line README generator.
+{{ "readmix" | NpmLink }} is a command-line README generator.
+
+You can find the source code at {{ "iaseth/readmix" | GithubLink }}.
 
 
