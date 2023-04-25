@@ -10,15 +10,9 @@ You can find the source code at [`iaseth/readmix`](https://github.com/iaseth/rea
 ## Features
 * Allows you to write comments in your `markdown` files:
     + First way to add comments:
-```
-// This is a comment.
-```
-
+        // This is a comment.
     + Another way to add comments:
-```
-:: This is another comment.
-```
-
+        :: This is another comment.
 
 * Easily insert the contents of any file inside your `README`:
     + This will insert the comments of your `LICENSE` file:

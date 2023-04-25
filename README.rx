@@ -10,9 +10,9 @@ You can find the source code at {{ "iaseth/readmix" | GithubLink }}.
 ## Features
 * Allows you to write comments in your `markdown` files:
 	+ First way to add comments:
-{{ "// This is a comment." | CodeBlock }}
+		// This is a comment.
 	+ Another way to add comments:
-{{ ":: This is another comment." | CodeBlock }}
+		:: This is another comment.
 
 * Easily insert the contents of any file inside your `README`:
 	+ This will insert the comments of your `LICENSE` file:
