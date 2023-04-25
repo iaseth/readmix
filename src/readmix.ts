@@ -1,5 +1,5 @@
 import { filters } from "./filters";
-import { utils } from "./utils";
+import { mixins } from "./mixins";
 
 import descriptionsJson from './descriptions.json';
 
@@ -8,7 +8,7 @@ import descriptionsJson from './descriptions.json';
 interface ReadmixType {
 	appName: string,
 	filters: any,
-	utils: any,
+	mixins: any,
 
 	descriptions: any,
 
@@ -19,10 +19,10 @@ interface ReadmixType {
 export const Readmix: ReadmixType = {
 	appName: "Readmix",
 	filters: filters,
-	utils: utils,
+	mixins: mixins,
 
 	descriptions: descriptionsJson,
 
-	packageJson: utils.parse("package.json"),
-	packageLockJson: utils.parse("package-lock.json"),
+	packageJson: mixins.parse("package.json"),
+	packageLockJson: mixins.parse("package-lock.json"),
 };

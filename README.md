@@ -57,8 +57,8 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | --- | --- |
 | `appName` | `Readmix` |
 | `filters` | `Object [11]` |
-| `utils` | `Object [4]` |
-| `descriptions` | `Object [3]` |
+| `mixins` | `Object [4]` |
+| `descriptions` | `Object [4]` |
 | `packageJson` | `Object [14]` |
 | `packageLockJson` | `Object [5]` |
 
@@ -97,9 +97,9 @@ You can use the `File` filter to include the contents of your `LICENSE` file ins
 
 
 
-## Utility Functions
+## Mixins
 
-In addition to props, the `Rx` object also contains a `utils` object with the following utility `functions`:
+In addition to props, the `Rx` object also contains a `mixins` object with the following `mixins`:
 | Function | Args |
 | --- | --- |
 | `giveCredit()` | 0 |
@@ -108,11 +108,11 @@ In addition to props, the `Rx` object also contains a `utils` object with the fo
 | `devDependencyTable()` | 0 |
 
 
-Every `function` on the `Rx.utils` object is also available globally.
-So, you can just write `giveCredit()` instead of `Rx.utils.giveCredit()` or `utils.giveCredit()`.
+Every `function` on the `Rx.mixins` object is also available globally.
+So, you can just write `giveCredit()` instead of `Rx.mixins.giveCredit()` or `mixins.giveCredit()`.
 
 ### Example usage
-You can use the `giveCredit()` util to include a section giving credit to `Readmix`:
+You can use the `giveCredit()` mixin to include a section giving credit to `Readmix`:
 
 ```
 {{ giveCredit() }}
