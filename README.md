@@ -8,7 +8,7 @@ You can find the source code at [`iaseth/readmix`](https://github.com/iaseth/rea
 Every `rx` file has access to the global `Rx` object:
 ```
 {
-	&quot;appName&quot;: &quot;Readmix&quot;
+	"appName": "Readmix"
 }
 ```
 
