@@ -7,6 +7,11 @@ You can find the source code at {{ "iaseth/readmix" | GithubLink }}.
 
 Every `rx` file has access to the global `Rx` object:
 {{ Rx | Print | safe }}
+Every property on the `Rx` object is also available globally.
+So, you can just say `appName` instead of `Rx.appName`.
+
+In addition to properties, the `Rx` object also contains the following `functions`:
+{{ Rx | PrintFunctionsTable | safe }}
 
 
 ## License

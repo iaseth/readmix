@@ -1,7 +1,7 @@
 import { CodeFile, File } from './files';
 import { GithubRepoLink } from './github';
 import { NpmPackageLink } from './npm';
-import { Print } from './print';
+import { Print, PrintFunctionsTable } from './print';
 
 
 
@@ -10,9 +10,11 @@ const NpmLink = NpmPackageLink;
 const GithubLink = GithubRepoLink;
 
 export const filters = {
+	Print,
+	PrintFunctionsTable,
+
 	File,
 	CodeFile,
-	Print,
 
 	GithubLink,
 	GithubRepoLink,

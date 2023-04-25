@@ -11,6 +11,14 @@ Every `rx` file has access to the global `Rx` object:
 	"appName": "Readmix"
 }
 ```
+Every property on the `Rx` object is also available globally.
+So, you can just say `appName` instead of `Rx.appName`.
+
+In addition to properties, the `Rx` object also contains the following `functions`:
+| Function | Args |
+| --- | --- |
+| giveCredit() | 0 |
+
 
 
 ## License
