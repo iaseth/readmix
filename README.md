@@ -9,7 +9,6 @@ You can find the source code at [`iaseth/readmix`](https://github.com/iaseth/rea
 ## Props
 
 Every `rx` file has access to the global `Rx` object with the following properties:
-| --- | --- |
 | Prop | Value |
 | --- | --- |
 | `appName` | `Readmix` |
@@ -56,14 +55,12 @@ Each `filter` is available globally.
 
 
 ## Dependencies
-| --- | --- |
 | Package | Version |
 | --- | --- |
 | `nunjucks` | `^3.2.4` |
 
 
 ## Dev dependencies
-| --- | --- |
 | Package | Version |
 | --- | --- |
 | `@types/node` | `^18.16.0` |

@@ -10,7 +10,7 @@ export function PrintPropsTable (obj: any, header = ["Prop", "Value"]) : string 
 	const keys = Object.keys(obj);
 	const propNames = keys.filter(k => typeof obj[k] !== "function");
 
-	let text = "| --- | --- |\n";
+	let text = "";
 	text += `| ${header[0]} | ${header[1]} |\n`;
 	text += "| --- | --- |\n";
 
