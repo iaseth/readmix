@@ -1,9 +1,12 @@
 
 # readmix
 
-[`readmix`](https://www.npmjs.com/package/readmix) is a command-line README generator.
+[`readmix`](https://www.npmjs.com/package/readmix) is a command-line `README` generator.
 
 You can find the source code at [`iaseth/readmix`](https://github.com/iaseth/readmix).
+
+
+## Props
 
 Every `rx` file has access to the global `Rx` object with the following properties:
 | Prop | Value |
@@ -18,6 +21,9 @@ Every `rx` file has access to the global `Rx` object with the following properti
 Every `property` on the `Rx` object is also available globally.
 So, you can just write `appName` instead of `Rx.appName`.
 
+
+## Utility Functions
+
 In addition to properties, the `Rx` object also contains the following utility `functions`:
 | Function | Args |
 | --- | --- |
@@ -28,6 +34,8 @@ In addition to properties, the `Rx` object also contains the following utility `
 Every `function` on the `Rx` object is also available globally.
 So, you can just write `giveCredit()` instead of `Rx.giveCredit()`.
 
+
+## Filters
 
 In addition to default filters in `nunjucks`, `Readmix` provides you with these additional `filters`:
 | Filter | Args |
@@ -45,7 +53,7 @@ In addition to default filters in `nunjucks`, `Readmix` provides you with these 
 
 
 
-## dependencies
+## Dependencies
 | Prop | Value |
 | --- | --- |
 | `nunjucks` | `^3.2.4` |

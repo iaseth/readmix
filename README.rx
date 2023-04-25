@@ -1,15 +1,21 @@
 
 # readmix
 
-{{ "readmix" | NpmLink }} is a command-line README generator.
+{{ "readmix" | NpmLink }} is a command-line `README` generator.
 
 You can find the source code at {{ "iaseth/readmix" | GithubLink }}.
+
+
+## Props
 
 Every `rx` file has access to the global `Rx` object with the following properties:
 {{ Rx | PrintPropsTable }}
 
 Every `property` on the `Rx` object is also available globally.
 So, you can just write `appName` instead of `Rx.appName`.
+
+
+## Utility Functions
 
 In addition to properties, the `Rx` object also contains the following utility `functions`:
 {{ Rx.utils | PrintFunctionsTable }}
@@ -18,11 +24,13 @@ Every `function` on the `Rx` object is also available globally.
 So, you can just write `giveCredit()` instead of `Rx.giveCredit()`.
 
 
+## Filters
+
 In addition to default filters in `nunjucks`, `Readmix` provides you with these additional `filters`:
 {{ Rx.filters | PrintFiltersTable }}
 
 
-## dependencies
+## Dependencies
 {{ packageJson.dependencies | PrintPropsTable }}
 
 ## Dev dependencies
