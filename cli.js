@@ -11,6 +11,12 @@ const readmix = require("./dist");
 
 
 
+function sanitizeLine (line) {
+	line = line.trimEnd();
+	line = line.replaceAll("\t", "    ");
+	return line;
+}
+
 function compileDirectory (dirpath, recursive=false) {
 	// console.log(`compileDirectory: ${dirpath}`);
 	const entries = fs.readdirSync(dirpath);
@@ -48,7 +54,8 @@ function compileFile (inputFilepath, forceUpdate=false) {
 	const frontMatterText = frontMatterLines.join("\n");
 
 	const contentLines = frontMatterExists ? inputLinesWithoutComments.slice(separatorIndex+1) : inputLinesWithoutComments;
-	const contentText = contentLines.join("\n");
+	const contentLinesSanitized = contentLines.map(x => sanitizeLine(x));
+	const contentText = contentLinesSanitized.join("\n");
 
 	const filetext = readmix.renderString(contentText);
 	fs.writeFileSync(outputFilepath, filetext);

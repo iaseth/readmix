@@ -9,42 +9,42 @@ You can find the source code at [`iaseth/readmix`](https://github.com/iaseth/rea
 
 ## Features
 * Allows you to write comments in your `markdown` files:
-	+ First way to add comments:
+    + First way to add comments:
 ```
 // This is a comment.
 ```
 
-	+ Another way to add comments:
+    + Another way to add comments:
 ```
 :: This is another comment.
 ```
 
 
 * Easily insert the contents of any file inside your `README`:
-	+ This will insert the comments of your `LICENSE` file:
+    + This will insert the comments of your `LICENSE` file:
 ```
 {{ "LICENSE" | File }}
 ```
 
-	+ This will insert the contents of `tsconfig.json` file into a code-block:
+    + This will insert the contents of `tsconfig.json` file into a code-block:
 ```
 {{ "tsconfig.json" | CodeFile | safe }}
 ```
 
-	+ Here, `File` and `CodeFile` are filters provided by `Readmix`, while `safe` is a `nunjucks` filter that marks the input as safe and disables `escaping`.
+    + Here, `File` and `CodeFile` are filters provided by `Readmix`, while `safe` is a `nunjucks` filter that marks the input as safe and disables `escaping`.
 
 * Easy access to `package.json` and `package-lock.json`:
-	+ This will print the app version:
+    + This will print the app version:
 ```
 {{ packageJson.version }}
 ```
 
-	+ This will print the app name:
+    + This will print the app name:
 ```
 {{ packageLockJson.name }}
 ```
 
-	+ `packageJson` and `packageLockJson` are available in every `rx` file assuming the corresponding `JSON` files are present.
+    + `packageJson` and `packageLockJson` are available in every `rx` file assuming the corresponding `JSON` files are present.
 
 
 
