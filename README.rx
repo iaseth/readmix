@@ -19,12 +19,12 @@ You can find the source code at {{ "iaseth/readmix" | GithubLink }}.
 * Easily insert the contents of any file inside your `README`:
 
 	* This will insert the comments of your `LICENSE` file:
-		{{ '{{ "LICENSE" | File }}' | CodeBlock | Indent(2) | safe }}
+		{{ '{{ "LICENSE" | File }}' | CodeBlock | Indent(2) }}
 
 	* This will insert the contents of `tsconfig.json` file into a code-block:
-		{{ '{{ "tsconfig.json" | CodeFile | safe }}' | CodeBlock | Indent(2) | safe }}
+		{{ '{{ "tsconfig.json" | CodeFile }}' | CodeBlock | Indent(2) }}
 
-	* Here, `File` and `CodeFile` are filters provided by `{{ appName }}`, while `safe` is a `nunjucks` filter that marks the input as safe and disables `escaping`.
+	* Here, `File` and `CodeFile` are filters provided by `{{ appName }}`.
 
 * Easy access to `package.json` and `package-lock.json`:
 
@@ -58,7 +58,7 @@ Each `filter` is available globally.
 ### Example usage
 You can use the `File` filter to include the contents of your `LICENSE` file inside your `README`:
 
-{{ "{{ \"LICENSE\" | File }}" | CodeBlock | safe }}
+{{ "{{ \"LICENSE\" | File }}" | CodeBlock }}
 
 
 

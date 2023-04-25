@@ -5,7 +5,7 @@ import { filters } from './filters';
 import { mixins } from './mixins';
 
 
-const env = new nunjucks.Environment();
+const env = nunjucks.configure({ autoescape: false });
 Object.keys(filters).forEach((filterName: string) => {
 	const filter = (filters as any)[filterName];
 	env.addFilter(filterName, filter);
