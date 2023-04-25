@@ -6,6 +6,30 @@
 You can find the source code at {{ "iaseth/readmix" | GithubLink }}.
 
 
+
+## Features
+* Allows you to write comments in your `markdown` files:
+	+ First way to add comments:
+{{ "// This is a comment." | CodeBlock }}
+	+ Another way to add comments:
+{{ ":: This is another comment." | CodeBlock }}
+
+* Easily insert the contents of any file inside your `README`:
+	+ This will insert the comments of your `LICENSE` file:
+{{ '{{ "LICENSE" | File }}' | CodeBlock | safe }}
+	+ This will insert the contents of `tsconfig.json` file into a code-block:
+{{ '{{ "tsconfig.json" | CodeFile | safe }}' | CodeBlock | safe }}
+	+ Here, `File` and `CodeFile` are filters provided by `{{ appName }}`, while `safe` is a `nunjucks` filter that marks the input as safe and disables `escaping`.
+
+* Easy access to `package.json` and `package-lock.json`:
+	+ This will print the app version:
+{{ "{{ packageJson.version }}" | CodeBlock }}
+	+ This will print the app name:
+{{ "{{ packageLockJson.name }}" | CodeBlock }}
+	+ `packageJson` and `packageLockJson` are available in every `rx` file assuming the corresponding `JSON` files are present.
+
+
+
 ## Props
 
 Every `rx` file has access to the global `Rx` object with the following properties:
@@ -13,29 +37,6 @@ Every `rx` file has access to the global `Rx` object with the following properti
 
 Every `property` on the `Rx` object is also available globally.
 So, you can just write `appName` instead of `Rx.appName`.
-
-
-
-## Features
-* Allows you to write comments in your `markdown` files:
-	+ First way to add comments:
-		{{ "// This is a comment." | CodeBlock }}
-	+ Another way to add comments:
-		{{ ":: This is another comment." | CodeBlock }}
-
-* Easily insert the contents of any file inside your `README`:
-	+ This will insert the comments of your `LICENSE` file:
-		{{ '{{ "LICENSE" | File }}' | CodeBlock | safe }}
-	+ This will insert the contents of `tsconfig.json` file into a code-block:
-		{{ '{{ "tsconfig.json" | CodeFile | safe }}' | CodeBlock | safe }}
-	+ Here, `File` and `CodeFile` are filters provided by `{{ appName }}`, while `safe` is a `nunjucks` filter that marks the input as safe and disables `escaping`.
-
-* Easy access to `package.json` and `package-lock.json`:
-	+ This will print the app version:
-		{{ "{{ packageJson.version }}" | CodeBlock }}
-	+ This will print the app name:
-		{{ "{{ packageLockJson.name }}" | CodeBlock }}
-	+ `packageJson` and `packageLockJson` are available in every `rx` file assuming the corresponding `JSON` files are present.
 
 
 
@@ -52,6 +53,7 @@ You can use the `File` filter to include the contents of your `LICENSE` file ins
 {{ "{{ \"LICENSE\" | File }}" | CodeBlock | safe }}
 
 
+
 ## Utility Functions
 
 In addition to props, the `Rx` object also contains a `utils` object with the following utility `functions`:
@@ -66,8 +68,10 @@ You can use the `giveCredit()` util to include a section giving credit to `{{ ap
 {{ "{{ giveCredit() }}" | CodeBlock }}
 
 
+
 ## Dependencies
 {{ dependencyTable() }}
+
 
 ## Dev dependencies
 {{ devDependencyTable() }}
@@ -75,5 +79,6 @@ You can use the `giveCredit()` util to include a section giving credit to `{{ ap
 
 ## License
 {{ "LICENSE" | File }}
+
 
 {{ giveCredit() }}
