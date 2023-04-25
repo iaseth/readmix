@@ -1,0 +1,17 @@
+{
+  "name": "readmix",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "readmix": "./cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["readme", "markdown", "json", "css", "yaml"],
+  "author": "iaseth",
+  "homepage": "https://github.com/iaseth/readmix",
+  "repository": "iaseth/readmix",
+  "license": "MIT"
+}
