@@ -18,6 +18,13 @@ In addition to default filters in `nunjucks`, `Readmix` provides you with these 
 {{ filters | PrintFiltersTable }}
 
 
+## dependencies
+{{ parse("package.json")["dependencies"] | Print | safe }}
+
+## Dev dependencies
+{{ parse("package.json")["devDependencies"] | Print | safe }}
+
+
 ## License
 {{ "LICENSE" | File }}
 

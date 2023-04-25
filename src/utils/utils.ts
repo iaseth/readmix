@@ -1,3 +1,4 @@
+export {parse} from './parse';
 
 
 

@@ -18,6 +18,7 @@ In addition to properties, the `Rx` object also contains the following utility `
 | Function | Args |
 | --- | --- |
 | `giveCredit()` | 0 |
+| `parse()` | 1 |
 
 
 
@@ -34,6 +35,22 @@ In addition to default filters in `nunjucks`, `Readmix` provides you with these 
 | `NpmLink` | 0 |
 | `NpmPackageLink` | 0 |
 
+
+
+## dependencies
+```
+{
+	"nunjucks": "^3.2.4"
+}
+```
+
+## Dev dependencies
+```
+{
+	"@types/node": "^18.16.0",
+	"@types/nunjucks": "^3.2.2"
+}
+```
 
 
 ## License
