@@ -13,7 +13,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | --- | --- |
 | `appName` | `Readmix` |
 | `filters` | `Object [10]` |
-| `utils` | `Object [2]` |
+| `utils` | `Object [4]` |
 | `packageJson` | `Object [14]` |
 | `packageLockJson` | `Object [5]` |
 
@@ -29,6 +29,8 @@ In addition to props, the `Rx` object also contains a `utils` object with the fo
 | --- | --- |
 | `giveCredit()` | 0 |
 | `parse()` | 1 |
+| `dependencyTable()` | 0 |
+| `devDependencyTable()` | 0 |
 
 
 Every `function` on the `Rx.utils` object is also available globally.
