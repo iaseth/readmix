@@ -1,6 +1,7 @@
 import { CodeBlock } from './code';
 import { CodeFile, File } from './files';
 import { GithubRepoLink } from './github';
+import { Indent } from './indent';
 import { NpmPackageLink } from './npm';
 import { Print, PrintFiltersTable, PrintFunctionsTable, PrintPropsTable } from './print';
 
@@ -20,6 +21,7 @@ export const filters = {
 	CodeFile,
 
 	CodeBlock,
+	Indent,
 
 	GithubLink,
 	GithubRepoLink,
