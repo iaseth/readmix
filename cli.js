@@ -5,8 +5,8 @@ const path = require("path");
 
 
 
-function compileDirectory (dirpath) {
-	console.log(`compileDirectory: ${dirpath}`);
+function compileDirectory (dirpath, recursive=false) {
+	// console.log(`compileDirectory: ${dirpath}`);
 	const entries = fs.readdirSync(dirpath);
 	for (const entry of entries) {
 		if (entry.startsWith(".")) {
@@ -15,16 +15,25 @@ function compileDirectory (dirpath) {
 
 		const fullpath = path.join(dirpath, entry);
 		const stat = fs.lstatSync(fullpath);
-		if (stat.isDirectory()) {
-			compileDirectory(fullpath);
+		if (stat.isDirectory() && recursive) {
+			compileDirectory(fullpath, recursive);
 		} else if (stat.isFile()) {
 			compileFile(fullpath);
 		}
 	}
 }
 
-function compileFile (pathArg) {
-	console.log(`compileFile: ${pathArg}`);
+function compileFile (filepath) {
+	// console.log(`compileFile: ${filepath}`);
+	if (!filepath.endsWith(".rx")) {
+		return; // skip files without "rx" extension
+	}
+	const outputFilepath = filepath.slice(0, -3) + ".md";
+	console.log(`Input: ${filepath}`);
+
+	const filetext = "";
+	fs.writeFileSync(outputFilepath, filetext);
+	console.log(`\tsaved: ${outputFilepath}`);
 }
 
 function main () {
