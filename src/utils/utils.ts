@@ -1,7 +1,9 @@
-export {parse} from './parse';
+import { giveCredit } from './meta';
+import { parse } from './parse';
 
 
 
-export function giveCredit () : string {
-	return "## Credit\n\nThis file was generated using [`readmix`](https://github.com/iaseth/readmix).\n";
-}
+export const utils = {
+	giveCredit,
+	parse,
+};

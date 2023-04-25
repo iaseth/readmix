@@ -1,17 +1,16 @@
-import { giveCredit, parse } from "./utils";
+import { filters } from "./filters";
+import { utils } from "./utils";
 
 
 
 interface ReadmixType {
 	appName: string,
-	giveCredit: () => string,
-	parse: (filepath: string) => any
+	filters: any,
+	utils: any
 };
 
 export const Readmix: ReadmixType = {
 	appName: "Readmix",
-	giveCredit: giveCredit,
-	parse: parse
+	filters: filters,
+	utils: utils
 };
-
-

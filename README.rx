@@ -15,14 +15,14 @@ Every `property` on the `Rx` object is also available globally.
 So, you can just write `appName` instead of `Rx.appName`.
 
 In addition to properties, the `Rx` object also contains the following utility `functions`:
-{{ Rx | PrintFunctionsTable }}
+{{ Rx.utils | PrintFunctionsTable }}
 
 Every `function` on the `Rx` object is also available globally.
 So, you can just write `giveCredit()` instead of `Rx.giveCredit()`.
 
 
 In addition to default filters in `nunjucks`, `Readmix` provides you with these additional `filters`:
-{{ filters | PrintFiltersTable }}
+{{ Rx.filters | PrintFiltersTable }}
 
 
 ## dependencies

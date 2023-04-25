@@ -8,7 +8,9 @@ You can find the source code at [`iaseth/readmix`](https://github.com/iaseth/rea
 Every `rx` file has access to the global `Rx` object:
 ```
 {
-	"appName": "Readmix"
+	"appName": "Readmix",
+	"filters": {},
+	"utils": {}
 }
 ```
 
@@ -16,6 +18,8 @@ The `Rx` object has the following properties:
 | Prop | Value |
 | --- | --- |
 | `appName` | `Readmix` |
+| `filters` | `[object Object]` |
+| `utils` | `[object Object]` |
 
 
 Every `property` on the `Rx` object is also available globally.
