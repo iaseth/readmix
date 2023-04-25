@@ -5,6 +5,9 @@
 
 You can find the source code at {{ "iaseth/readmix" | GithubLink }}.
 
+Every `rx` file has access to the global `Rx` object:
+{{ Rx | Print }}
+
 
 ## License
 {{ "LICENSE" | File }}

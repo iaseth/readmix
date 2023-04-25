@@ -5,6 +5,13 @@
 
 You can find the source code at [`iaseth/readmix`](https://github.com/iaseth/readmix).
 
+Every `rx` file has access to the global `Rx` object:
+```
+{
+	&quot;appName&quot;: &quot;Readmix&quot;
+}
+```
+
 
 ## License
 MIT License
