@@ -22,7 +22,7 @@ You can find the source code at {{ "iaseth/readmix" | GithubLink }}.
 		{{ '{{ "LICENSE" | File }}' | CodeBlock(2) | safe }}
 
 	* This will insert the contents of `tsconfig.json` file into a code-block:
-		{{ '{{ "tsconfig.json" | CodeFile(2) | safe }}' | CodeBlock | safe }}
+		{{ '{{ "tsconfig.json" | CodeFile | safe }}' | CodeBlock(2) | safe }}
 
 	* Here, `File` and `CodeFile` are filters provided by `{{ appName }}`, while `safe` is a `nunjucks` filter that marks the input as safe and disables `escaping`.
 

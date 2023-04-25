@@ -29,8 +29,8 @@ You can find the source code at [`iaseth/readmix`](https://github.com/iaseth/rea
 
     * This will insert the contents of `tsconfig.json` file into a code-block:
         ```
-{{ "tsconfig.json" | CodeFile(2) | safe }}
-```
+        {{ "tsconfig.json" | CodeFile | safe }}
+        ```
 
     * Here, `File` and `CodeFile` are filters provided by `Readmix`, while `safe` is a `nunjucks` filter that marks the input as safe and disables `escaping`.
 
