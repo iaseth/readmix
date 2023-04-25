@@ -9,9 +9,8 @@ const SEPARATOR = "::::";
 const HEAD_COMMENT_PREFIX = "//";
 const BODY_COMMENT_PREFIX = "::";
 
-const Readmix = {
-	appName: "Readmix"
-};
+const readmix = require("./dist");
+const {Readmix} = readmix;
 
 
 
