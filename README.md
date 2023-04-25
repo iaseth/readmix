@@ -11,6 +11,13 @@ Every `rx` file has access to the global `Rx` object:
 	"appName": "Readmix"
 }
 ```
+
+The `Rx` object has the following properties:
+| Function | Args |
+| --- | --- |
+| `appName` | Readmix |
+
+
 Every property on the `Rx` object is also available globally.
 So, you can just say `appName` instead of `Rx.appName`.
 
@@ -23,9 +30,10 @@ In addition to properties, the `Rx` object also contains the following utility `
 
 
 In addition to default filters in `nunjucks`, `Readmix` provides you with these additional `filters`:
-| Filter | Args |
+| Filter | Value |
 | --- | --- |
 | `Print` | 0 |
+| `PrintPropsTable` | 0 |
 | `PrintFunctionsTable` | 0 |
 | `PrintFiltersTable` | 0 |
 | `File` | 0 |
