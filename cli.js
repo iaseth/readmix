@@ -55,6 +55,22 @@ function main () {
 	const singleFlags = args.filter(readmix.helpers.isSingleFlag);
 	const doubleFlags = args.filter(readmix.helpers.isDoubleFlag);
 
+	const cmdOptions = {
+		force: false, // force update even if output file exists and is newer than input file
+		openBrowser: false, // open the preview page default web browser
+		preview: false, // run a local server for previewing output in browser
+		recursive: false, // recurse into sub-directories
+		status: false, // print update status of all files
+		watch: false, // watch files for changes
+	};
+
+	cmdOptions.force = singleFlags.includes("-F") || doubleFlags.includes("--force");
+	cmdOptions.openBrowser = singleFlags.includes("-O") || doubleFlags.includes("--open");
+	cmdOptions.preview = singleFlags.includes("-P") || doubleFlags.includes("--preview");
+	cmdOptions.recursive = singleFlags.includes("-R") || doubleFlags.includes("--recursive");
+	cmdOptions.status = singleFlags.includes("-S") || doubleFlags.includes("--status");
+	cmdOptions.watch = singleFlags.includes("-W") || doubleFlags.includes("--watch");
+
 	const pathArgs = args.filter(readmix.helpers.isNotFlag);
 	for (const pathArg of pathArgs) {
 		if (fs.existsSync(pathArg)) {
