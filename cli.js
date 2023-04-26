@@ -57,7 +57,8 @@ function main () {
 
 	const cmdOptions = {
 		force: false, // force update even if output file exists and is newer than input file
-		openBrowser: false, // open the preview page default web browser
+		list: false, // just list all the input files
+		open: false, // open the preview page default web browser
 		preview: false, // run a local server for previewing output in browser
 		recursive: false, // recurse into sub-directories
 		status: false, // print update status of all files
@@ -65,24 +66,28 @@ function main () {
 	};
 
 	cmdOptions.force = singleFlags.includes("-F") || doubleFlags.includes("--force");
-	cmdOptions.openBrowser = singleFlags.includes("-O") || doubleFlags.includes("--open");
+	cmdOptions.list = singleFlags.includes("-L") || doubleFlags.includes("--list");
+	cmdOptions.open = singleFlags.includes("-O") || doubleFlags.includes("--open");
 	cmdOptions.preview = singleFlags.includes("-P") || doubleFlags.includes("--preview");
 	cmdOptions.recursive = singleFlags.includes("-R") || doubleFlags.includes("--recursive");
 	cmdOptions.status = singleFlags.includes("-S") || doubleFlags.includes("--status");
 	cmdOptions.watch = singleFlags.includes("-W") || doubleFlags.includes("--watch");
 
 	const pathArgs = args.filter(readmix.helpers.isNotFlag);
-	for (const pathArg of pathArgs) {
-		if (fs.existsSync(pathArg)) {
-			const stat = fs.lstatSync(pathArg);
-			if (stat.isDirectory()) {
-				compileDirectory(pathArg);
-			} else if (stat.isFile()) {
-				compileFile(pathArg);
-			}
-		} else {
-			console.log(`Path Not Found: ${pathArg}`);
+	const goodPaths = pathArgs.filter(readmix.helpers.pathExists);
+	const badPaths = pathArgs.filter(readmix.helpers.pathDoesNotExist);
+
+	for (const goodPath of goodPaths) {
+		const stat = fs.lstatSync(goodPath);
+		if (stat.isDirectory()) {
+			compileDirectory(goodPath);
+		} else if (stat.isFile()) {
+			compileFile(goodPath);
 		}
+	}
+
+	for (const badPath of badPaths) {
+		console.log(`Path Not Found: ${badPath}`);
 	}
 }
 
