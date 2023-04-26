@@ -29,8 +29,10 @@ function main () {
 	cmdOptions.compile = singleFlags.includes("-C") || doubleFlags.includes("--compile");
 	cmdOptions.debug = singleFlags.includes("-D") || doubleFlags.includes("--debug");
 	cmdOptions.force = singleFlags.includes("-F") || doubleFlags.includes("--force");
+	cmdOptions.html = singleFlags.includes("-H") || doubleFlags.includes("--html");
 	cmdOptions.init = singleFlags.includes("-I") || doubleFlags.includes("--init");
 	cmdOptions.list = singleFlags.includes("-L") || doubleFlags.includes("--list");
+	cmdOptions.markdown = singleFlags.includes("-M") || doubleFlags.includes("--markdown");
 	cmdOptions.open = singleFlags.includes("-O") || doubleFlags.includes("--open");
 	cmdOptions.preview = singleFlags.includes("-P") || doubleFlags.includes("--preview");
 	cmdOptions.recursive = singleFlags.includes("-R") || doubleFlags.includes("--recursive");
@@ -55,9 +57,7 @@ function main () {
 	} else if (cmdOptions.watch) {
 		commands.watchCommand(entries, cmdOptions);
 	} else {
-		for (const entry of entries) {
-			compileEntry(entry);
-		}
+		entries.forEach(compileEntry);
 	}
 
 	for (const badPath of badPaths) {
