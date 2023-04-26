@@ -86,7 +86,7 @@ You can use the `giveCredit()` mixin to include a section giving credit to `{{ a
 
 
 ## License
-{{ "LICENSE" | File }}
+{{ "LICENSE.md" | File }}
 
 
 {{ giveCredit() }}

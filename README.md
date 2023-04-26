@@ -57,7 +57,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | --- | --- |
 | `appName` | `Readmix` |
 | `filters` | `Object [12]` |
-| `mixins` | `Object [4]` |
+| `mixins` | `Object [5]` |
 | `utils` | `Object [0]` |
 | `descriptions` | `Object [4]` |
 | `packageJson` | `Object [14]` |
@@ -108,6 +108,7 @@ In addition to props, the `Rx` object also contains a `mixins` object with the f
 | `parse()` | 1 |
 | `dependencyTable()` | 0 |
 | `devDependencyTable()` | 0 |
+| `insertMitLicense()` | 1 |
 
 
 Every `function` on the `Rx.mixins` object is also available globally.
