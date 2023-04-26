@@ -1,4 +1,7 @@
+import { parse } from './parse';
 
 
 
-export const utils = {};
+export const utils = {
+	parse,
+};

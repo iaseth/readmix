@@ -33,7 +33,7 @@ export const Readmix: ReadmixType = {
 
 	descriptions: descriptionsJson,
 
-	packageJson: mixins.parse("package.json"),
-	packageLockJson: mixins.parse("package-lock.json"),
-	rxconfigJson: mixins.parse("rxconfig.json"),
+	packageJson: utils.parse("package.json"),
+	packageLockJson: utils.parse("package-lock.json"),
+	rxconfigJson: utils.parse("rxconfig.json"),
 };
