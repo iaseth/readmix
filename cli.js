@@ -48,8 +48,18 @@ function main () {
 
 	const inputFiles = helpers.getRxFilesInDirectories(goodPaths, cmdOptions.recursive);
 	const entries = inputFiles.map(helpers.getEntry);
-	for (const entry of entries) {
-		compileEntry(entry);
+
+	if (cmdOptions.list) {
+		commands.listCommand(entries);
+	} else if (cmdOptions.preview) {
+		commands.previewCommand(entries);
+	} else if (cmdOptions.watch) {
+		commands.watchCommand(entries);
+	} else {
+		commands.compileCommand(entries);
+		for (const entry of entries) {
+			compileEntry(entry);
+		}
 	}
 
 	for (const badPath of badPaths) {
