@@ -1,7 +1,6 @@
+import { SPACES } from "../constants";
 
 
-
-const SPACES = "    ";
 
 function getIndentation (level: number) {
 	let indentation = "";

@@ -1,0 +1,2 @@
+
+export { insertMitLicense } from "./mit"
