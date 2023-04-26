@@ -45,7 +45,8 @@ function main () {
 		commands.initCommand(entries, cmdOptions);
 	} else if (cmdOptions.list) {
 		commands.listCommand(entries, cmdOptions);
-	} else if (cmdOptions.preview) {
+	} else if (cmdOptions.preview || cmdOptions.open) {
+		// open will run preview and then open it in the browser
 		commands.previewCommand(entries, cmdOptions);
 	} else if (cmdOptions.version) {
 		commands.versionCommand(entries, cmdOptions);
@@ -56,7 +57,7 @@ function main () {
 	}
 
 	for (const badPath of badPaths) {
-		console.log(`Path Not Found: ${badPath}`);
+		console.log(`Path Not Found: '${badPath}'`);
 	}
 }
 
