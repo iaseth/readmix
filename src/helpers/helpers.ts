@@ -1,5 +1,5 @@
 import { isCode, isComment, isNotAComment, isRx } from "./comment";
-import { sanitizeRxLine } from "./sanitize";
+import { sanitizeCodeLine, sanitizeRxLine } from "./sanitize";
 
 
 
@@ -9,5 +9,6 @@ export const helpers = {
 	isCode,
 	isRx,
 
+	sanitizeCodeLine,
 	sanitizeRxLine,
 };

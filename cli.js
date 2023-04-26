@@ -40,7 +40,8 @@ function compileFile (inputFilepath, forceUpdate=false) {
 	const inputLinesWithoutComments = inputLines.filter(readmix.helpers.isNotAComment);
 
 	const codeLines = inputLinesWithoutComments.filter(readmix.helpers.isCode);
-	const codeText = codeLines.join("\n");
+	const codeLinesSanitized = codeLines.map(readmix.helpers.sanitizeCodeLine);
+	const codeText = codeLinesSanitized.join("\n");
 
 	const contentLines = inputLinesWithoutComments.filter(readmix.helpers.isRx);
 	const contentLinesSanitized = contentLines.map(readmix.helpers.sanitizeRxLine);
