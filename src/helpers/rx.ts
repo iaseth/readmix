@@ -3,6 +3,22 @@ import { helpers } from './helpers';
 
 
 
+export interface EntryType {
+	inputFilepath: string,
+	outputFilepath: string
+}
+
+export function getEntry (inputFilepath: string) : EntryType|null {
+	if (!inputFilepath.endsWith(".rx")) {
+		return null;
+	}
+
+	return {
+		inputFilepath: inputFilepath,
+		outputFilepath: inputFilepath.slice(0, -3) + ".md"
+	};
+}
+
 export function splitFile (inputFilepath: string) : string[] {
 	if (!inputFilepath.endsWith(".rx")) {
 		return ["", ""];

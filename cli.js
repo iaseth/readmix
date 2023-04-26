@@ -8,12 +8,8 @@ const {commands, helpers} = readmix;
 
 
 
-function compileFile (inputFilepath, forceUpdate=false) {
-	if (!inputFilepath.endsWith(".rx")) {
-		return;
-	}
-
-	const outputFilepath = inputFilepath.slice(0, -3) + ".md";
+function compileEntry (entry, forceUpdate=false) {
+	const {inputFilepath, outputFilepath} = entry;
 
 	console.log(`Input: ${inputFilepath}`);
 	const [codeText, contentText] = helpers.splitFile(inputFilepath);
@@ -51,8 +47,9 @@ function main () {
 	const badPaths = pathArgs.filter(helpers.pathDoesNotExist);
 
 	const inputFiles = helpers.getRxFilesInDirectories(goodPaths, cmdOptions.recursive);
-	for (const inputFile of inputFiles) {
-		compileFile(inputFile);
+	const entries = inputFiles.map(helpers.getEntry);
+	for (const entry of entries) {
+		compileEntry(entry);
 	}
 
 	for (const badPath of badPaths) {
