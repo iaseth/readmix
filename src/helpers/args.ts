@@ -1,16 +1,29 @@
 
 
 
+function getLeadingDashCount (arg: string) : number {
+	let count = 0;
+	for (let ch of arg) {
+		if (ch === "-") {
+			count++;
+		} else {
+			break;
+		}
+	}
+
+	return count;
+}
+
 export function isSingleFlag (arg: string) : boolean {
-	return arg[0] === "-" && arg[1] !== "-";
+	return getLeadingDashCount(arg) === 1;
 }
 
 export function isDoubleFlag (arg: string) : boolean {
-	return arg[0] === "-" && arg[1] === "-" && arg[2] !== "-";
+	return getLeadingDashCount(arg) === 2;
 }
 
 export function isTripleFlag (arg: string) : boolean {
-	return arg[0] === "-" && arg[1] === "-" && arg[2] === "-" && arg[3] !== "-";
+	return getLeadingDashCount(arg) === 3;
 }
 
 export function isNotFlag (arg: string) : boolean {
