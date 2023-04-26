@@ -1,9 +1,19 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["templates/*.html"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+import tailwindcolors from 'tailwindcss/colors';
+
+import hcn from 'html-color-names';
+const { htmlcolors } = hcn;
+const { firebrick } = htmlcolors;
+
+export default {
+	content: ["templates/*.html"],
+	theme: {
+		colors: {
+			firebrick,
+			...tailwindcolors
+		},
+		extend: {},
+	},
+	plugins: [],
 }
 

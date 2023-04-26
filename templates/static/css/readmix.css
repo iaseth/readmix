@@ -526,6 +526,11 @@ video {
   display: block;
 }
 
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }

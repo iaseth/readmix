@@ -144,6 +144,10 @@ You can use the `giveCredit()` mixin to include a section giving credit to `Read
 | --- | --- |
 | `@types/node` | `^18.16.0` |
 | `@types/nunjucks` | `^3.2.2` |
+| `autoprefixer` | `^10.4.14` |
+| `html-color-names` | `^0.2.8` |
+| `postcss` | `^8.4.23` |
+| `tailwindcss` | `^3.3.2` |
 
 
 
