@@ -16,6 +16,9 @@ build: clean
 	@tsc
 	@echo "    Done."
 
+css:
+	npx tailwindcss -i ./src/css/readmix.css -o ./templates/static/css/readmix.css
+
 clean:
 	@echo "Cleaning JS ..."
 	@rm -rf dist
