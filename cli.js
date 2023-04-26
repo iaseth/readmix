@@ -52,9 +52,10 @@ function compileFile (inputFilepath, forceUpdate=false) {
 
 function main () {
 	const [,, ...args] = process.argv;
-	const flags = args.filter(a => a.startsWith("-"));
+	const singleFlags = args.filter(readmix.helpers.isSingleFlag);
+	const doubleFlags = args.filter(readmix.helpers.isDoubleFlag);
 
-	const pathArgs = args.filter(a => !a.startsWith("-"));
+	const pathArgs = args.filter(readmix.helpers.isNotFlag);
 	for (const pathArg of pathArgs) {
 		if (fs.existsSync(pathArg)) {
 			const stat = fs.lstatSync(pathArg);
