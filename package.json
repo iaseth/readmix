@@ -1,6 +1,6 @@
 {
   "name": "readmix",
-  "version": "0.8.5",
+  "version": "0.8.6",
   "description": "Readmix is a command-line markdown generator.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,6 +22,7 @@
   "repository": "iaseth/readmix",
   "license": "MIT",
   "dependencies": {
+    "marked": "^4.3.0",
     "nunjucks": "^3.2.4"
   },
   "devDependencies": {

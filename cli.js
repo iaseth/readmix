@@ -34,7 +34,9 @@ function main () {
 
 	const pathArgs = args.filter(helpers.isNotFlag);
 	const goodPaths = pathArgs.filter(helpers.pathExists);
-	const badPaths = pathArgs.filter(helpers.pathDoesNotExist);
+	if (goodPaths.length === 0) {
+		goodPaths.push("."); // ensures that goodPaths is not empty
+	}
 
 	const inputFiles = helpers.getRxFilesInDirectories(goodPaths, cmdOptions.recursive);
 	const entries = inputFiles.map(helpers.getEntry);
@@ -56,6 +58,7 @@ function main () {
 		entries.forEach(compileEntry);
 	}
 
+	const badPaths = pathArgs.filter(helpers.pathDoesNotExist);
 	for (const badPath of badPaths) {
 		console.log(`Path Not Found: '${badPath}'`);
 	}
