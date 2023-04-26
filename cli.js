@@ -45,13 +45,10 @@ function compileFile (inputFilepath, forceUpdate=false) {
 	const inputLines = inputText.split("\n");
 	const inputLinesWithoutComments = inputLines.filter(readmix.helpers.isNotAComment);
 
-	const separatorIndex = inputLinesWithoutComments.findIndex(x => x.startsWith(SEPARATOR));
-	const frontMatterExists = separatorIndex !== -1;
+	const codeLines = inputLinesWithoutComments.filter(readmix.helpers.isCode);
+	const codeText = codeLines.join("\n");
 
-	const frontMatterLines = frontMatterExists ? inputLinesWithoutComments.slice(0, separatorIndex) : [""];
-	const frontMatterText = frontMatterLines.join("\n");
-
-	const contentLines = frontMatterExists ? inputLinesWithoutComments.slice(separatorIndex+1) : inputLinesWithoutComments;
+	const contentLines = inputLinesWithoutComments.filter(readmix.helpers.isRx);
 	const contentLinesSanitized = contentLines.map(x => sanitizeLine(x));
 	const contentText = contentLinesSanitized.join("\n");
 
