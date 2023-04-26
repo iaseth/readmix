@@ -5,6 +5,7 @@ import { SPACES, TAB } from "../constants";
 export function sanitizeCodeLine (line: string) : string {
 	line = line.trim();
 	line = line.slice(1); // remove leading `@`
+	line = line.trim();
 	return line;
 }
 

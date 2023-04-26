@@ -3,6 +3,7 @@ const COLONS = "::";
 const SLASHES = "//";
 
 export function isComment (text: string) : boolean {
+	text = text.trimStart();
 	return text.startsWith(COLONS) || text.startsWith(SLASHES);
 }
 
@@ -15,5 +16,5 @@ export function isCode (text: string) : boolean {
 }
 
 export function isRx (text: string) : boolean {
-	return !isCode(text) && !isCode(text);
+	return !isCode(text) && !isComment(text);
 }
