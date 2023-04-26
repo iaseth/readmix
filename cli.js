@@ -4,8 +4,6 @@ const fs = require("fs");
 const path = require("path");
 
 const SEPARATOR = "::::";
-const HEAD_COMMENT_PREFIX = "//";
-const BODY_COMMENT_PREFIX = "::";
 
 const readmix = require("./dist");
 
@@ -45,7 +43,7 @@ function compileFile (inputFilepath, forceUpdate=false) {
 
 	const inputText = fs.readFileSync(inputFilepath, {encoding:'utf8'});
 	const inputLines = inputText.split("\n");
-	const inputLinesWithoutComments = inputLines.filter(x => !x.startsWith(HEAD_COMMENT_PREFIX) && !x.startsWith(BODY_COMMENT_PREFIX));
+	const inputLinesWithoutComments = inputLines.filter(readmix.helpers.isNotAComment);
 
 	const separatorIndex = inputLinesWithoutComments.findIndex(x => x.startsWith(SEPARATOR));
 	const frontMatterExists = separatorIndex !== -1;
