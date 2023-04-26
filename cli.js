@@ -60,7 +60,7 @@ function main () {
 	const goodPaths = pathArgs.filter(helpers.pathExists);
 	const badPaths = pathArgs.filter(helpers.pathDoesNotExist);
 
-	const inputFiles = helpers.getFilesInDirectories(goodPaths);
+	const inputFiles = helpers.getRxFilesInDirectories(goodPaths, cmdOptions.recursive);
 	for (const inputFile of inputFiles) {
 		compileFile(inputFile);
 	}

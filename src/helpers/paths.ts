@@ -49,3 +49,9 @@ export function getFilesInDirectories (dirpaths: string[], recursive=false) : st
 	}
 	return files;
 }
+
+export function getRxFilesInDirectories (dirpaths: string[], recursive=false) : string[] {
+	const files = getFilesInDirectories(dirpaths, recursive);
+	const rxFiles = files.filter(x => x.endsWith(".rx"));
+	return rxFiles;
+}
