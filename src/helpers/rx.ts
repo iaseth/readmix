@@ -4,8 +4,9 @@ import { helpers } from './helpers';
 
 
 export interface EntryType {
+	basepath: string,
 	inputFilepath: string,
-	outputFilepath: string
+	outputFilepath: string,
 }
 
 export function getEntry (inputFilepath: string) : EntryType|null {
@@ -13,9 +14,11 @@ export function getEntry (inputFilepath: string) : EntryType|null {
 		return null;
 	}
 
+	const basepath = inputFilepath.slice(0, -3);
 	return {
-		inputFilepath: inputFilepath,
-		outputFilepath: inputFilepath.slice(0, -3) + ".md"
+		basepath,
+		inputFilepath,
+		outputFilepath: basepath + ".md"
 	};
 }
 

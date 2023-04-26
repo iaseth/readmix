@@ -13,8 +13,10 @@
   "keywords": [
     "readme",
     "markdown",
+    "license",
     "json",
     "css",
+    "toml",
     "yaml"
   ],
   "author": "iaseth",
