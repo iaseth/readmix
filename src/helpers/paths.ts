@@ -18,6 +18,10 @@ export function getFilesInDirectory (dirpath: string, recursive=false) : string[
 	}
 
 	const stat = fs.lstatSync(dirpath);
+	if (stat.isFile()) {
+		return [dirpath];
+	}
+
 	if (!stat.isDirectory()) {
 		return [];
 	}
