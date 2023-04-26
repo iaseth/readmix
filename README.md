@@ -64,7 +64,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | `descriptions` | `Object [4]` |
 | `packageJson` | `Object [14]` |
 | `packageLockJson` | `Object [5]` |
-| `rxconfigJson` | `Object [0]` |
+| `rxconfigJson` | `Object [4]` |
 
 
 Every `property` on the `Rx` object is also available globally.
@@ -128,6 +128,7 @@ You can use the `giveCredit()` mixin to include a section giving credit to `Read
 ## Dependencies
 | Package | Version |
 | --- | --- |
+| `json5` | `^2.2.3` |
 | `marked` | `^4.3.0` |
 | `nunjucks` | `^3.2.4` |
 
