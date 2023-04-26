@@ -59,12 +59,12 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | `commands` | `Object [7]` |
 | `filters` | `Object [12]` |
 | `helpers` | `Object [17]` |
-| `mixins` | `Object [5]` |
-| `utils` | `Object [0]` |
+| `mixins` | `Object [4]` |
+| `utils` | `Object [1]` |
 | `descriptions` | `Object [4]` |
 | `packageJson` | `Object [14]` |
 | `packageLockJson` | `Object [5]` |
-| `rxconfigJson` | `Object [4]` |
+| `rxconfigJson` | `Object [0]` |
 
 
 Every `property` on the `Rx` object is also available globally.
@@ -108,7 +108,6 @@ In addition to props, the `Rx` object also contains a `mixins` object with the f
 | Function | Args |
 | --- | --- |
 | `giveCredit()` | 0 |
-| `parse()` | 1 |
 | `dependencyTable()` | 0 |
 | `devDependencyTable()` | 0 |
 | `insertMitLicense()` | 1 |

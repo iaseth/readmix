@@ -20,7 +20,7 @@ export function parse (filepath: string, extension = ""): any {
 			const jo = JSON.parse(fileText);
 			return jo;
 		} catch (error) {
-			return null;
+			return {};
 		}
 	}
 
