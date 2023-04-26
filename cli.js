@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 
 const readmix = require("./dist");
+const {helpers} = readmix;
 
 
 
@@ -17,14 +18,14 @@ function compileFile (inputFilepath, forceUpdate=false) {
 
 	const inputText = fs.readFileSync(inputFilepath, {encoding:'utf8'});
 	const inputLines = inputText.split("\n");
-	const inputLinesWithoutComments = inputLines.filter(readmix.helpers.isNotAComment);
+	const inputLinesWithoutComments = inputLines.filter(helpers.isNotAComment);
 
-	const codeLines = inputLinesWithoutComments.filter(readmix.helpers.isCode);
-	const codeLinesSanitized = codeLines.map(readmix.helpers.sanitizeCodeLine);
+	const codeLines = inputLinesWithoutComments.filter(helpers.isCode);
+	const codeLinesSanitized = codeLines.map(helpers.sanitizeCodeLine);
 	const codeText = codeLinesSanitized.join("\n");
 
-	const contentLines = inputLinesWithoutComments.filter(readmix.helpers.isRx);
-	const contentLinesSanitized = contentLines.map(readmix.helpers.sanitizeRxLine);
+	const contentLines = inputLinesWithoutComments.filter(helpers.isRx);
+	const contentLinesSanitized = contentLines.map(helpers.sanitizeRxLine);
 	const contentText = contentLinesSanitized.join("\n");
 
 	const filetext = readmix.renderString(contentText);
@@ -34,8 +35,8 @@ function compileFile (inputFilepath, forceUpdate=false) {
 
 function main () {
 	const [,, ...args] = process.argv;
-	const singleFlags = args.filter(readmix.helpers.isSingleFlag);
-	const doubleFlags = args.filter(readmix.helpers.isDoubleFlag);
+	const singleFlags = args.filter(helpers.isSingleFlag);
+	const doubleFlags = args.filter(helpers.isDoubleFlag);
 
 	const cmdOptions = {
 		force: false, // force update even if output file exists and is newer than input file
@@ -55,11 +56,11 @@ function main () {
 	cmdOptions.status = singleFlags.includes("-S") || doubleFlags.includes("--status");
 	cmdOptions.watch = singleFlags.includes("-W") || doubleFlags.includes("--watch");
 
-	const pathArgs = args.filter(readmix.helpers.isNotFlag);
-	const goodPaths = pathArgs.filter(readmix.helpers.pathExists);
-	const badPaths = pathArgs.filter(readmix.helpers.pathDoesNotExist);
+	const pathArgs = args.filter(helpers.isNotFlag);
+	const goodPaths = pathArgs.filter(helpers.pathExists);
+	const badPaths = pathArgs.filter(helpers.pathDoesNotExist);
 
-	const inputFiles = readmix.helpers.getFilesInDirectories(goodPaths);
+	const inputFiles = helpers.getFilesInDirectories(goodPaths);
 	for (const inputFile of inputFiles) {
 		compileFile(inputFile);
 	}
