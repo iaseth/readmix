@@ -2,6 +2,7 @@ import fs from 'fs';
 import { parseCss } from './css';
 import { parseCsv } from './csv';
 import { parseHtml } from './html';
+import { parseIni } from './ini';
 import { parseJson } from './json';
 import { parseToml } from './toml';
 import { parseXml } from './xml';
@@ -28,6 +29,10 @@ export function parse (filepath: string, format = ""): any {
 
 	if (filepath.endsWith(".toml") || format === "toml") {
 		return parseToml(fileText);
+	}
+
+	if (filepath.endsWith(".ini") || format === "ini") {
+		return parseIni(fileText);
 	}
 
 	if (filepath.endsWith(".yaml") || format === "yaml") {

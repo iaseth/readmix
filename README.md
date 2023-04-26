@@ -66,6 +66,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | `packageLockJson` | `Object [5]` |
 | `tsconfigJson` | `Object [2]` |
 | `rxconfigJson` | `Object [4]` |
+| `gitconfig` | `Object [3]` |
 
 
 Every `property` on the `Rx` object is also available globally.
@@ -129,6 +130,7 @@ You can use the `giveCredit()` mixin to include a section giving credit to `Read
 ## Dependencies
 | Package | Version |
 | --- | --- |
+| `ini` | `^4.1.0` |
 | `js-yaml` | `^4.1.0` |
 | `json5` | `^2.2.3` |
 | `marked` | `^4.3.0` |

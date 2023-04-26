@@ -22,6 +22,8 @@ interface ReadmixType {
 	packageLockJson: any,
 	tsconfigJson: any,
 	rxconfigJson: any,
+
+	gitconfig: any,
 };
 
 export const Readmix: ReadmixType = {
@@ -38,4 +40,6 @@ export const Readmix: ReadmixType = {
 	packageLockJson: utils.parse("package-lock.json"),
 	tsconfigJson: utils.parse("tsconfig.json"),
 	rxconfigJson: utils.parse("rxconfig.json"),
+
+	gitconfig: utils.parse(".git/config", "ini"),
 };
