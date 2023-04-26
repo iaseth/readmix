@@ -9,27 +9,17 @@ const {helpers} = readmix;
 
 
 function compileFile (inputFilepath, forceUpdate=false) {
-	// console.log(`compileFile: ${inputFilepath}`);
 	if (!inputFilepath.endsWith(".rx")) {
-		return; // skip files without "rx" extension
+		return;
 	}
+
 	const outputFilepath = inputFilepath.slice(0, -3) + ".md";
+
 	console.log(`Input: ${inputFilepath}`);
+	const [codeText, contentText] = helpers.splitFile(inputFilepath);
 
-	const inputText = fs.readFileSync(inputFilepath, {encoding:'utf8'});
-	const inputLines = inputText.split("\n");
-	const inputLinesWithoutComments = inputLines.filter(helpers.isNotAComment);
-
-	const codeLines = inputLinesWithoutComments.filter(helpers.isCode);
-	const codeLinesSanitized = codeLines.map(helpers.sanitizeCodeLine);
-	const codeText = codeLinesSanitized.join("\n");
-
-	const contentLines = inputLinesWithoutComments.filter(helpers.isRx);
-	const contentLinesSanitized = contentLines.map(helpers.sanitizeRxLine);
-	const contentText = contentLinesSanitized.join("\n");
-
-	const filetext = readmix.renderString(contentText);
-	fs.writeFileSync(outputFilepath, filetext);
+	const outputFileText = readmix.renderString(contentText);
+	fs.writeFileSync(outputFilepath, outputFileText);
 	console.log(`\tsaved: ${outputFilepath}`);
 }
 
