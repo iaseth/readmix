@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 
 const readmix = require("./dist");
-const {helpers} = readmix;
+const {commands, helpers} = readmix;
 
 
 
