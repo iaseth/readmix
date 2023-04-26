@@ -1,6 +1,6 @@
 import { isDoubleFlag, isNotFlag, isSingleFlag, isTripleFlag } from "./args";
 import { isCode, isComment, isNotAComment, isRx } from "./comment";
-import { pathDoesNotExist, pathExists } from "./paths";
+import { getFilesInDirectories, getFilesInDirectory, pathDoesNotExist, pathExists } from "./paths";
 import { sanitizeCodeLine, sanitizeRxLine } from "./sanitize";
 
 
@@ -13,6 +13,8 @@ export const helpers = {
 
 	pathExists,
 	pathDoesNotExist,
+	getFilesInDirectory,
+	getFilesInDirectories,
 
 	isComment,
 	isNotAComment,
