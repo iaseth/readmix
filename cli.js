@@ -7,24 +7,6 @@ const readmix = require("./dist");
 
 
 
-function compileDirectory (dirpath, recursive=false) {
-	// console.log(`compileDirectory: ${dirpath}`);
-	const entries = fs.readdirSync(dirpath);
-	for (const entry of entries) {
-		if (entry.startsWith(".")) {
-			continue; // skip hidden files/dirs
-		}
-
-		const fullpath = path.join(dirpath, entry);
-		const stat = fs.lstatSync(fullpath);
-		if (stat.isDirectory() && recursive) {
-			compileDirectory(fullpath, recursive);
-		} else if (stat.isFile()) {
-			compileFile(fullpath);
-		}
-	}
-}
-
 function compileFile (inputFilepath, forceUpdate=false) {
 	// console.log(`compileFile: ${inputFilepath}`);
 	if (!inputFilepath.endsWith(".rx")) {
@@ -77,13 +59,9 @@ function main () {
 	const goodPaths = pathArgs.filter(readmix.helpers.pathExists);
 	const badPaths = pathArgs.filter(readmix.helpers.pathDoesNotExist);
 
-	for (const goodPath of goodPaths) {
-		const stat = fs.lstatSync(goodPath);
-		if (stat.isDirectory()) {
-			compileDirectory(goodPath);
-		} else if (stat.isFile()) {
-			compileFile(goodPath);
-		}
+	const inputFiles = readmix.helpers.getFilesInDirectories(goodPaths);
+	for (const inputFile of inputFiles) {
+		compileFile(inputFile);
 	}
 
 	for (const badPath of badPaths) {
