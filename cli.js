@@ -24,15 +24,7 @@ function main () {
 	const singleFlags = args.filter(helpers.isSingleFlag);
 	const doubleFlags = args.filter(helpers.isDoubleFlag);
 
-	const cmdOptions = {
-		force: false, // force update even if output file exists and is newer than input file
-		list: false, // just list all the input files
-		open: false, // open the preview page default web browser
-		preview: false, // run a local server for previewing output in browser
-		recursive: false, // recurse into sub-directories
-		status: false, // print update status of all files
-		watch: false, // watch files for changes
-	};
+	const cmdOptions = commands.getDefaultCmdOptions();
 
 	cmdOptions.force = singleFlags.includes("-F") || doubleFlags.includes("--force");
 	cmdOptions.list = singleFlags.includes("-L") || doubleFlags.includes("--list");
@@ -50,13 +42,13 @@ function main () {
 	const entries = inputFiles.map(helpers.getEntry);
 
 	if (cmdOptions.list) {
-		commands.listCommand(entries);
+		commands.listCommand(entries, cmdOptions);
 	} else if (cmdOptions.preview) {
-		commands.previewCommand(entries);
+		commands.previewCommand(entries, cmdOptions);
 	} else if (cmdOptions.watch) {
-		commands.watchCommand(entries);
+		commands.watchCommand(entries, cmdOptions);
 	} else {
-		commands.compileCommand(entries);
+		commands.compileCommand(entries, cmdOptions);
 		for (const entry of entries) {
 			compileEntry(entry);
 		}
