@@ -4,13 +4,23 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Readmix</title>
+
+	<base href="/">
+
+	<link rel="stylesheet" href="static/css/readmix.css">
+	<link rel="stylesheet" href="static/css/github-markdown.css">
 </head>
 <body class="bg-slate-100">
-	<h4>Base HTML</h4>
 
+	<main class="min-h-screen px-4 py-6">
 	{% block content %}
 	<h4>Content goes here.</h4>
 	{% endblock %}
+	</main>
+
+	<footer class="bg-slate-700 text-white text-center px-4 py-12">
+		<h4>Created by <a href="https://github.com/iaseth">Ankur Seth</a>.</h4>
+	</footer>
 </body>
 </html>

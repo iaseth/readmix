@@ -1,3 +1,8 @@
 {% extends "base.html" %}
 
-
+{% block content %}
+<section class="bg-white max-w-3xl mx-auto text-center px-4 py-6 rounded shadow">
+	<h4>{{ entry.inputFilepath }}</h4>
+	<p>{{ entry.outputFilepath }}</p>
+</section>
+{% endblock %}

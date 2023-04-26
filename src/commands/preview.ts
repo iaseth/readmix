@@ -1,3 +1,4 @@
+import fs from 'fs';
 import path from 'path';
 import http from 'http';
 import nunjucks from 'nunjucks';
@@ -18,9 +19,32 @@ export function previewCommand (entries: EntryType[], cmdOptions: CmdOptionsType
 
 	const server = http.createServer((req, res) => {
 		res.statusCode = 200;
-		res.setHeader('Content-Type', 'text/html');
-		const text = homepageTemplate.render({entries});
-		res.end(text);
+
+		const { url } = req;
+		if (url?.startsWith("/static/")) {
+			const staticFilepath = url.slice(8);
+			const fullpath = path.join("templates/static", staticFilepath);
+			try {
+				res.end(fs.readFileSync(fullpath, {encoding: "utf-8"}));
+			} catch (error) {
+				res.end(`Error 404: "${fullpath}"`);
+			}
+		} else if (url?.startsWith("/rx/")) {
+			const documentPath = url.slice(4);
+			const entry = entries.find(x => x.basepath === documentPath);
+			if (entry) {
+				const text = docpageTemplate.render({entries, entry});
+				res.setHeader('Content-Type', 'text/html');
+				res.end(text);
+			} else {
+				res.setHeader('Content-Type', 'text/html');
+				res.end(`Error 404: "${documentPath}"`);
+			}
+		} else {
+			const text = homepageTemplate.render({entries});
+			res.setHeader('Content-Type', 'text/html');
+			res.end(text);
+		}
 	});
 
 	server.listen(PORT, HOSTNAME, () => {

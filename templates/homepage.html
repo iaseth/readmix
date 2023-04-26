@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<ul>
+<section class="bg-white max-w-md mx-auto px-4 py-6 rounded shadow">
 	{% for entry in entries %}
-	<li>
+	<a href="rx/{{ entry.basepath }}">
 		<h4>{{ entry.inputFilepath }}</h4>
 		<p>{{ entry.outputFilepath }}</p>
-	</li>
+	</a>
 	{% endfor %}
-</ul>
+</section>
 {% endblock %}

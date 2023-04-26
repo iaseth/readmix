@@ -1,12 +1,12 @@
 
-default: build
+default: build css
 
 readme:
 	@echo "Recompiling README ..."
 	@./cli.js README.rx
 	@echo "    Done."
 
-publish: build readme
+publish: build css readme
 	@echo "Publishing to NPM ..."
 	@npm publish
 	@echo "    Done."
@@ -18,6 +18,9 @@ build: clean
 
 css:
 	npx tailwindcss -i ./src/css/readmix.css -o ./templates/static/css/readmix.css
+
+watchcss:
+	npx tailwindcss -i ./src/css/readmix.css -o ./templates/static/css/readmix.css --watch
 
 clean:
 	@echo "Cleaning JS ..."
