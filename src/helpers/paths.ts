@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { IGNORED_DIRS } from '../constants';
 
 
 
@@ -30,7 +31,7 @@ export function getFilesInDirectory (dirpath: string, recursive=false) : string[
 
 		const fullpath = path.join(dirpath, entry);
 		const stat = fs.lstatSync(fullpath);
-		if (stat.isDirectory() && recursive) {
+		if (stat.isDirectory() && recursive && !IGNORED_DIRS.includes(entry)) {
 			const moreFiles = getFilesInDirectory(fullpath);
 			files = files.concat(moreFiles);
 		} else if (stat.isFile()) {
