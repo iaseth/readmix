@@ -27,6 +27,7 @@ function main () {
 	const cmdOptions = commands.getDefaultCmdOptions();
 
 	cmdOptions.force = singleFlags.includes("-F") || doubleFlags.includes("--force");
+	cmdOptions.init = singleFlags.includes("-I") || doubleFlags.includes("--init");
 	cmdOptions.list = singleFlags.includes("-L") || doubleFlags.includes("--list");
 	cmdOptions.open = singleFlags.includes("-O") || doubleFlags.includes("--open");
 	cmdOptions.preview = singleFlags.includes("-P") || doubleFlags.includes("--preview");
@@ -41,7 +42,9 @@ function main () {
 	const inputFiles = helpers.getRxFilesInDirectories(goodPaths, cmdOptions.recursive);
 	const entries = inputFiles.map(helpers.getEntry);
 
-	if (cmdOptions.list) {
+	if (cmdOptions.init) {
+		commands.initCommand(entries, cmdOptions);
+	} else if (cmdOptions.list) {
 		commands.listCommand(entries, cmdOptions);
 	} else if (cmdOptions.preview) {
 		commands.previewCommand(entries, cmdOptions);

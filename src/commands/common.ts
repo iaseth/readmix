@@ -3,6 +3,7 @@
 
 export interface CmdOptionsType {
 	force: boolean, // force update even if output file exists and is newer than input file
+	init: boolean, // initialize Readmix in current directory, create a rxconfig.json
 	list: boolean, // just list all the input files
 	open: boolean, // open the preview page default web browser
 	preview: boolean, // run a local server for previewing output in browser
@@ -14,6 +15,7 @@ export interface CmdOptionsType {
 export function getDefaultCmdOptions () : CmdOptionsType {
 	const options: CmdOptionsType = {
 		force: false,
+		init: false,
 		list: false,
 		open: false,
 		preview: false,
