@@ -26,6 +26,7 @@ function main () {
 
 	const cmdOptions = commands.getDefaultCmdOptions();
 
+	cmdOptions.compile = singleFlags.includes("-C") || doubleFlags.includes("--compile");
 	cmdOptions.force = singleFlags.includes("-F") || doubleFlags.includes("--force");
 	cmdOptions.init = singleFlags.includes("-I") || doubleFlags.includes("--init");
 	cmdOptions.list = singleFlags.includes("-L") || doubleFlags.includes("--list");
@@ -42,7 +43,9 @@ function main () {
 	const inputFiles = helpers.getRxFilesInDirectories(goodPaths, cmdOptions.recursive);
 	const entries = inputFiles.map(helpers.getEntry);
 
-	if (cmdOptions.init) {
+	if (cmdOptions.compile) {
+		commands.compileCommand(entries, cmdOptions);
+	} else if (cmdOptions.init) {
 		commands.initCommand(entries, cmdOptions);
 	} else if (cmdOptions.list) {
 		commands.listCommand(entries, cmdOptions);
@@ -51,7 +54,6 @@ function main () {
 	} else if (cmdOptions.watch) {
 		commands.watchCommand(entries, cmdOptions);
 	} else {
-		commands.compileCommand(entries, cmdOptions);
 		for (const entry of entries) {
 			compileEntry(entry);
 		}
