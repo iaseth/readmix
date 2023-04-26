@@ -56,12 +56,15 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | Prop | Value |
 | --- | --- |
 | `appName` | `Readmix` |
+| `commands` | `Object [7]` |
 | `filters` | `Object [12]` |
+| `helpers` | `Object [17]` |
 | `mixins` | `Object [5]` |
 | `utils` | `Object [0]` |
 | `descriptions` | `Object [4]` |
 | `packageJson` | `Object [14]` |
 | `packageLockJson` | `Object [5]` |
+| `rxconfigJson` | `Object [4]` |
 
 
 Every `property` on the `Rx` object is also available globally.
