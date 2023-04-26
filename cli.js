@@ -26,19 +26,11 @@ function main () {
 
 	const cmdOptions = commands.getDefaultCmdOptions();
 
-	cmdOptions.compile = singleFlags.includes("-C") || doubleFlags.includes("--compile");
-	cmdOptions.debug = singleFlags.includes("-D") || doubleFlags.includes("--debug");
-	cmdOptions.force = singleFlags.includes("-F") || doubleFlags.includes("--force");
-	cmdOptions.html = singleFlags.includes("-H") || doubleFlags.includes("--html");
-	cmdOptions.init = singleFlags.includes("-I") || doubleFlags.includes("--init");
-	cmdOptions.list = singleFlags.includes("-L") || doubleFlags.includes("--list");
-	cmdOptions.markdown = singleFlags.includes("-M") || doubleFlags.includes("--markdown");
-	cmdOptions.open = singleFlags.includes("-O") || doubleFlags.includes("--open");
-	cmdOptions.preview = singleFlags.includes("-P") || doubleFlags.includes("--preview");
-	cmdOptions.recursive = singleFlags.includes("-R") || doubleFlags.includes("--recursive");
-	cmdOptions.status = singleFlags.includes("-S") || doubleFlags.includes("--status");
-	cmdOptions.version = singleFlags.includes("-V") || doubleFlags.includes("--version");
-	cmdOptions.watch = singleFlags.includes("-W") || doubleFlags.includes("--watch");
+	readmix.flags.forEach(flag => {
+		if (singleFlags.includes(flag.singleFlag) || doubleFlags.includes(flag.doubleFlag)) {
+			cmdOptions[flag.name] = true;
+		}
+	});
 
 	const pathArgs = args.filter(helpers.isNotFlag);
 	const goodPaths = pathArgs.filter(helpers.pathExists);
