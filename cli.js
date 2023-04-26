@@ -27,6 +27,7 @@ function main () {
 	const cmdOptions = commands.getDefaultCmdOptions();
 
 	cmdOptions.compile = singleFlags.includes("-C") || doubleFlags.includes("--compile");
+	cmdOptions.debug = singleFlags.includes("-D") || doubleFlags.includes("--debug");
 	cmdOptions.force = singleFlags.includes("-F") || doubleFlags.includes("--force");
 	cmdOptions.init = singleFlags.includes("-I") || doubleFlags.includes("--init");
 	cmdOptions.list = singleFlags.includes("-L") || doubleFlags.includes("--list");
