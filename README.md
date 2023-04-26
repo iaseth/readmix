@@ -64,6 +64,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | `descriptions` | `Object [4]` |
 | `packageJson` | `Object [14]` |
 | `packageLockJson` | `Object [5]` |
+| `tsconfigJson` | `Object [2]` |
 | `rxconfigJson` | `Object [4]` |
 
 

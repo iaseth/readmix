@@ -20,6 +20,7 @@ interface ReadmixType {
 
 	packageJson: any,
 	packageLockJson: any,
+	tsconfigJson: any,
 	rxconfigJson: any,
 };
 
@@ -35,5 +36,6 @@ export const Readmix: ReadmixType = {
 
 	packageJson: utils.parse("package.json"),
 	packageLockJson: utils.parse("package-lock.json"),
+	tsconfigJson: utils.parse("tsconfig.json"),
 	rxconfigJson: utils.parse("rxconfig.json"),
 };
