@@ -1,3 +1,4 @@
+import { SPACES, TAB } from "../constants";
 
 
 
@@ -12,7 +13,7 @@ export function sanitizeRxLine (line: string) : string {
 
 	let nTabs = 0;
 	for (let ch of line) {
-		if (ch === "\t") {
+		if (ch === TAB) {
 			nTabs++;
 		} else {
 			break;
@@ -21,7 +22,7 @@ export function sanitizeRxLine (line: string) : string {
 
 	line = line.slice(nTabs); // remove all tabs
 	while (nTabs > 0) {
-		line = "    " + line;
+		line = SPACES + line;
 		nTabs--;
 	}
 
