@@ -37,6 +37,7 @@ function main () {
 	cmdOptions.preview = singleFlags.includes("-P") || doubleFlags.includes("--preview");
 	cmdOptions.recursive = singleFlags.includes("-R") || doubleFlags.includes("--recursive");
 	cmdOptions.status = singleFlags.includes("-S") || doubleFlags.includes("--status");
+	cmdOptions.version = singleFlags.includes("-V") || doubleFlags.includes("--version");
 	cmdOptions.watch = singleFlags.includes("-W") || doubleFlags.includes("--watch");
 
 	const pathArgs = args.filter(helpers.isNotFlag);
@@ -54,6 +55,8 @@ function main () {
 		commands.listCommand(entries, cmdOptions);
 	} else if (cmdOptions.preview) {
 		commands.previewCommand(entries, cmdOptions);
+	} else if (cmdOptions.version) {
+		commands.versionCommand(entries, cmdOptions);
 	} else if (cmdOptions.watch) {
 		commands.watchCommand(entries, cmdOptions);
 	} else {

@@ -2,7 +2,7 @@
 
 
 export interface CmdOptionsType {
-	compile: boolean       // compile all files
+	compile: boolean,      // compile all files
 	debug: boolean,        // debug mode on/off
 	force: boolean,        // force update even if output file exists and is newer than input file
 	html: boolean,         // HTML mode on/off
@@ -13,6 +13,7 @@ export interface CmdOptionsType {
 	preview: boolean,      // run a local server for previewing output in browser
 	recursive: boolean,    // recurse into sub-directories
 	status: boolean,       // print update status of all files
+	version: boolean,      // print Readmix version
 	watch: boolean,        // watch files for changes
 }
 
@@ -29,6 +30,7 @@ export function getDefaultCmdOptions () : CmdOptionsType {
 		preview: false,
 		recursive: false,
 		status: false,
+		version: false,
 		watch: false,
 	};
 	return options;
