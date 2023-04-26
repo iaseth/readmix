@@ -128,9 +128,11 @@ You can use the `giveCredit()` mixin to include a section giving credit to `Read
 ## Dependencies
 | Package | Version |
 | --- | --- |
+| `js-yaml` | `^4.1.0` |
 | `json5` | `^2.2.3` |
 | `marked` | `^4.3.0` |
 | `nunjucks` | `^3.2.4` |
+| `toml` | `^3.0.0` |
 
 
 
