@@ -7,6 +7,7 @@ export interface EntryType {
 	basepath: string,
 	inputFilepath: string,
 	outputFilepath: string,
+	htmlFilepath: string,
 }
 
 export function getEntry (inputFilepath: string) : EntryType|null {
@@ -18,7 +19,8 @@ export function getEntry (inputFilepath: string) : EntryType|null {
 	return {
 		basepath,
 		inputFilepath,
-		outputFilepath: basepath + ".md"
+		outputFilepath: basepath + ".md",
+		htmlFilepath: basepath + ".html"
 	};
 }
 

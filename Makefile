@@ -24,7 +24,13 @@ css:
 watchcss:
 	npx tailwindcss -i ./src/css/readmix.css -o ./templates/static/css/readmix.css --watch
 
+docs:
+	mv README.html docs/index.html
+	cp -r templates/static docs
+
 clean:
 	@echo "Cleaning JS ..."
 	@rm -rf dist
 	@echo "    Done."
+
+.PHONY: docs

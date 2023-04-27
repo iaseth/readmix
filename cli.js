@@ -43,6 +43,8 @@ function main () {
 
 	if (cmdOptions.compile) {
 		commands.compileCommand(entries, cmdOptions);
+	} else if (cmdOptions.html) {
+		commands.htmlCommand(entries, cmdOptions);
 	} else if (cmdOptions.init) {
 		commands.initCommand(entries, cmdOptions);
 	} else if (cmdOptions.list) {

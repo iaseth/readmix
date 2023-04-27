@@ -56,7 +56,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | Prop | Value |
 | --- | --- |
 | `appName` | `Readmix` |
-| `commands` | `Object [7]` |
+| `commands` | `Object [8]` |
 | `filters` | `Object [12]` |
 | `helpers` | `Object [17]` |
 | `mixins` | `Object [4]` |
@@ -142,6 +142,7 @@ You can use the `giveCredit()` mixin to include a section giving credit to `Read
 ## Dev dependencies
 | Package | Version |
 | --- | --- |
+| `@types/marked` | `^4.0.8` |
 | `@types/node` | `^18.16.0` |
 | `@types/nunjucks` | `^3.2.2` |
 | `autoprefixer` | `^10.4.14` |
