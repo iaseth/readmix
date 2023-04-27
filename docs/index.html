@@ -71,6 +71,82 @@
 </ul>
 </li>
 </ul>
+<h2 id="flags">Flags</h2>
+<p>The  <code>readmix</code> command accepts the following command line options:</p>
+<table>
+<thead>
+<tr>
+<th>Short</th>
+<th>Long</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-C</td>
+<td>--compile</td>
+<td>Compile to Markdown.</td>
+</tr>
+<tr>
+<td>-D</td>
+<td>--debug</td>
+<td>Turns debug mode ON.</td>
+</tr>
+<tr>
+<td>-F</td>
+<td>--force</td>
+<td>Force update files.</td>
+</tr>
+<tr>
+<td>-H</td>
+<td>--html</td>
+<td>Compile to HTML.</td>
+</tr>
+<tr>
+<td>-I</td>
+<td>--init</td>
+<td>Initialize readmix in directory, created rxconfig.json with default options.</td>
+</tr>
+<tr>
+<td>-L</td>
+<td>--list</td>
+<td>List all input files.</td>
+</tr>
+<tr>
+<td>-M</td>
+<td>--markdown</td>
+<td>Compile to Markdown.</td>
+</tr>
+<tr>
+<td>-O</td>
+<td>--open</td>
+<td>Open live preview in default web browser.</td>
+</tr>
+<tr>
+<td>-P</td>
+<td>--preview</td>
+<td>Run a live preview server.</td>
+</tr>
+<tr>
+<td>-R</td>
+<td>--recursive</td>
+<td>Select subdirectories recursively.</td>
+</tr>
+<tr>
+<td>-S</td>
+<td>--status</td>
+<td>Print status.</td>
+</tr>
+<tr>
+<td>-V</td>
+<td>--version</td>
+<td>Print version.</td>
+</tr>
+<tr>
+<td>-W</td>
+<td>--watch</td>
+<td>Watch input files for changes.</td>
+</tr>
+</tbody></table>
 <h2 id="props">Props</h2>
 <p>Every <code>rx</code> file has access to the global <code>Rx</code> object with the following properties:</p>
 <table>
@@ -91,6 +167,10 @@
 <tr>
 <td><code>filters</code></td>
 <td><code>Object [12]</code></td>
+</tr>
+<tr>
+<td><code>flags</code></td>
+<td><code>Object [13]</code></td>
 </tr>
 <tr>
 <td><code>helpers</code></td>
@@ -322,7 +402,7 @@ SOFTWARE.</p>
 
 	</main>
 
-	<footer class="bg-slate-700 text-white text-center px-4 py-12">
+	<footer class="bg-slate-700 text-white text-center px-4 py-6">
 		<h4>Created by <a href="https://github.com/iaseth">Ankur Seth</a>.</h4>
 	</footer>
 </body>

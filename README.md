@@ -50,6 +50,28 @@ You can find the source code at [`iaseth/readmix`](https://github.com/iaseth/rea
 
 
 
+## Flags
+
+The  `readmix` command accepts the following command line options:
+
+| Short | Long | Description |
+| --- | --- | --- |
+| -C | --compile | Compile to Markdown. |
+| -D | --debug | Turns debug mode ON. |
+| -F | --force | Force update files. |
+| -H | --html | Compile to HTML. |
+| -I | --init | Initialize readmix in directory, creates rxconfig.json with default options. |
+| -L | --list | List all input files. |
+| -M | --markdown | Compile to Markdown. |
+| -O | --open | Open live preview in default web browser. |
+| -P | --preview | Run a live preview server. |
+| -R | --recursive | Select subdirectories recursively. |
+| -S | --status | Print status. |
+| -V | --version | Print version. |
+| -W | --watch | Watch input files for changes. |
+
+
+
 ## Props
 
 Every `rx` file has access to the global `Rx` object with the following properties:
@@ -58,6 +80,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | `appName` | `Readmix` |
 | `commands` | `Object [8]` |
 | `filters` | `Object [12]` |
+| `flags` | `Object [13]` |
 | `helpers` | `Object [17]` |
 | `mixins` | `Object [4]` |
 | `utils` | `Object [1]` |

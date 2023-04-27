@@ -38,6 +38,16 @@ You can find the source code at {{ "iaseth/readmix" | GithubLink }}.
 
 
 
+## Flags
+
+The  `readmix` command accepts the following command line options:
+
+| Short | Long | Description |
+| --- | --- | --- |{% for flag in Rx.flags %}
+| {{ flag.singleFlag }} | {{ flag.doubleFlag }} | {{ flag.description }} |{% endfor %}
+
+
+
 ## Props
 
 Every `rx` file has access to the global `Rx` object with the following properties:

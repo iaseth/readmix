@@ -1,4 +1,5 @@
 import { commands } from "./commands";
+import { flags } from "./commands/common";
 import { filters } from "./filters";
 import { helpers } from "./helpers";
 import { mixins } from "./mixins";
@@ -12,6 +13,7 @@ interface ReadmixType {
 	appName: string,
 	commands: any,
 	filters: any,
+	flags: any,
 	helpers: any,
 	mixins: any,
 	utils: any,
@@ -30,6 +32,7 @@ export const Readmix: ReadmixType = {
 	appName: "Readmix",
 	commands: commands,
 	filters: filters,
+	flags: flags,
 	helpers: helpers,
 	mixins: mixins,
 	utils: utils,
