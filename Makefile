@@ -5,7 +5,7 @@ build: ts css
 
 readme:
 	@echo "Recompiling README ..."
-	@./cli.js README.rx
+	@./cli.js README.rx --markdown
 	@echo "    Done."
 
 publish: build readme
@@ -25,6 +25,7 @@ watchcss:
 	npx tailwindcss -i ./src/css/readmix.css -o ./templates/static/css/readmix.css --watch
 
 docs:
+	./cli.js README.rx --html
 	mv README.html docs/index.html
 	cp -r templates/static docs
 
