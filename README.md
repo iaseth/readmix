@@ -83,6 +83,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | `flags` | `Object [13]` |
 | `helpers` | `Object [17]` |
 | `mixins` | `Object [4]` |
+| `sugars` | `Object [0]` |
 | `utils` | `Object [1]` |
 | `descriptions` | `Object [4]` |
 | `packageJson` | `Object [14]` |

@@ -3,6 +3,7 @@ import { flags } from "./commands/common";
 import { filters } from "./filters";
 import { helpers } from "./helpers";
 import { mixins } from "./mixins";
+import { sugars } from "./sugars";
 import { utils } from "./utils";
 
 import descriptionsJson from './descriptions.json';
@@ -16,6 +17,7 @@ interface ReadmixType {
 	flags: any,
 	helpers: any,
 	mixins: any,
+	sugars: any,
 	utils: any,
 
 	descriptions: any,
@@ -35,6 +37,7 @@ export const Readmix: ReadmixType = {
 	flags: flags,
 	helpers: helpers,
 	mixins: mixins,
+	sugars: sugars,
 	utils: utils,
 
 	descriptions: descriptionsJson,
