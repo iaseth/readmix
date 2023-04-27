@@ -32,6 +32,21 @@ function main () {
 		}
 	});
 
+	const commandFlags = readmix.flags.filter(flag => flag.isCommand);
+	const trueCommandFlags = commandFlags.filter(flag => cmdOptions[flag.name] === true);
+	if (trueCommandFlags.length === 0) {
+		// No command flags were specified
+		console.log(`No commands to run!`);
+		console.log(`\tYou must supply exactly 1 of the following flags:`);
+		commandFlags.forEach((c, i) => console.log(`\t\tcommand #${i+1}: ${c.doubleFlag.padEnd(12)} => ${c.description}`));
+		return;
+	} else if (trueCommandFlags.length > 1) {
+		// Multiple command flags were specified
+		console.log(`Multiple commands cannot be run at the same time!`);
+		trueCommandFlags.forEach((c, i) => console.log(`\tcommand #${i+1}: ${c.doubleFlag.padEnd(12)} => ${c.description}`));
+		return;
+	}
+
 	const pathArgs = args.filter(helpers.isNotFlag);
 	const goodPaths = pathArgs.filter(helpers.pathExists);
 	if (goodPaths.length === 0) {
