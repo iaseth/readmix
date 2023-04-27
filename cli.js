@@ -53,8 +53,7 @@ function main () {
 		goodPaths.push("."); // ensures that goodPaths is not empty
 	}
 
-	const inputFiles = helpers.getRxFilesInDirectories(goodPaths, cmdOptions.recursive);
-	const entries = inputFiles.map(helpers.getEntry);
+	const entries = helpers.getRxFilesInDirectories(goodPaths, cmdOptions.recursive);
 
 	if (cmdOptions.compile) {
 		commands.compileCommand(entries, cmdOptions);

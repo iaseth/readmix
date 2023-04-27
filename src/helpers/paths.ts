@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { IGNORED_DIRS } from '../constants';
+import { RxFile } from '../rxfile';
 
 
 
@@ -75,8 +76,9 @@ export function getFilesInDirectories (dirpaths: string[], recursive=false) : st
 	return files;
 }
 
-export function getRxFilesInDirectories (dirpaths: string[], recursive=false) : string[] {
+export function getRxFilesInDirectories (dirpaths: string[], recursive=false) : RxFile[] {
 	const files = getFilesInDirectories(dirpaths, recursive);
-	const rxFiles = files.filter(x => x.endsWith(".rx"));
+	const rxFilePaths = files.filter(x => x.endsWith(".rx"));
+	const rxFiles = rxFilePaths.map(x => new RxFile(x));
 	return rxFiles;
 }

@@ -12,6 +12,9 @@ export class RxFile {
 	htmlFilepath: string;
 	pdfFilepath: string;
 
+	next: RxFile|null = null;
+	prev: RxFile|null = null;
+
 	constructor(inputFilepath: string) {
 		this.inputFilepath = inputFilepath;
 		this.inputFileExists = helpers.fileExists(this.inputFilepath);
