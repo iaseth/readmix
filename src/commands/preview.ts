@@ -2,9 +2,12 @@ import fs from 'fs';
 import path from 'path';
 import http from 'http';
 import nunjucks from 'nunjucks';
+import { marked } from 'marked';
 
 import { EntryType } from "../helpers/rx";
 import { CmdOptionsType } from "./common";
+import { helpers } from '../helpers';
+import { renderString } from '../render';
 
 const HOSTNAME = '127.0.0.1';
 const PORT = 1996;
@@ -33,7 +36,10 @@ export function previewCommand (entries: EntryType[], cmdOptions: CmdOptionsType
 			const documentPath = url.slice(4);
 			const entry = entries.find(x => x.basepath === documentPath);
 			if (entry) {
-				const text = docpageTemplate.render({entries, entry});
+				const [codeText, contentText] = helpers.splitFile(entry.inputFilepath);
+				const markdownText = renderString(contentText);
+				const htmlText = marked.parse(markdownText);
+				const text = docpageTemplate.render({entries, entry, markdownText, htmlText});
 				res.setHeader('Content-Type', 'text/html');
 				res.end(text);
 			} else {

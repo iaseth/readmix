@@ -1,17 +1,19 @@
 
-default: build css
+default: build
+
+build: ts css
 
 readme:
 	@echo "Recompiling README ..."
 	@./cli.js README.rx
 	@echo "    Done."
 
-publish: build css readme
+publish: build readme
 	@echo "Publishing to NPM ..."
 	@npm publish
 	@echo "    Done."
 
-build: clean
+ts: clean
 	@echo "Compiling TS to JS ..."
 	@tsc
 	@echo "    Done."

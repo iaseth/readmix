@@ -1,8 +1,18 @@
 {% extends "base.html" %}
 
+{% block css %}
+<link rel="stylesheet" href="static/css/github-markdown.css">
+{% endblock %}
+
 {% block content %}
-<section class="bg-white max-w-3xl mx-auto text-center px-4 py-6 rounded shadow">
-	<h4>{{ entry.inputFilepath }}</h4>
-	<p>{{ entry.outputFilepath }}</p>
+<section class="bg-white max-w-3xl mx-auto rounded shadow">
+	<header class="bg-slate-500 text-white px-4 py-4 text-center">
+		<h4>{{ entry.inputFilepath }}</h4>
+		<p>{{ entry.outputFilepath }}</p>
+	</header>
+
+	<article class="px-4 py-6">
+		{{ htmlText | safe }}
+	</article>
 </section>
 {% endblock %}
