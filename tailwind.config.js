@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import tailwindcolors from 'tailwindcss/colors';
+const { slate, white } = tailwindcolors;
 
 import hcn from 'html-color-names';
 const { htmlcolors } = hcn;
@@ -10,7 +11,8 @@ export default {
 	theme: {
 		colors: {
 			firebrick,
-			...tailwindcolors
+			slate,
+			white
 		},
 		extend: {},
 	},

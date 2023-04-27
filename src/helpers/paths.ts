@@ -12,6 +12,26 @@ export function pathDoesNotExist (pathArg: string) : boolean {
 	return !pathExists(pathArg);
 }
 
+
+export function fileExists (pathArg: string) : boolean {
+	if (!pathExists(pathArg)) {
+		return false;
+	}
+
+	const stat = fs.lstatSync(pathArg);
+	return stat.isFile();
+}
+
+export function directoryExists (pathArg: string) : boolean {
+	if (!pathExists(pathArg)) {
+		return false;
+	}
+
+	const stat = fs.lstatSync(pathArg);
+	return stat.isDirectory();
+}
+
+
 export function getFilesInDirectory (dirpath: string, recursive=false) : string[] {
 	if (pathDoesNotExist(dirpath)) {
 		return [];
