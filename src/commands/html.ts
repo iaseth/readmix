@@ -3,14 +3,14 @@ import path from 'path';
 import nunjucks from 'nunjucks';
 import { marked } from 'marked';
 
-import { EntryType } from "../helpers/rx";
 import { CmdOptionsType } from "./common";
 import { helpers } from '../helpers';
 import { renderString } from '../render';
+import { RxFile } from '../rxfile';
 
 
 
-export function htmlCommand (entries: EntryType[], cmdOptions: CmdOptionsType) {
+export function htmlCommand (entries: RxFile[], cmdOptions: CmdOptionsType) {
 	const homepageTemplatesPath = require.resolve('../../templates/homepage.html');
 	const templatesPath = path.dirname(homepageTemplatesPath);
 

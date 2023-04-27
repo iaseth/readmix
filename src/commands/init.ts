@@ -1,9 +1,9 @@
-import { EntryType } from "../helpers/rx";
+import { RxFile } from "../rxfile";
 import { CmdOptionsType } from "./common";
 
 
 
-export function initCommand (entries: EntryType[], cmdOptions: CmdOptionsType) {
+export function initCommand (entries: RxFile[], cmdOptions: CmdOptionsType) {
 	console.log(`Running initCommand:`);
 	console.log("\t---- complete");
 }

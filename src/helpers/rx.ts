@@ -1,29 +1,16 @@
 import fs from 'fs';
+import { RxFile } from '../rxfile';
 import { helpers } from './helpers';
 
 
 
-export interface EntryType {
-	basepath: string,
-	pageURL: string,
-	inputFilepath: string,
-	outputFilepath: string,
-	htmlFilepath: string,
-}
-
-export function getEntry (inputFilepath: string) : EntryType|null {
+export function getEntry (inputFilepath: string) : RxFile|null {
 	if (!inputFilepath.endsWith(".rx")) {
 		return null;
 	}
 
-	const basepath = inputFilepath.slice(0, -3);
-	return {
-		basepath,
-		pageURL: `rx/${basepath}`,
-		inputFilepath,
-		outputFilepath: basepath + ".md",
-		htmlFilepath: basepath + ".html"
-	};
+	const rxfile = new RxFile(inputFilepath);
+	return rxfile;
 }
 
 export function splitFile (inputFilepath: string) : string[] {

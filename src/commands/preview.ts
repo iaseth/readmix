@@ -4,15 +4,15 @@ import http from 'http';
 import nunjucks from 'nunjucks';
 import { marked } from 'marked';
 
-import { EntryType } from "../helpers/rx";
 import { CmdOptionsType } from "./common";
 import { helpers } from '../helpers';
 import { renderString } from '../render';
+import { RxFile } from '../rxfile';
 
 const HOSTNAME = '127.0.0.1';
 const PORT = 1996;
 
-export function previewCommand (entries: EntryType[], cmdOptions: CmdOptionsType) {
+export function previewCommand (entries: RxFile[], cmdOptions: CmdOptionsType) {
 	const homepageTemplatesPath = require.resolve('../../templates/homepage.html');
 	const templatesPath = path.dirname(homepageTemplatesPath);
 
@@ -38,8 +38,8 @@ export function previewCommand (entries: EntryType[], cmdOptions: CmdOptionsType
 			if (entryIndex !== -1) {
 				const entry = entries[entryIndex];
 
-				let next: EntryType|null = null;
-				let prev: EntryType|null = null;
+				let next: RxFile|null = null;
+				let prev: RxFile|null = null;
 				if (entries.length > 1) {
 					next = entries[entryIndex+1 === entries.length ? 0 : entryIndex+1];
 					prev = entries[entryIndex === 0 ? entries.length-1 : entryIndex-1];
