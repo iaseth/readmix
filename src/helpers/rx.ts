@@ -5,6 +5,7 @@ import { helpers } from './helpers';
 
 export interface EntryType {
 	basepath: string,
+	pageURL: string,
 	inputFilepath: string,
 	outputFilepath: string,
 	htmlFilepath: string,
@@ -18,6 +19,7 @@ export function getEntry (inputFilepath: string) : EntryType|null {
 	const basepath = inputFilepath.slice(0, -3);
 	return {
 		basepath,
+		pageURL: `rx/${basepath}`,
 		inputFilepath,
 		outputFilepath: basepath + ".md",
 		htmlFilepath: basepath + ".html"

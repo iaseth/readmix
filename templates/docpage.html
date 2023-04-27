@@ -7,8 +7,12 @@
 
 {% block content %}
 <section class="bg-white max-w-5xl mx-auto rounded overflow-hidden shadow">
-	<header class="bg-firebrick-500 text-white px-4 py-3 text-center">
-		<h4>{{ entry.basepath }}</h4>
+	<header class="bg-firebrick-500 text-white px-4 py-3 text-center flex">
+		<a href="{{ prev.pageURL }}">{{ prev.basepath }}</a>
+		<section class="grow">
+			<h4>{{ entry.basepath }}</h4>
+		</section>
+		<a href="{{ next.pageURL }}">{{ next.basepath }}</a>
 	</header>
 
 	<article class="markdown-body px-4 py-6">

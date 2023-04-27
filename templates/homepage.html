@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="bg-white max-w-md mx-auto px-4 py-6 rounded shadow">
+<section class="bg-white max-w-md mx-auto py-4 rounded shadow">
 	{% for entry in entries %}
-	<a href="rx/{{ entry.basepath }}">
+	<a href="{{ entry.pageURL }}" class="block odd:bg-slate-100 px-4 py-3">
 		<h4>{{ entry.inputFilepath }}</h4>
 		<p>{{ entry.outputFilepath }}</p>
 	</a>

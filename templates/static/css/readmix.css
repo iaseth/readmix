@@ -531,6 +531,10 @@ video {
   display: block;
 }
 
+.flex {
+  display: flex;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -541,6 +545,10 @@ video {
 
 .max-w-md {
   max-width: 28rem;
+}
+
+.grow {
+  flex-grow: 1;
 }
 
 .overflow-hidden {
@@ -691,6 +699,11 @@ h6, .h6, .p6 {
 .H6, .P6 {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.odd\:bg-slate-100:nth-child(odd) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
 
 
