@@ -535,12 +535,16 @@ video {
   min-height: 100vh;
 }
 
-.max-w-3xl {
-  max-width: 48rem;
+.max-w-5xl {
+  max-width: 64rem;
 }
 
 .max-w-md {
   max-width: 28rem;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .rounded {

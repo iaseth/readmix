@@ -2,16 +2,17 @@
 
 {% block css %}
 <link rel="stylesheet" href="static/css/github-markdown.css">
+<link rel="stylesheet" href="static/css/github-primer.css">
 {% endblock %}
 
 {% block content %}
-<section class="bg-white max-w-3xl mx-auto rounded shadow">
+<section class="bg-white max-w-5xl mx-auto rounded overflow-hidden shadow">
 	<header class="bg-slate-500 text-white px-4 py-4 text-center">
 		<h4>{{ entry.inputFilepath }}</h4>
-		<p>{{ entry.outputFilepath }}</p>
+		<h4>{{ entry.outputFilepath }}</h4>
 	</header>
 
-	<article class="px-4 py-6">
+	<article class="markdown-body px-4 py-6">
 		{{ htmlText | safe }}
 	</article>
 </section>
