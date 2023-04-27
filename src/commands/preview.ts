@@ -34,23 +34,13 @@ export function previewCommand (entries: RxFile[], cmdOptions: CmdOptionsType) {
 			}
 		} else if (url?.startsWith("/rx/")) {
 			const documentPath = url.slice(4);
-			const entryIndex = entries.findIndex(x => x.basepath === documentPath);
-			if (entryIndex !== -1) {
-				const entry = entries[entryIndex];
-
-				let next: RxFile|null = null;
-				let prev: RxFile|null = null;
-				if (entries.length > 1) {
-					next = entries[entryIndex+1 === entries.length ? 0 : entryIndex+1];
-					prev = entries[entryIndex === 0 ? entries.length-1 : entryIndex-1];
-				}
-
+			const entry = entries.find(x => x.basepath === documentPath);
+			if (entry) {
 				const [codeText, contentText] = helpers.splitFile(entry.inputFilepath);
 				const markdownText = renderString(contentText);
 				const htmlText = marked.parse(markdownText);
 				const text = docpageTemplate.render({
 					entries, entry,
-					next, prev,
 					markdownText, htmlText
 				});
 				res.setHeader('Content-Type', 'text/html');

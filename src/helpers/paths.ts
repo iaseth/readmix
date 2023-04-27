@@ -80,5 +80,12 @@ export function getRxFilesInDirectories (dirpaths: string[], recursive=false) : 
 	const files = getFilesInDirectories(dirpaths, recursive);
 	const rxFilePaths = files.filter(x => x.endsWith(".rx"));
 	const rxFiles = rxFilePaths.map(x => new RxFile(x));
+
+	if (rxFiles.length > 1) {
+		rxFiles.forEach((rxFile, i) => {
+			rxFile.next = (i+1 === rxFiles.length) ? rxFiles[0] : rxFiles[i+1];
+			rxFile.prev = (i === 0) ? rxFiles[rxFiles.length-1] : rxFiles[i-1];
+		});
+	}
 	return rxFiles;
 }
