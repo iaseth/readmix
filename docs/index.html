@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Readmix</title>
+
+	<base href="/">
+
+	<link rel="stylesheet" href="static/css/readmix.css">
+	
+<link rel="stylesheet" href="static/css/github-markdown.css">
+
+</head>
+<body class="bg-slate-200">
+
+	<main class="min-h-screen px-4 py-6">
+	
+<section class="bg-white max-w-3xl mx-auto rounded shadow">
+	<header class="bg-slate-500 text-white px-4 py-4 text-center">
+		<h4>README.rx</h4>
+		<p>README.md</p>
+	</header>
+
+	<article class="px-4 py-6">
+		<h1 id="readmix">readmix</h1>
+<p><a href="https://www.npmjs.com/package/readmix"><code>readmix</code></a> is a command-line <code>README</code> generator.</p>
+<p>You can find the source code at <a href="https://github.com/iaseth/readmix"><code>iaseth/readmix</code></a>.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><p>Allows you to write comments in your <code>markdown</code> files:</p>
+<ul>
+<li><p>First way to add comments:</p>
+<pre><code>// This is a comment.
+</code></pre>
+</li>
+<li><p>Another way to add comments:</p>
+<pre><code>:: This is another comment.
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>Easily insert the contents of any file inside your <code>README</code>:</p>
+<ul>
+<li><p>This will insert the comments of your <code>LICENSE</code> file:</p>
+<pre><code>{{ &quot;LICENSE&quot; | File }}
+</code></pre>
+</li>
+<li><p>This will insert the contents of <code>tsconfig.json</code> file into a code-block:</p>
+<pre><code>{{ &quot;tsconfig.json&quot; | CodeFile }}
+</code></pre>
+</li>
+<li><p>Here, <code>File</code> and <code>CodeFile</code> are filters provided by <code>Readmix</code>.</p>
+</li>
+</ul>
+</li>
+<li><p>Easy access to <code>package.json</code> and <code>package-lock.json</code>:</p>
+<ul>
+<li><p>This will print the app version:</p>
+<pre><code>{{ packageJson.version }}
+</code></pre>
+</li>
+<li><p>This will print the app name:</p>
+<pre><code>{{ packageLockJson.name }}
+</code></pre>
+</li>
+<li><p><code>packageJson</code> and <code>packageLockJson</code> are available in every <code>rx</code> file assuming the corresponding <code>JSON</code> files are present.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="props">Props</h2>
+<p>Every <code>rx</code> file has access to the global <code>Rx</code> object with the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Prop</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>appName</code></td>
+<td><code>Readmix</code></td>
+</tr>
+<tr>
+<td><code>commands</code></td>
+<td><code>Object [8]</code></td>
+</tr>
+<tr>
+<td><code>filters</code></td>
+<td><code>Object [12]</code></td>
+</tr>
+<tr>
+<td><code>helpers</code></td>
+<td><code>Object [17]</code></td>
+</tr>
+<tr>
+<td><code>mixins</code></td>
+<td><code>Object [4]</code></td>
+</tr>
+<tr>
+<td><code>utils</code></td>
+<td><code>Object [1]</code></td>
+</tr>
+<tr>
+<td><code>descriptions</code></td>
+<td><code>Object [4]</code></td>
+</tr>
+<tr>
+<td><code>packageJson</code></td>
+<td><code>Object [14]</code></td>
+</tr>
+<tr>
+<td><code>packageLockJson</code></td>
+<td><code>Object [5]</code></td>
+</tr>
+<tr>
+<td><code>tsconfigJson</code></td>
+<td><code>Object [2]</code></td>
+</tr>
+<tr>
+<td><code>rxconfigJson</code></td>
+<td><code>Object [4]</code></td>
+</tr>
+<tr>
+<td><code>gitconfig</code></td>
+<td><code>Object [3]</code></td>
+</tr>
+</tbody></table>
+<p>Every <code>property</code> on the <code>Rx</code> object is also available globally.
+So, you can just write <code>appName</code> instead of <code>Rx.appName</code>.</p>
+<h2 id="filters">Filters</h2>
+<p>In addition to default filters in <code>nunjucks</code>, <code>Readmix</code> provides you with these additional <code>filters</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Filter</th>
+<th>Args</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Print</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>PrintPropsTable</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>PrintFunctionsTable</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>PrintFiltersTable</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>File</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>CodeFile</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>CodeBlock</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>Indent</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>GithubLink</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>GithubRepoLink</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>NpmLink</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>NpmPackageLink</code></td>
+<td>0</td>
+</tr>
+</tbody></table>
+<p>Each <code>filter</code> is available globally.</p>
+<h3 id="example-usage">Example usage</h3>
+<p>You can use the <code>File</code> filter to include the contents of your <code>LICENSE</code> file inside your <code>README</code>:</p>
+<pre><code>{{ &quot;LICENSE&quot; | File }}
+</code></pre>
+<h2 id="mixins">Mixins</h2>
+<p>In addition to props, the <code>Rx</code> object also contains a <code>mixins</code> object with the following <code>mixins</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Args</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>giveCredit()</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>dependencyTable()</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>devDependencyTable()</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>insertMitLicense()</code></td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>Every <code>function</code> on the <code>Rx.mixins</code> object is also available globally.
+So, you can just write <code>giveCredit()</code> instead of <code>Rx.mixins.giveCredit()</code> or <code>mixins.giveCredit()</code>.</p>
+<h3 id="example-usage-1">Example usage</h3>
+<p>You can use the <code>giveCredit()</code> mixin to include a section giving credit to <code>Readmix</code>:</p>
+<pre><code>{{ giveCredit() }}
+</code></pre>
+<h2 id="dependencies">Dependencies</h2>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ini</code></td>
+<td><code>^4.1.0</code></td>
+</tr>
+<tr>
+<td><code>js-yaml</code></td>
+<td><code>^4.1.0</code></td>
+</tr>
+<tr>
+<td><code>json5</code></td>
+<td><code>^2.2.3</code></td>
+</tr>
+<tr>
+<td><code>marked</code></td>
+<td><code>^4.3.0</code></td>
+</tr>
+<tr>
+<td><code>nunjucks</code></td>
+<td><code>^3.2.4</code></td>
+</tr>
+<tr>
+<td><code>toml</code></td>
+<td><code>^3.0.0</code></td>
+</tr>
+</tbody></table>
+<h2 id="dev-dependencies">Dev dependencies</h2>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>@types/marked</code></td>
+<td><code>^4.0.8</code></td>
+</tr>
+<tr>
+<td><code>@types/node</code></td>
+<td><code>^18.16.0</code></td>
+</tr>
+<tr>
+<td><code>@types/nunjucks</code></td>
+<td><code>^3.2.2</code></td>
+</tr>
+<tr>
+<td><code>autoprefixer</code></td>
+<td><code>^10.4.14</code></td>
+</tr>
+<tr>
+<td><code>html-color-names</code></td>
+<td><code>^0.2.8</code></td>
+</tr>
+<tr>
+<td><code>postcss</code></td>
+<td><code>^8.4.23</code></td>
+</tr>
+<tr>
+<td><code>tailwindcss</code></td>
+<td><code>^3.3.2</code></td>
+</tr>
+</tbody></table>
+<h2 id="license">License</h2>
+<p>MIT License</p>
+<p>Copyright (c) Ankur Seth.</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+<h2 id="credit">Credit</h2>
+<p>This file was generated using <a href="https://github.com/iaseth/readmix"><code>readmix</code></a>.</p>
+
+	</article>
+</section>
+
+	</main>
+
+	<footer class="bg-slate-700 text-white text-center px-4 py-12">
+		<h4>Created by <a href="https://github.com/iaseth">Ankur Seth</a>.</h4>
+	</footer>
+</body>
+</html>
