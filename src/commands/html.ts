@@ -10,18 +10,18 @@ import { RxFile } from '../rxfile';
 
 
 
-export function htmlCommand (entries: RxFile[], cmdOptions: CmdOptionsType) {
+export function htmlCommand (rxFiles: RxFile[], cmdOptions: CmdOptionsType) {
 	const homepageTemplatesPath = require.resolve('../../templates/homepage.html');
 	const templatesPath = path.dirname(homepageTemplatesPath);
 
 	const env = new nunjucks.Environment(new nunjucks.FileSystemLoader(templatesPath));
 	const docpageTemplate = env.getTemplate("docpage.html");
 
-	for (const entry of entries) {
+	for (const entry of rxFiles) {
 		const [codeText, contentText] = helpers.splitFile(entry.inputFilepath);
 		const markdownText = renderString(contentText);
 		const htmlText = marked.parse(markdownText);
-		const text = docpageTemplate.render({entries, entry, markdownText, htmlText});
+		const text = docpageTemplate.render({rxFiles, entry, markdownText, htmlText});
 		fs.writeFileSync(entry.htmlFilepath, text);
 		console.log(`Saved: ${entry.htmlFilepath}`);
 	}

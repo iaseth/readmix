@@ -53,25 +53,25 @@ function main () {
 		goodPaths.push("."); // ensures that goodPaths is not empty
 	}
 
-	const entries = helpers.getRxFilesInDirectories(goodPaths, cmdOptions.recursive);
+	const rxFiles = helpers.getRxFilesInDirectories(goodPaths, cmdOptions.recursive);
 
 	if (cmdOptions.compile) {
-		commands.compileCommand(entries, cmdOptions);
+		commands.compileCommand(rxFiles, cmdOptions);
 	} else if (cmdOptions.html) {
-		commands.htmlCommand(entries, cmdOptions);
+		commands.htmlCommand(rxFiles, cmdOptions);
 	} else if (cmdOptions.init) {
-		commands.initCommand(entries, cmdOptions);
+		commands.initCommand(rxFiles, cmdOptions);
 	} else if (cmdOptions.list) {
-		commands.listCommand(entries, cmdOptions);
+		commands.listCommand(rxFiles, cmdOptions);
 	} else if (cmdOptions.preview || cmdOptions.open) {
 		// open will run preview and then open it in the browser
-		commands.previewCommand(entries, cmdOptions);
+		commands.previewCommand(rxFiles, cmdOptions);
 	} else if (cmdOptions.version) {
-		commands.versionCommand(entries, cmdOptions);
+		commands.versionCommand(rxFiles, cmdOptions);
 	} else if (cmdOptions.watch) {
-		commands.watchCommand(entries, cmdOptions);
+		commands.watchCommand(rxFiles, cmdOptions);
 	} else {
-		entries.forEach(compileEntry);
+		rxFiles.forEach(compileEntry);
 	}
 
 	const badPaths = pathArgs.filter(helpers.pathDoesNotExist);

@@ -3,7 +3,7 @@ import { CmdOptionsType } from "./common";
 
 
 
-export function initCommand (entries: RxFile[], cmdOptions: CmdOptionsType) {
+export function initCommand (rxFiles: RxFile[], cmdOptions: CmdOptionsType) {
 	console.log(`Running initCommand:`);
 	console.log("\t---- complete");
 }
