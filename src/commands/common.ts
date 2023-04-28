@@ -51,7 +51,7 @@ export const flags: FlagType[] = [
 	{isCommand: false, name: "html", singleFlag: "-H", doubleFlag: "--html", description: "Compile to HTML."},
 	{isCommand: true, name: "init", singleFlag: "-I", doubleFlag: "--init", description: "Initialize readmix in directory, creates rxconfig.json with default options."},
 	{isCommand: true, name: "list", singleFlag: "-L", doubleFlag: "--list", description: "List all input files."},
-	{isCommand: true, name: "markdown", singleFlag: "-M", doubleFlag: "--markdown", description: "Compile to Markdown."},
+	{isCommand: false, name: "markdown", singleFlag: "-M", doubleFlag: "--markdown", description: "Compile to Markdown."},
 	{isCommand: false, name: "open", singleFlag: "-O", doubleFlag: "--open", description: "Open live preview in default web browser."},
 	{isCommand: true, name: "preview", singleFlag: "-P", doubleFlag: "--preview", description: "Run a live preview server."},
 	{isCommand: false, name: "recursive", singleFlag: "-R", doubleFlag: "--recursive", description: "Select subdirectories recursively."},

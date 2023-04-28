@@ -78,7 +78,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | Prop | Value |
 | --- | --- |
 | `appName` | `Readmix` |
-| `commands` | `Object [8]` |
+| `commands` | `Object [7]` |
 | `filters` | `Object [12]` |
 | `flags` | `Object [13]` |
 | `helpers` | `Object [18]` |
