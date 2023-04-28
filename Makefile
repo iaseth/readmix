@@ -25,7 +25,7 @@ watchcss:
 	npx tailwindcss -i ./src/css/readmix.css -o ./templates/static/css/readmix.css --watch
 
 docs:
-	./cli.js README.rx --html
+	./cli.js --compile --html README.rx
 	mv README.html docs/index.html
 	cp -r templates/static docs
 
