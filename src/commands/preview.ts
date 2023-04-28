@@ -1,25 +1,18 @@
 import fs from 'fs';
 import path from 'path';
 import http from 'http';
-import nunjucks from 'nunjucks';
 import { marked } from 'marked';
 
 import { CmdOptionsType } from "./common";
 import { helpers } from '../helpers';
 import { renderString } from '../render';
 import { RxFile } from '../rxfile';
+import { rxEnv } from '../rxenv';
 
 const HOSTNAME = '127.0.0.1';
 const PORT = 1996;
 
 export function previewCommand (entries: RxFile[], cmdOptions: CmdOptionsType) {
-	const homepageTemplatesPath = require.resolve('../../templates/homepage.html');
-	const templatesPath = path.dirname(homepageTemplatesPath);
-
-	const env = new nunjucks.Environment(new nunjucks.FileSystemLoader(templatesPath));
-	const homepageTemplate = env.getTemplate("homepage.html");
-	const docpageTemplate = env.getTemplate("docpage.html");
-
 	const server = http.createServer((req, res) => {
 		res.statusCode = 200;
 
@@ -39,7 +32,7 @@ export function previewCommand (entries: RxFile[], cmdOptions: CmdOptionsType) {
 				const [codeText, contentText] = helpers.splitFile(entry.inputFilepath);
 				const markdownText = renderString(contentText);
 				const htmlText = marked.parse(markdownText);
-				const text = docpageTemplate.render({
+				const text = rxEnv.docpageTemplate.render({
 					entries, entry,
 					markdownText, htmlText
 				});
@@ -50,7 +43,7 @@ export function previewCommand (entries: RxFile[], cmdOptions: CmdOptionsType) {
 				res.end(`Error 404: "${documentPath}"`);
 			}
 		} else {
-			const text = homepageTemplate.render({entries});
+			const text = rxEnv.homepageTemplate.render({entries});
 			res.setHeader('Content-Type', 'text/html');
 			res.end(text);
 		}

@@ -1,27 +1,20 @@
 import fs from 'fs';
-import path from 'path';
-import nunjucks from 'nunjucks';
 import { marked } from 'marked';
 
 import { CmdOptionsType } from "./common";
 import { helpers } from '../helpers';
 import { renderString } from '../render';
 import { RxFile } from '../rxfile';
+import { rxEnv } from '../rxenv';
 
 
 
 export function htmlCommand (rxFiles: RxFile[], cmdOptions: CmdOptionsType) {
-	const homepageTemplatesPath = require.resolve('../../templates/homepage.html');
-	const templatesPath = path.dirname(homepageTemplatesPath);
-
-	const env = new nunjucks.Environment(new nunjucks.FileSystemLoader(templatesPath));
-	const docpageTemplate = env.getTemplate("docpage.html");
-
 	for (const entry of rxFiles) {
 		const [codeText, contentText] = helpers.splitFile(entry.inputFilepath);
 		const markdownText = renderString(contentText);
 		const htmlText = marked.parse(markdownText);
-		const text = docpageTemplate.render({rxFiles, entry, markdownText, htmlText});
+		const text = rxEnv.docpageTemplate.render({rxFiles, entry, markdownText, htmlText});
 		fs.writeFileSync(entry.htmlFilepath, text);
 		console.log(`Saved: ${entry.htmlFilepath}`);
 	}

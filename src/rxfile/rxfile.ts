@@ -5,14 +5,14 @@ import { renderString } from "../render";
 
 
 export class RxFile {
-	inputFilepath: string;
-	inputFileExists: boolean;
+	readonly inputFilepath: string;
+	readonly inputFileExists: boolean;
 
-	basepath: string;
-	pageURL: string;
-	outputFilepath: string;
-	htmlFilepath: string;
-	pdfFilepath: string;
+	readonly basepath: string;
+	readonly pageURL: string;
+	readonly outputFilepath: string;
+	readonly htmlFilepath: string;
+	readonly pdfFilepath: string;
 
 	next: RxFile|null = null;
 	prev: RxFile|null = null;
