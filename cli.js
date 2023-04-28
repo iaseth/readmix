@@ -1,23 +1,8 @@
 #!/usr/bin/env node
-
-const fs = require("fs");
-const path = require("path");
-
 const readmix = require("./dist");
 const {commands, helpers} = readmix;
 
 
-
-function compileEntry (entry, forceUpdate=false) {
-	const {inputFilepath, outputFilepath} = entry;
-
-	console.log(`Input: ${inputFilepath}`);
-	const [codeText, contentText] = helpers.splitFile(inputFilepath);
-
-	const outputFileText = readmix.renderString(contentText);
-	fs.writeFileSync(outputFilepath, outputFileText);
-	console.log(`\tsaved: ${outputFilepath}`);
-}
 
 function main () {
 	const [,, ...args] = process.argv;
@@ -70,8 +55,6 @@ function main () {
 		commands.versionCommand(rxFiles, cmdOptions);
 	} else if (cmdOptions.watch) {
 		commands.watchCommand(rxFiles, cmdOptions);
-	} else {
-		rxFiles.forEach(compileEntry);
 	}
 
 	const badPaths = pathArgs.filter(helpers.pathDoesNotExist);

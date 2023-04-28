@@ -1,4 +1,6 @@
+import fs from "fs";
 import { helpers } from "../helpers";
+import { renderString } from "../render";
 
 
 
@@ -24,5 +26,14 @@ export class RxFile {
 		this.outputFilepath = this.basepath + ".md";
 		this.htmlFilepath = this.basepath + ".html";
 		this.pdfFilepath = this.basepath + ".pdf";
+	}
+
+	compileMarkdown (forceUpdate=false) {
+		console.log(`Input: ${this.inputFilepath}`);
+		const [codeText, contentText] = helpers.splitFile(this.inputFilepath);
+	
+		const outputFileText = renderString(contentText);
+		fs.writeFileSync(this.outputFilepath, outputFileText);
+		console.log(`\tsaved: ${this.outputFilepath}`);
 	}
 }
