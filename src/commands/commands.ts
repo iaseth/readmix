@@ -1,6 +1,5 @@
 import { getDefaultCmdOptions } from "./common";
 import { compileCommand } from "./compile";
-import { htmlCommand } from "./html";
 import { initCommand } from "./init";
 import { listCommand } from "./list";
 import { previewCommand } from "./preview";
@@ -13,7 +12,6 @@ export const commands = {
 	getDefaultCmdOptions,
 
 	compileCommand,
-	htmlCommand,
 	initCommand,
 	listCommand,
 	previewCommand,

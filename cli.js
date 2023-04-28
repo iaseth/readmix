@@ -42,8 +42,6 @@ function main () {
 
 	if (cmdOptions.compile) {
 		commands.compileCommand(rxFiles, cmdOptions);
-	} else if (cmdOptions.html) {
-		commands.htmlCommand(rxFiles, cmdOptions);
 	} else if (cmdOptions.init) {
 		commands.initCommand(rxFiles, cmdOptions);
 	} else if (cmdOptions.list) {
