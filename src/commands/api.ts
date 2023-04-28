@@ -10,10 +10,16 @@ const success = {
 	status: "success"
 };
 
+const HEADERS = {
+	'Access-Control-Allow-Origin': '*',
+	'Access-Control-Allow-Methods': 'OPTIONS, POST, GET',
+	'Access-Control-Max-Age': 2592000,
+	'Content-Type': 'application/json',
+};
+
 export function apiCommand (rxFiles: RxFile[], cmdOptions: CmdOptionsType) {
 	const server = http.createServer((req, res) => {
-		res.statusCode = 200;
-		res.setHeader('Content-Type', 'application/json');
+		res.writeHead(200, HEADERS);
 		res.end(JSON.stringify(success));
 	});
 
