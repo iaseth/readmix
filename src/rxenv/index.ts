@@ -1,3 +1,3 @@
-import { RxEnv } from "./RxEnv";
+import { RxEnv } from "./rxenv";
 
 export const rxEnv = new RxEnv();
