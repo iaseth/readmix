@@ -1,5 +1,7 @@
 import path from 'path';
 import nunjucks from 'nunjucks';
+import { RxTemplate } from './rxtemplate';
+
 
 
 export class RxEnv {
@@ -7,8 +9,8 @@ export class RxEnv {
 	templatesPath = path.dirname(this.homepageTemplatesPath);
 
 	env = new nunjucks.Environment(new nunjucks.FileSystemLoader(this.templatesPath));
-	homepageTemplate = this.env.getTemplate("homepage.html");
-	docpageTemplate = this.env.getTemplate("docpage.html");
+	homepageTemplate = new RxTemplate(this.env, "homepage.html");
+	docpageTemplate = new RxTemplate(this.env, "docpage.html");
 
 	constructor() {
 		//
