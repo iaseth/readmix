@@ -2,7 +2,7 @@ import fs from "fs";
 import { marked } from 'marked';
 
 import { helpers } from "../helpers";
-import { renderString } from "../render";
+import { renderString } from "./render";
 import { rxEnv } from "../rxenv";
 
 
@@ -72,5 +72,11 @@ export class RxFile {
 
 		fs.writeFileSync(this.htmlFilepath, text);
 		console.log(`Saved: ${this.htmlFilepath}`);
+	}
+
+	renderMarkdownString () {
+		const [codeText, contentText] = this.splitFile();
+		const markdownText = renderString(contentText);
+		return markdownText;
 	}
 }

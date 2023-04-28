@@ -1,9 +1,9 @@
 import nunjucks from 'nunjucks';
 
-import { Readmix } from './readmix';
-import { filters } from './filters';
-import { mixins } from './mixins';
-import { utils } from './utils';
+import { Readmix } from '../readmix';
+import { filters } from '../filters';
+import { mixins } from '../mixins';
+import { utils } from '../utils';
 
 
 const env = nunjucks.configure({ autoescape: false });
