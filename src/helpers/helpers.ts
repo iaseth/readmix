@@ -1,7 +1,6 @@
 import { isDoubleFlag, isNotFlag, isSingleFlag, isTripleFlag } from "./args";
 import { isCode, isComment, isNotAComment, isRx } from "./comment";
 import { directoryExists, fileExists, getFilesInDirectories, getFilesInDirectory, getRxFilesInDirectories, pathDoesNotExist, pathExists } from "./paths";
-import { splitFile } from "./rx";
 import { sanitizeCodeLine, sanitizeRxLine } from "./sanitize";
 
 
@@ -28,6 +27,4 @@ export const helpers = {
 
 	sanitizeCodeLine,
 	sanitizeRxLine,
-
-	splitFile,
 };

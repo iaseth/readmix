@@ -4,7 +4,6 @@ import http from 'http';
 import { marked } from 'marked';
 
 import { CmdOptionsType } from "./common";
-import { helpers } from '../helpers';
 import { renderString } from '../render';
 import { RxFile } from '../rxfile';
 import { rxEnv } from '../rxenv';
@@ -29,7 +28,7 @@ export function previewCommand (entries: RxFile[], cmdOptions: CmdOptionsType) {
 			const documentPath = url.slice(4);
 			const entry = entries.find(x => x.basepath === documentPath);
 			if (entry) {
-				const [codeText, contentText] = helpers.splitFile(entry.inputFilepath);
+				const [codeText, contentText] = entry.splitFile();
 				const markdownText = renderString(contentText);
 				const htmlText = marked.parse(markdownText);
 				const text = rxEnv.docpageTemplate.refresh().render({
