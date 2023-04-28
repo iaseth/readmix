@@ -2,6 +2,7 @@
 src/
 docs/
 examples/
+webapp/
 
 Makefile
 *.rx
