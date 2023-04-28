@@ -1,6 +1,9 @@
 import fs from "fs";
+import { marked } from 'marked';
+
 import { helpers } from "../helpers";
 import { renderString } from "../render";
+import { rxEnv } from "../rxenv";
 
 
 
@@ -35,5 +38,18 @@ export class RxFile {
 		const outputFileText = renderString(contentText);
 		fs.writeFileSync(this.outputFilepath, outputFileText);
 		console.log(`\tsaved: ${this.outputFilepath}`);
+	}
+
+	compileHtml (forceUpdate=false) {
+		const [codeText, contentText] = helpers.splitFile(this.inputFilepath);
+		const markdownText = renderString(contentText);
+		const htmlText = marked.parse(markdownText);
+		const text = rxEnv.docpageTemplate.render({
+			entry: this,
+			markdownText, htmlText
+		});
+
+		fs.writeFileSync(this.htmlFilepath, text);
+		console.log(`Saved: ${this.htmlFilepath}`);
 	}
 }
