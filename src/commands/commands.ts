@@ -1,3 +1,4 @@
+import { apiCommand } from "./api";
 import { getDefaultCmdOptions } from "./common";
 import { compileCommand } from "./compile";
 import { initCommand } from "./init";
@@ -11,6 +12,7 @@ import { watchCommand } from "./watch";
 export const commands = {
 	getDefaultCmdOptions,
 
+	apiCommand,
 	compileCommand,
 	initCommand,
 	listCommand,

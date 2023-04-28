@@ -56,6 +56,7 @@ The  `readmix` command accepts the following command line options:
 
 | Short | Long | Description |
 | --- | --- | --- |
+| -A | --api | Run the Readmix JSON API. |
 | -C | --compile | Compile to Markdown. |
 | -D | --debug | Turns debug mode ON. |
 | -F | --force | Force update files. |
@@ -78,9 +79,9 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | Prop | Value |
 | --- | --- |
 | `appName` | `Readmix` |
-| `commands` | `Object [7]` |
+| `commands` | `Object [8]` |
 | `filters` | `Object [12]` |
-| `flags` | `Object [13]` |
+| `flags` | `Object [14]` |
 | `helpers` | `Object [18]` |
 | `mixins` | `Object [4]` |
 | `sugars` | `Object [0]` |

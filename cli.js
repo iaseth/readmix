@@ -40,7 +40,9 @@ function main () {
 
 	const rxFiles = helpers.getRxFilesInDirectories(goodPaths, cmdOptions.recursive);
 
-	if (cmdOptions.compile) {
+	if (cmdOptions.api) {
+		commands.apiCommand(rxFiles, cmdOptions);
+	} else if (cmdOptions.compile) {
 		commands.compileCommand(rxFiles, cmdOptions);
 	} else if (cmdOptions.init) {
 		commands.initCommand(rxFiles, cmdOptions);

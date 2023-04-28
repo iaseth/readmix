@@ -2,6 +2,7 @@
 
 
 export interface CmdOptionsType {
+	api: boolean,          // Run the Readmix JSON API
 	compile: boolean,      // compile all files
 	debug: boolean,        // debug mode on/off
 	force: boolean,        // force update even if output file exists and is newer than input file
@@ -19,6 +20,7 @@ export interface CmdOptionsType {
 
 export function getDefaultCmdOptions () : CmdOptionsType {
 	const options: CmdOptionsType = {
+		api: false,
 		compile: false,
 		debug: false,
 		force: false,
@@ -45,6 +47,7 @@ export interface FlagType {
 }
 
 export const flags: FlagType[] = [
+	{isCommand: true, name: "api", singleFlag: "-A", doubleFlag: "--api", description: "Run the Readmix JSON API."},
 	{isCommand: true, name: "compile", singleFlag: "-C", doubleFlag: "--compile", description: "Compile to Markdown."},
 	{isCommand: false, name: "debug", singleFlag: "-D", doubleFlag: "--debug", description: "Turns debug mode ON."},
 	{isCommand: false, name: "force", singleFlag: "-F", doubleFlag: "--force", description: "Force update files."},
