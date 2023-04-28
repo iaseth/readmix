@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { Template } from "nunjucks";
+import nunjucks from "nunjucks";
 import { RxEnv } from "./rxenv";
 
 
@@ -10,7 +10,7 @@ export class RxTemplate {
 	readonly filepath: string;
 	readonly fullFilepath: string;
 	mtime: Date = new Date();
-	template?: Template;
+	template?: nunjucks.Template;
 
 	constructor(rxEnv: RxEnv, filepath: string) {
 		this.rxEnv = rxEnv;
@@ -20,8 +20,9 @@ export class RxTemplate {
 	}
 
 	loadTemplate () {
+		const env = new nunjucks.Environment(new nunjucks.FileSystemLoader(this.rxEnv.templatesPath));
 		this.mtime = fs.lstatSync(this.fullFilepath).mtime;
-		this.template = this.rxEnv.env.getTemplate(this.filepath);
+		this.template = env.getTemplate(this.filepath);
 	}
 
 	needsReload () {
