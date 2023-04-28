@@ -32,7 +32,7 @@ export function previewCommand (entries: RxFile[], cmdOptions: CmdOptionsType) {
 				const [codeText, contentText] = helpers.splitFile(entry.inputFilepath);
 				const markdownText = renderString(contentText);
 				const htmlText = marked.parse(markdownText);
-				const text = rxEnv.docpageTemplate.render({
+				const text = rxEnv.docpageTemplate.refresh().render({
 					entries, entry,
 					markdownText, htmlText
 				});
@@ -43,7 +43,7 @@ export function previewCommand (entries: RxFile[], cmdOptions: CmdOptionsType) {
 				res.end(`Error 404: "${documentPath}"`);
 			}
 		} else {
-			const text = rxEnv.homepageTemplate.render({entries});
+			const text = rxEnv.homepageTemplate.refresh().render({entries});
 			res.setHeader('Content-Type', 'text/html');
 			res.end(text);
 		}
