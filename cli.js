@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const readmix = require("./dist");
-const {commands, helpers} = readmix;
+const { commands, helpers } = readmix;
 
 
 

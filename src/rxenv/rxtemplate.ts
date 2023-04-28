@@ -12,7 +12,7 @@ export class RxTemplate {
 	mtime: Date = new Date();
 	template?: nunjucks.Template;
 
-	constructor(rxEnv: RxEnv, filepath: string) {
+	constructor (rxEnv: RxEnv, filepath: string) {
 		this.rxEnv = rxEnv;
 		this.filepath = filepath;
 		this.fullFilepath = path.join(this.rxEnv.templatesPath, filepath);
