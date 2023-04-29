@@ -66,10 +66,13 @@ The  `readmix` command accepts the following command line options:
 | -M | --markdown | Compile to Markdown. |
 | -O | --open | Open live preview in default web browser. |
 | -P | --preview | Run a live preview server. |
+| -Q | --quiet | Turns quiet mode ON. |
 | -R | --recursive | Select subdirectories recursively. |
 | -S | --status | Print status. |
 | -V | --version | Print version. |
 | -W | --watch | Watch input files for changes. |
+| -X | --experimental | Turns experimental mode ON. |
+| -Z | --zen | Turns zen mode ON. |
 
 
 
@@ -81,7 +84,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | `appName` | `Readmix` |
 | `commands` | `Object [8]` |
 | `filters` | `Object [12]` |
-| `flags` | `Object [14]` |
+| `flags` | `Object [17]` |
 | `helpers` | `Object [17]` |
 | `mixins` | `Object [4]` |
 | `sugars` | `Object [0]` |

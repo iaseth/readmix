@@ -12,6 +12,7 @@ export interface CmdOptionsType {
 	markdown: boolean,       // MarkDown mode on/off
 	open: boolean,           // open the preview page default web browser
 	preview: boolean,        // run a local server for previewing output in browser
+	quiet: boolean,          // Quiet mode on/off
 	recursive: boolean,      // recurse into sub-directories
 	status: boolean,         // print update status of all files
 	version: boolean,        // print Readmix version
@@ -32,6 +33,7 @@ export function getDefaultCmdOptions () : CmdOptionsType {
 		markdown: false,
 		open: false,
 		preview: false,
+		quiet: false,
 		recursive: false,
 		status: false,
 		version: false,
@@ -61,6 +63,7 @@ export const flags: FlagType[] = [
 	{isCommand: false, name: "markdown", singleFlag: "-M", doubleFlag: "--markdown", description: "Compile to Markdown."},
 	{isCommand: false, name: "open", singleFlag: "-O", doubleFlag: "--open", description: "Open live preview in default web browser."},
 	{isCommand: true, name: "preview", singleFlag: "-P", doubleFlag: "--preview", description: "Run a live preview server."},
+	{isCommand: false, name: "quiet", singleFlag: "-Q", doubleFlag: "--quiet", description: "Turns quiet mode ON."},
 	{isCommand: false, name: "recursive", singleFlag: "-R", doubleFlag: "--recursive", description: "Select subdirectories recursively."},
 	{isCommand: true, name: "status", singleFlag: "-S", doubleFlag: "--status", description: "Print status."},
 	{isCommand: true, name: "version", singleFlag: "-V", doubleFlag: "--version", description: "Print version."},
