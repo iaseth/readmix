@@ -14,17 +14,22 @@ const GithubLink = GithubRepoLink;
 
 export const filters = {
 	Print,
+	P: Print,
+
 	PrintPropsTable,
 	PrintFunctionsTable,
 	PrintFiltersTable,
 
 	File,
+	F: File,
 	CodeFile,
 
 	Table,
+	T: Table,
 
 	CodeBlock,
 	Indent,
+	I: Indent,
 
 	GithubLink,
 	GithubRepoLink,
