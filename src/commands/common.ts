@@ -2,20 +2,22 @@
 
 
 export interface CmdOptionsType {
-	api: boolean,          // Run the Readmix JSON API
-	compile: boolean,      // compile all files
-	debug: boolean,        // debug mode on/off
-	force: boolean,        // force update even if output file exists and is newer than input file
-	html: boolean,         // HTML mode on/off
-	init: boolean,         // initialize Readmix in current directory, create a rxconfig.json
-	list: boolean,         // just list all the input files
-	markdown: boolean,     // MarkDown mode on/off
-	open: boolean,         // open the preview page default web browser
-	preview: boolean,      // run a local server for previewing output in browser
-	recursive: boolean,    // recurse into sub-directories
-	status: boolean,       // print update status of all files
-	version: boolean,      // print Readmix version
-	watch: boolean,        // watch files for changes
+	api: boolean,            // Run the Readmix JSON API
+	compile: boolean,        // compile all files
+	debug: boolean,          // debug mode on/off
+	force: boolean,          // force update even if output file exists and is newer than input file
+	html: boolean,           // HTML mode on/off
+	init: boolean,           // initialize Readmix in current directory, create a rxconfig.json
+	list: boolean,           // just list all the input files
+	markdown: boolean,       // MarkDown mode on/off
+	open: boolean,           // open the preview page default web browser
+	preview: boolean,        // run a local server for previewing output in browser
+	recursive: boolean,      // recurse into sub-directories
+	status: boolean,         // print update status of all files
+	version: boolean,        // print Readmix version
+	watch: boolean,          // watch files for changes
+	experimental: boolean,   // experimental mode on/off
+	zen: boolean,            // zen mode on/off
 }
 
 export function getDefaultCmdOptions () : CmdOptionsType {
@@ -34,6 +36,8 @@ export function getDefaultCmdOptions () : CmdOptionsType {
 		status: false,
 		version: false,
 		watch: false,
+		experimental: false,
+		zen: false,
 	};
 	return options;
 }
@@ -60,5 +64,7 @@ export const flags: FlagType[] = [
 	{isCommand: false, name: "recursive", singleFlag: "-R", doubleFlag: "--recursive", description: "Select subdirectories recursively."},
 	{isCommand: true, name: "status", singleFlag: "-S", doubleFlag: "--status", description: "Print status."},
 	{isCommand: true, name: "version", singleFlag: "-V", doubleFlag: "--version", description: "Print version."},
-	{isCommand: false, name: "watch", singleFlag: "-W", doubleFlag: "--watch", description: "Watch input files for changes."},
+	{isCommand: true, name: "watch", singleFlag: "-W", doubleFlag: "--watch", description: "Watch input files for changes."},
+	{isCommand: false, name: "experimental", singleFlag: "-X", doubleFlag: "--experimental", description: "Turns experimental mode ON."},
+	{isCommand: false, name: "zen", singleFlag: "-Z", doubleFlag: "--zen", description: "Turns zen mode ON."},
 ];
