@@ -46,6 +46,14 @@ export function previewCommand (entries: RxFile[], cmdOptions: CmdOptionsType) {
 		}
 	});
 
+	server.once('error', function(err: NodeJS.ErrnoException) {
+		if (err.code === 'EADDRINUSE') {
+			console.log(`Port ${PREVIEW_PORT} is already is use!`);
+		} else {
+			console.log(`Something bad happened!`);
+		}
+	});
+
 	server.listen(PREVIEW_PORT, HOSTNAME, () => {
 		console.log(`Server running at http://${HOSTNAME}:${PREVIEW_PORT}/`);
 	});

@@ -23,6 +23,14 @@ export function apiCommand (rxFiles: RxFile[], cmdOptions: CmdOptionsType) {
 		res.end(JSON.stringify(success));
 	});
 
+	server.once('error', function(err: NodeJS.ErrnoException) {
+		if (err.code === 'EADDRINUSE') {
+			console.log(`Port ${API_PORT} is already is use!`);
+		} else {
+			console.log(`Something bad happened!`);
+		}
+	});
+
 	server.listen(API_PORT, HOSTNAME, () => {
 		console.log(`API Server running at http://${HOSTNAME}:${API_PORT}/`);
 	});
