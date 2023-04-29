@@ -1,4 +1,6 @@
-import http from 'http';
+import express from 'express';
+import cors from 'cors';
+
 import { API_PORT, HOSTNAME } from '../constants';
 
 import { RxFile } from "../rxfile";
@@ -18,10 +20,16 @@ const HEADERS = {
 };
 
 export function apiCommand (rxFiles: RxFile[], cmdOptions: CmdOptionsType) {
-	const server = http.createServer((req, res) => {
-		res.writeHead(200, HEADERS);
-		res.end(JSON.stringify(success));
+	const app = express();
+	app.use(cors());
+	app.get("/", (req, res) => {
+		res.json(success);
 	});
+
+	const server = app.listen(API_PORT);
+	if (server) {
+		console.log(`Server running at http://${HOSTNAME}:${API_PORT}/`);
+	}
 
 	server.once('error', function(err: NodeJS.ErrnoException) {
 		if (err.code === 'EADDRINUSE') {
@@ -29,9 +37,5 @@ export function apiCommand (rxFiles: RxFile[], cmdOptions: CmdOptionsType) {
 		} else {
 			console.log(`Something bad happened!`);
 		}
-	});
-
-	server.listen(API_PORT, HOSTNAME, () => {
-		console.log(`API Server running at http://${HOSTNAME}:${API_PORT}/`);
 	});
 }
