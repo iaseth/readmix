@@ -6,12 +6,18 @@
 
 {% block content %}
 <section class="bg-white max-w-5xl mx-auto rounded overflow-hidden shadow">
-	<header class="bg-firebrick-500 text-white text-center flex px-4 py-3">
-		<a href="{{ entry.prev.pageURL }}">{{ entry.prev.basepath }}</a>
-		<section class="grow">
-			<h4>{{ entry.basepath }}</h4>
+	<header class="bg-firebrick-600 text-white text-center flex ch:px-4 ch:py-4">
+		<a href="{{ entry.prev.pageURL }}">
+			<h4>{{ entry.prev.basepath }}</h4>
+			<h5>Prev</h5>
+		</a>
+		<section class="grow bg-firebrick-500">
+			<h2 class="py-2">{{ entry.basepath }}</h2>
 		</section>
-		<a href="{{ entry.next.pageURL }}">{{ entry.next.basepath }}</a>
+		<a href="{{ entry.next.pageURL }}">
+			<h4>{{ entry.next.basepath }}</h4>
+			<h5>Next</h5>
+		</a>
 	</header>
 
 	<article class="markdown-body px-4 py-6">

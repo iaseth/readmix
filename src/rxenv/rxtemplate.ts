@@ -9,6 +9,7 @@ export class RxTemplate {
 	readonly rxEnv: RxEnv;
 	readonly filepath: string;
 	readonly fullFilepath: string;
+	readonly baseFilepath: string;
 	mtime: Date = new Date();
 	template?: nunjucks.Template;
 
@@ -16,6 +17,7 @@ export class RxTemplate {
 		this.rxEnv = rxEnv;
 		this.filepath = filepath;
 		this.fullFilepath = path.join(this.rxEnv.templatesPath, filepath);
+		this.baseFilepath = path.join(this.rxEnv.templatesPath, "base.html");
 		this.loadTemplate();
 	}
 
@@ -30,6 +32,12 @@ export class RxTemplate {
 		if (mtime > this.mtime) {
 			return true;
 		}
+
+		const baseMtime = fs.lstatSync(this.baseFilepath).mtime;
+		if (baseMtime > this.mtime) {
+			return true;
+		}
+
 		return false;
 	}
 

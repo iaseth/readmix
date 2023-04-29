@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import tailwindcolors from 'tailwindcss/colors';
-const { slate, white } = tailwindcolors;
+const { slate, white, blue } = tailwindcolors;
 
 import hcn from 'html-color-names';
 const { htmlcolors } = hcn;
@@ -12,10 +12,17 @@ export default {
 		colors: {
 			firebrick,
 			slate,
-			white
+			white,
+			blue,
 		},
 		extend: {},
 	},
-	plugins: [],
+	plugins: [
+		function ({ addVariant }) {
+			addVariant('ch', '& > *');
+			addVariant('ch2', '& > * > *');
+			addVariant('ch3', '& > * > * > *');
+		}
+	],
 }
 

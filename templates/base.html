@@ -14,11 +14,23 @@
 </head>
 <body class="bg-slate-200">
 
-	<main class="min-h-screen px-4 py-12">
+	<header class="max-w-md mx-auto grid grid-cols-3 bg-slate-600 text-white rounded-b shadow text-center font-bold select-none ch:px-2 ch:py-2">
+		<a href="https://iaseth.github.io/readmix">Docs</a>
+		<a href="https://github.com/iaseth/readmix">GitHub</a>
+		<a href="https://www.npmjs.com/package/readmix">NPM</a>
+	</header>
+
+	<header class="py-10 text-center">
+		<a class="text-2xl font-bold" href="/">Readmix</a>
+	</header>
+
+	<main class="min-h-screen px-2 py-2">
 	{% block content %}
 	<h4>Content goes here.</h4>
 	{% endblock %}
 	</main>
+
+	<footer class="py-12"></footer>
 
 	<footer class="bg-slate-700 text-white text-center px-4 py-10">
 		<h4>Created by <a href="https://github.com/iaseth">Ankur Seth</a>.</h4>
