@@ -4,6 +4,7 @@ import { GithubRepoLink } from './github';
 import { Indent } from './indent';
 import { NpmPackageLink } from './npm';
 import { Print, PrintFiltersTable, PrintFunctionsTable, PrintPropsTable } from './print';
+import { Table } from './table';
 
 
 
@@ -19,6 +20,8 @@ export const filters = {
 
 	File,
 	CodeFile,
+
+	Table,
 
 	CodeBlock,
 	Indent,
