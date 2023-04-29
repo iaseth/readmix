@@ -158,6 +158,8 @@ You can use the `giveCredit()` mixin to include a section giving credit to `Read
 ## Dependencies
 | Package | Version |
 | --- | --- |
+| `cors` | `^2.8.5` |
+| `express` | `^4.18.2` |
 | `ini` | `^4.1.0` |
 | `js-yaml` | `^4.1.0` |
 | `json5` | `^2.2.3` |
@@ -170,6 +172,8 @@ You can use the `giveCredit()` mixin to include a section giving credit to `Read
 ## Dev dependencies
 | Package | Version |
 | --- | --- |
+| `@types/cors` | `^2.8.13` |
+| `@types/express` | `^4.17.17` |
 | `@types/marked` | `^4.0.8` |
 | `@types/node` | `^18.16.0` |
 | `@types/nunjucks` | `^3.2.2` |

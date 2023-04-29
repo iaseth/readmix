@@ -79,4 +79,10 @@ export class RxFile {
 		const markdownText = renderString(contentText);
 		return markdownText;
 	}
+
+	renderHtmlString () {
+		const markdownText = this.renderMarkdownString();
+		const htmlText = marked.parse(markdownText);
+		return htmlText;
+	}
 }

@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import http from 'http';
-import { marked } from 'marked';
 
 import { CmdOptionsType } from "./common";
 import { RxFile } from '../rxfile';
@@ -27,12 +26,7 @@ export function previewCommand (entries: RxFile[], cmdOptions: CmdOptionsType) {
 			const documentPath = url.slice(4);
 			const entry = entries.find(x => x.basepath === documentPath);
 			if (entry) {
-				const markdownText = entry.renderMarkdownString();
-				const htmlText = marked.parse(markdownText);
-				const text = rxEnv.docpageTemplate.refresh().render({
-					entries, entry,
-					markdownText, htmlText
-				});
+				const text = rxEnv.docpageTemplate.refresh().render({entries, entry});
 				res.setHeader('Content-Type', 'text/html');
 				res.end(text);
 			} else {
