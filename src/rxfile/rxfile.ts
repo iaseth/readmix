@@ -38,10 +38,10 @@ export class RxFile {
 		this.pdfFilepath = this.basepath + ".pdf";
 	}
 
-	splitFile () : string[] {
+	splitFile () : RxFileLine[][] {
 		const { inputFilepath } = this;
 		if (!inputFilepath.endsWith(".rx")) {
-			return ["", ""];
+			return [[], []];
 		}
 	
 		const inputText = fs.readFileSync(inputFilepath, {encoding:'utf8'});
@@ -55,29 +55,39 @@ export class RxFile {
 		});
 		const inputLinesWithoutComments = inputLines.filter(line => helpers.isNotAComment(line.text));
 	
-		const codeLines = inputLinesWithoutComments.filter(line => helpers.isCode(line.text));
-		const codeLinesSanitized = codeLines.map(helpers.sanitizeCodeLine);
-		const codeText = codeLinesSanitized.map(x => x.text).join("\n");
+		const codeLines = inputLinesWithoutComments
+							.filter(line => helpers.isCode(line.text))
+							.map(helpers.sanitizeCodeLine);
 	
-		const contentLines = inputLinesWithoutComments.filter(line => helpers.isRx(line.text));
-		const contentLinesSanitized = contentLines.map(helpers.sanitizeRxLine);
-		const contentText = contentLinesSanitized.map(x => x.text).join("\n");
+		const contentLines = inputLinesWithoutComments
+							.filter(line => helpers.isRx(line.text))
+							.map(helpers.sanitizeRxLine);
 	
-		return [codeText, contentText];
+		return [codeLines, contentLines];
+	}
+
+	get codeText () {
+		const [codeLines, contentLines] = this.splitFile();
+		const codeText = codeLines.map(x => x.text).join("\n");
+		return codeText;
+	}
+
+	get contentText () {
+		const [codeLines, contentLines] = this.splitFile();
+		const contentText = contentLines.map(x => x.text).join("\n");
+		return contentText;
 	}
 
 	compileMarkdown (forceUpdate=false) {
 		console.log(`Input: ${this.inputFilepath}`);
-		const [codeText, contentText] = this.splitFile();
 	
-		const outputFileText = renderString(contentText);
+		const outputFileText = renderString(this.contentText);
 		fs.writeFileSync(this.outputFilepath, outputFileText);
 		console.log(`\tsaved: ${this.outputFilepath}`);
 	}
 
 	compileHtml (forceUpdate=false) {
-		const [codeText, contentText] = this.splitFile();
-		const markdownText = renderString(contentText);
+		const markdownText = renderString(this.contentText);
 		const htmlText = marked.parse(markdownText);
 		const text = rxEnv.docpageTemplate.render({
 			entry: this,
@@ -89,8 +99,7 @@ export class RxFile {
 	}
 
 	renderMarkdownString () {
-		const [codeText, contentText] = this.splitFile();
-		const markdownText = renderString(contentText);
+		const markdownText = renderString(this.contentText);
 		return markdownText;
 	}
 
