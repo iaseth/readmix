@@ -8,3 +8,11 @@ export const TAB = "\t";
 export const SPACES = "    ";
 
 export const IGNORED_DIRS = ["node_modules"];
+
+export const COMMENT_PREFIXES = ["//", "::"];
+
+export const SUGAR_PREFIXES = [
+	"$", "@",
+	"=>", "->",
+	"[s]", "{s}", "(s)", "<s>",
+];

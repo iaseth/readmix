@@ -1,10 +1,15 @@
+import { COMMENT_PREFIXES } from "../constants";
 
-const COLONS = "::";
-const SLASHES = "//";
+
 
 export function isComment (text: string) : boolean {
 	text = text.trimStart();
-	return text.startsWith(COLONS) || text.startsWith(SLASHES);
+	for (const prefix of COMMENT_PREFIXES) {
+		if (text.startsWith(prefix)) {
+			return true;
+		}
+	}
+	return false;
 }
 
 export function isNotAComment (text: string) : boolean {
