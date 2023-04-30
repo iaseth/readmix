@@ -54,9 +54,13 @@ export class RxFile {
 			return line;
 		});
 
-		const inputLinesWithoutComments = inputLines.filter(helpers.isNotAComment);	
+		const inputLinesSanitized = inputLines.map(helpers.sanitizeRxLine);
+		const inputLinesWithoutComments = inputLinesSanitized.filter(helpers.isNotAComment);	
 		const codeLines = inputLinesWithoutComments.filter(helpers.isCode).map(helpers.sanitizeCodeLine);
-		const contentLines = inputLinesWithoutComments.filter(helpers.isRx).map(helpers.sanitizeRxLine);
+		const contentLines = inputLinesWithoutComments.filter(helpers.isContent);
+
+		const sugarLines = contentLines.filter(helpers.isSugar);
+		sugarLines.forEach(deSugarize);
 	
 		return [codeLines, contentLines];
 	}

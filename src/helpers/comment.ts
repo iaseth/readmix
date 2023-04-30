@@ -21,7 +21,7 @@ export function isCode (line: RxFileLine) : boolean {
 	return line.text.trimStart().startsWith("@");
 }
 
-export function isRx (line: RxFileLine) : boolean {
+export function isContent (line: RxFileLine) : boolean {
 	return !isCode(line) && !isComment(line);
 }
 
