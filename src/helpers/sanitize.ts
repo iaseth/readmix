@@ -13,7 +13,7 @@ export function sanitizeRxLine (line: string) : string {
 	line = line.trimEnd();
 
 	let nTabs = 0;
-	for (let ch of line) {
+	for (const ch of line) {
 		if (ch === TAB) {
 			nTabs++;
 		} else {

@@ -1,4 +1,4 @@
-import { COMMENT_PREFIXES } from "../constants";
+import { COMMENT_PREFIXES, SUGAR_PREFIXES } from "../constants";
 
 
 
@@ -22,4 +22,14 @@ export function isCode (text: string) : boolean {
 
 export function isRx (text: string) : boolean {
 	return !isCode(text) && !isComment(text);
+}
+
+export function isSugar (text: string) : boolean {
+	text = text.trimStart();
+	for (const prefix of SUGAR_PREFIXES) {
+		if (text.startsWith(prefix)) {
+			return true;
+		}
+	}
+	return false;
 }

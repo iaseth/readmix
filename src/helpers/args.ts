@@ -3,7 +3,7 @@
 
 function getLeadingDashCount (arg: string) : number {
 	let count = 0;
-	for (let ch of arg) {
+	for (const ch of arg) {
 		if (ch === "-") {
 			count++;
 		} else {

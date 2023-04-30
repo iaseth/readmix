@@ -69,7 +69,7 @@ export function getFilesInDirectory (dirpath: string, recursive=false) : string[
 
 export function getFilesInDirectories (dirpaths: string[], recursive=false) : string[] {
 	let files: string[] = [];
-	for (let dirpath of dirpaths) {
+	for (const dirpath of dirpaths) {
 		const moreFiles = getFilesInDirectory(dirpath, recursive);
 		files = files.concat(moreFiles);
 	}
