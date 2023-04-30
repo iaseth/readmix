@@ -1,7 +1,7 @@
 import { isDoubleFlag, isNotFlag, isSingleFlag, isTripleFlag } from "./args";
 import { isCode, isComment, isContent, isNotAComment, isSugar } from "./comment";
 import { directoryExists, fileExists, getFilesInDirectories, getFilesInDirectory, getRxFilesInDirectories, pathDoesNotExist, pathExists } from "./paths";
-import { sanitizeCodeLine, sanitizeRxLine } from "./sanitize";
+import { indentLine, sanitizeCodeLine, sanitizeRxLine } from "./sanitize";
 
 
 
@@ -26,6 +26,7 @@ export const helpers = {
 	isContent,
 	isSugar,
 
+	indentLine,
 	sanitizeCodeLine,
 	sanitizeRxLine,
 };

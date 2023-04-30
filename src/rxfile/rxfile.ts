@@ -67,13 +67,13 @@ export class RxFile {
 
 	get codeText () {
 		const [codeLines, contentLines] = this.splitFile();
-		const codeText = codeLines.map(x => x.text).join("\n");
+		const codeText = codeLines.map(helpers.indentLine).join("\n");
 		return codeText;
 	}
 
 	get contentText () {
 		const [codeLines, contentLines] = this.splitFile();
-		const contentText = contentLines.map(x => x.text).join("\n");
+		const contentText = contentLines.map(helpers.indentLine).join("\n");
 		return contentText;
 	}
 
