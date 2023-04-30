@@ -1,23 +1,23 @@
 import { RxFileLine } from "../rxfile";
+import { Dollars } from "./dollars";
+import { FatArrow } from "./fatarrow";
+import { ThinArrow } from "./thinarrow";
 
 
 
-export const sugars = {};
+export const sugars = {
+	Dollars,
+	FatArrow,
+	ThinArrow,
+};
 
 export function deSugarize (line: RxFileLine) : RxFileLine {
-	const prefix = line.text.split(" ")[0].trim();
-	switch (prefix) {
-		case "$":
-		case "$$":
-		case "$$$":
-		case "$$$$":
-		case "$$$$$":
-		case "$$$$$$":
-		case "=>":
-			line.text = "{{ '" + line.text.slice(3).trim() + `' | CodeBlock | Indent(${line.indent}) }}`
-		case "->":
-		default:
+	if (line.text.startsWith("$")) {
+		return Dollars(line);
+	} else if (line.text.startsWith("=>")) {
+		return FatArrow(line);
+	} else if (line.text.startsWith("->")) {
+		return ThinArrow(line);
 	}
-
 	return line;
 }
