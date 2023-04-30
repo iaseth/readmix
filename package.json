@@ -8,7 +8,8 @@
     "readmix": "./cli.js"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "testwatch": "jest --watchAll --verbose"
   },
   "keywords": [
     "readme",
