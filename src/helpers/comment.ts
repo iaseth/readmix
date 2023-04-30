@@ -1,9 +1,10 @@
 import { COMMENT_PREFIXES, SUGAR_PREFIXES } from "../constants";
+import { RxFileLine } from "../rxfile";
 
 
 
-export function isComment (text: string) : boolean {
-	text = text.trimStart();
+export function isComment (line: RxFileLine) : boolean {
+	const text = line.text.trimStart();
 	for (const prefix of COMMENT_PREFIXES) {
 		if (text.startsWith(prefix)) {
 			return true;
@@ -12,20 +13,20 @@ export function isComment (text: string) : boolean {
 	return false;
 }
 
-export function isNotAComment (text: string) : boolean {
-	return !isComment(text);
+export function isNotAComment (line: RxFileLine) : boolean {
+	return !isComment(line);
 }
 
-export function isCode (text: string) : boolean {
-	return text.trimStart().startsWith("@");
+export function isCode (line: RxFileLine) : boolean {
+	return line.text.trimStart().startsWith("@");
 }
 
-export function isRx (text: string) : boolean {
-	return !isCode(text) && !isComment(text);
+export function isRx (line: RxFileLine) : boolean {
+	return !isCode(line) && !isComment(line);
 }
 
-export function isSugar (text: string) : boolean {
-	text = text.trimStart();
+export function isSugar (line: RxFileLine) : boolean {
+	const text = line.text.trimStart();
 	for (const prefix of SUGAR_PREFIXES) {
 		if (text.startsWith(prefix)) {
 			return true;

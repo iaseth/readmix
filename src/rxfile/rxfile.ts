@@ -53,15 +53,10 @@ export class RxFile {
 			};
 			return line;
 		});
-		const inputLinesWithoutComments = inputLines.filter(line => helpers.isNotAComment(line.text));
-	
-		const codeLines = inputLinesWithoutComments
-							.filter(line => helpers.isCode(line.text))
-							.map(helpers.sanitizeCodeLine);
-	
-		const contentLines = inputLinesWithoutComments
-							.filter(line => helpers.isRx(line.text))
-							.map(helpers.sanitizeRxLine);
+
+		const inputLinesWithoutComments = inputLines.filter(helpers.isNotAComment);	
+		const codeLines = inputLinesWithoutComments.filter(helpers.isCode).map(helpers.sanitizeCodeLine);
+		const contentLines = inputLinesWithoutComments.filter(helpers.isRx).map(helpers.sanitizeRxLine);
 	
 		return [codeLines, contentLines];
 	}
