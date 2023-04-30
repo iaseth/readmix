@@ -3,6 +3,40 @@ const { helpers } = readmix;
 
 
 
+test("isSingleFlag", () => {
+	expect(helpers.isSingleFlag("-A")).toBe(true);
+	expect(helpers.isSingleFlag("-F")).toBe(true);
+	expect(helpers.isSingleFlag("-f")).toBe(true);
+
+	expect(helpers.isSingleFlag("--foo")).toBe(false);
+	expect(helpers.isSingleFlag("foo")).toBe(false);
+	expect(helpers.isSingleFlag("-")).toBe(false);
+});
+
+test("isDoubleFlag", () => {
+	expect(helpers.isDoubleFlag("--preview")).toBe(true);
+	expect(helpers.isDoubleFlag("--Foo")).toBe(true);
+	expect(helpers.isDoubleFlag("--x")).toBe(true);
+
+	expect(helpers.isDoubleFlag("-foo")).toBe(false);
+	expect(helpers.isDoubleFlag("foo")).toBe(false);
+	expect(helpers.isDoubleFlag("--")).toBe(false);
+});
+
+test("isTripleFlag", () => {
+	expect(helpers.isTripleFlag("---preview")).toBe(true);
+	expect(helpers.isTripleFlag("---Foo")).toBe(true);
+	expect(helpers.isTripleFlag("---x")).toBe(true);
+
+	expect(helpers.isTripleFlag("-foo")).toBe(false);
+	expect(helpers.isTripleFlag("--foo")).toBe(false);
+	expect(helpers.isTripleFlag("-")).toBe(false);
+	expect(helpers.isTripleFlag("--")).toBe(false);
+	expect(helpers.isTripleFlag("---")).toBe(false);
+});
+
+
+
 test("isComment", () => {
 	expect(helpers.isComment({text: "// Comment"})).toBe(true);
 	expect(helpers.isComment({text: "  // Comment"})).toBe(true);

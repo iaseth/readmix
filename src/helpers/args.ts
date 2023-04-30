@@ -15,15 +15,15 @@ function getLeadingDashCount (arg: string) : number {
 }
 
 export function isSingleFlag (arg: string) : boolean {
-	return getLeadingDashCount(arg) === 1;
+	return arg.length >= 2 && getLeadingDashCount(arg) === 1;
 }
 
 export function isDoubleFlag (arg: string) : boolean {
-	return getLeadingDashCount(arg) === 2;
+	return arg.length >= 3 && getLeadingDashCount(arg) === 2;
 }
 
 export function isTripleFlag (arg: string) : boolean {
-	return getLeadingDashCount(arg) === 3;
+	return arg.length >= 4 && getLeadingDashCount(arg) === 3;
 }
 
 export function isNotFlag (arg: string) : boolean {
