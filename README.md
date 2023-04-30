@@ -83,7 +83,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | --- | --- |
 | `appName` | `Readmix` |
 | `commands` | `Object [8]` |
-| `filters` | `Object [12]` |
+| `filters` | `Object [17]` |
 | `flags` | `Object [17]` |
 | `helpers` | `Object [17]` |
 | `mixins` | `Object [4]` |
@@ -108,13 +108,18 @@ In addition to default filters in `nunjucks`, `Readmix` provides you with these 
 | Filter | Args |
 | --- | --- |
 | `Print` | 0 |
+| `P` | 0 |
 | `PrintPropsTable` | 0 |
 | `PrintFunctionsTable` | 0 |
 | `PrintFiltersTable` | 0 |
 | `File` | 0 |
+| `F` | 0 |
 | `CodeFile` | 0 |
+| `Table` | 0 |
+| `T` | 0 |
 | `CodeBlock` | 0 |
 | `Indent` | 0 |
+| `I` | 0 |
 | `GithubLink` | 0 |
 | `GithubRepoLink` | 0 |
 | `NpmLink` | 0 |
@@ -178,7 +183,7 @@ You can use the `giveCredit()` mixin to include a section giving credit to `Read
 | `@types/node` | `^18.16.0` |
 | `@types/nunjucks` | `^3.2.2` |
 | `autoprefixer` | `^10.4.14` |
-| `html-color-names` | `^0.2.8` |
+| `html-color-names` | `^0.3.2` |
 | `postcss` | `^8.4.23` |
 | `tailwindcss` | `^3.3.2` |
 
