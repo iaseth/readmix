@@ -56,12 +56,12 @@ export class RxFile {
 		const inputLinesWithoutComments = inputLines.filter(line => helpers.isNotAComment(line.text));
 	
 		const codeLines = inputLinesWithoutComments.filter(line => helpers.isCode(line.text));
-		const codeLinesSanitized = codeLines.map(line => helpers.sanitizeCodeLine(line.text));
-		const codeText = codeLinesSanitized.join("\n");
+		const codeLinesSanitized = codeLines.map(helpers.sanitizeCodeLine);
+		const codeText = codeLinesSanitized.map(x => x.text).join("\n");
 	
 		const contentLines = inputLinesWithoutComments.filter(line => helpers.isRx(line.text));
-		const contentLinesSanitized = contentLines.map(line => helpers.sanitizeRxLine(line.text));
-		const contentText = contentLinesSanitized.join("\n");
+		const contentLinesSanitized = contentLines.map(helpers.sanitizeRxLine);
+		const contentText = contentLinesSanitized.map(x => x.text).join("\n");
 	
 		return [codeText, contentText];
 	}

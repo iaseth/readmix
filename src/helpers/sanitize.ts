@@ -1,19 +1,20 @@
 import { SPACES, TAB } from "../constants";
+import { RxFileLine } from "../rxfile";
 
 
 
-export function sanitizeCodeLine (line: string) : string {
-	line = line.trim();
-	line = line.slice(1); // remove leading `@`
-	line = line.trim();
+export function sanitizeCodeLine (line: RxFileLine) : RxFileLine {
+	line.text = line.text.trim();
+	line.text = line.text.slice(1); // remove leading `@`
+	line.text = line.text.trimStart();
 	return line;
 }
 
-export function sanitizeRxLine (line: string) : string {
-	line = line.trimEnd();
+export function sanitizeRxLine (line: RxFileLine) : RxFileLine {
+	let text = line.text.trimEnd();
 
 	let nTabs = 0;
-	for (const ch of line) {
+	for (const ch of text) {
 		if (ch === TAB) {
 			nTabs++;
 		} else {
@@ -21,11 +22,12 @@ export function sanitizeRxLine (line: string) : string {
 		}
 	}
 
-	line = line.slice(nTabs); // remove all tabs
+	text = text.slice(nTabs); // remove all tabs
 	while (nTabs > 0) {
-		line = SPACES + line;
+		text = SPACES + text;
 		nTabs--;
 	}
 
+	line.text = text;
 	return line;
 }
