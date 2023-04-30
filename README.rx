@@ -50,7 +50,7 @@ The  `readmix` command accepts the following command line options:
 
 | Short | Long | Description |
 | --- | --- | --- |{% for flag in Rx.flags %}
-| {{ flag.singleFlag }} | {{ flag.doubleFlag }} | {{ flag.description }} |{% endfor %}
+| `{{ flag.singleFlag }}` | `{{ flag.doubleFlag }}` | {{ flag.description }} |{% endfor %}
 
 
 

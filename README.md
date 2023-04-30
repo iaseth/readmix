@@ -64,23 +64,23 @@ The  `readmix` command accepts the following command line options:
 
 | Short | Long | Description |
 | --- | --- | --- |
-| -A | --api | Run the Readmix JSON API. |
-| -C | --compile | Compile to Markdown. |
-| -D | --debug | Turns debug mode ON. |
-| -F | --force | Force update files. |
-| -H | --html | Compile to HTML. |
-| -I | --init | Initialize readmix in directory, creates rxconfig.json with default options. |
-| -L | --list | List all input files. |
-| -M | --markdown | Compile to Markdown. |
-| -O | --open | Open live preview in default web browser. |
-| -P | --preview | Run a live preview server. |
-| -Q | --quiet | Turns quiet mode ON. |
-| -R | --recursive | Select subdirectories recursively. |
-| -S | --status | Print status. |
-| -V | --version | Print version. |
-| -W | --watch | Watch input files for changes. |
-| -X | --experimental | Turns experimental mode ON. |
-| -Z | --zen | Turns zen mode ON. |
+| `-A` | `--api` | Run the Readmix JSON API. |
+| `-C` | `--compile` | Compile to Markdown. |
+| `-D` | `--debug` | Turns debug mode ON. |
+| `-F` | `--force` | Force update files. |
+| `-H` | `--html` | Compile to HTML. |
+| `-I` | `--init` | Initialize readmix in directory, creates rxconfig.json with default options. |
+| `-L` | `--list` | List all input files. |
+| `-M` | `--markdown` | Compile to Markdown. |
+| `-O` | `--open` | Open live preview in default web browser. |
+| `-P` | `--preview` | Run a live preview server. |
+| `-Q` | `--quiet` | Turns quiet mode ON. |
+| `-R` | `--recursive` | Select subdirectories recursively. |
+| `-S` | `--status` | Print status. |
+| `-V` | `--version` | Print version. |
+| `-W` | `--watch` | Watch input files for changes. |
+| `-X` | `--experimental` | Turns experimental mode ON. |
+| `-Z` | `--zen` | Turns zen mode ON. |
 
 
 
