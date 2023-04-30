@@ -1,2 +1,2 @@
 
-export { RxFile } from "./rxfile";
+export { RxFile, RxFileLine } from "./rxfile";

@@ -7,12 +7,17 @@ export const API_PORT = 1997;
 export const TAB = "\t";
 export const SPACES = "    ";
 
-export const IGNORED_DIRS = ["node_modules"];
+export const IGNORED_DIRS = [
+	"node_modules",      // for obvious reasons
+];
 
-export const COMMENT_PREFIXES = ["//", "::"];
+export const COMMENT_PREFIXES = [
+	"//", // slash comment
+	"::", // colon comment
+];
 
 export const SUGAR_PREFIXES = [
-	"$", "@",
-	"=>", "->",
-	"[s]", "{s}", "(s)", "<s>",
+	"$",    // dollar
+	"=>",   // fat arrow
+	"->",   // thin arrow
 ];

@@ -4,8 +4,15 @@ import { marked } from 'marked';
 import { helpers } from "../helpers";
 import { renderString } from "./render";
 import { rxEnv } from "../rxenv";
+import { deSugarize } from "../sugars";
 
 
+
+export interface RxFileLine {
+	number: number,
+	text: string,
+	indent: number,
+}
 
 export class RxFile {
 	readonly inputFilepath: string;
@@ -38,15 +45,22 @@ export class RxFile {
 		}
 	
 		const inputText = fs.readFileSync(inputFilepath, {encoding:'utf8'});
-		const inputLines = inputText.split("\n");
-		const inputLinesWithoutComments = inputLines.filter(helpers.isNotAComment);
+		const inputLines = inputText.split("\n").map((lineText, idx) => {
+			const line: RxFileLine = {
+				number: idx+1,
+				text: lineText,
+				indent: 0,
+			};
+			return line;
+		});
+		const inputLinesWithoutComments = inputLines.filter(line => helpers.isNotAComment(line.text));
 	
-		const codeLines = inputLinesWithoutComments.filter(helpers.isCode);
-		const codeLinesSanitized = codeLines.map(helpers.sanitizeCodeLine);
+		const codeLines = inputLinesWithoutComments.filter(line => helpers.isCode(line.text));
+		const codeLinesSanitized = codeLines.map(line => helpers.sanitizeCodeLine(line.text));
 		const codeText = codeLinesSanitized.join("\n");
 	
-		const contentLines = inputLinesWithoutComments.filter(helpers.isRx);
-		const contentLinesSanitized = contentLines.map(helpers.sanitizeRxLine);
+		const contentLines = inputLinesWithoutComments.filter(line => helpers.isRx(line.text));
+		const contentLinesSanitized = contentLines.map(line => helpers.sanitizeRxLine(line.text));
 		const contentText = contentLinesSanitized.join("\n");
 	
 		return [codeText, contentText];

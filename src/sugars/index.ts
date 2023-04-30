@@ -1,2 +1,2 @@
 
-export { sugars } from "./sugars";
+export { sugars, deSugarize } from "./sugars";
