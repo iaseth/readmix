@@ -30,7 +30,7 @@ npm i -g readmix
 
 * Easily insert the contents of any file inside your `README`:
 
-    * This will insert the comments of your `LICENSE` file:
+    * This will insert the contents of your `LICENSE` file:
         ```
         {{ "LICENSE" | File }}
         ```
