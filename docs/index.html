@@ -50,6 +50,17 @@
 <p>You can install <a href="https://www.npmjs.com/package/readmix"><code>readmix</code></a> with the following command:</p>
 <pre><code>npm i -g readmix
 </code></pre>
+<p>Now you should be able to run the <code>readmix</code> command in your terminal.</p>
+<h2 id="usage">Usage</h2>
+<p>To compile your <code>README.rx</code>:</p>
+<pre><code>readmix --compile --markdown README.rx
+</code></pre>
+<p>To compile all <code>rx</code> files in the current directory:</p>
+<pre><code>readmix --compile --markdown .
+</code></pre>
+<p>To compile your <code>README.rx</code> to <code>HTML</code>:</p>
+<pre><code>readmix --compile --html README.rx
+</code></pre>
 <h2 id="features">Features</h2>
 <ul>
 <li><p>Allows you to write comments in your <code>markdown</code> files:</p>
@@ -224,7 +235,7 @@
 </tr>
 <tr>
 <td><code>sugars</code></td>
-<td><code>Object [0]</code></td>
+<td><code>Object [3]</code></td>
 </tr>
 <tr>
 <td><code>utils</code></td>

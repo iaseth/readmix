@@ -11,6 +11,20 @@ You can find the source code at {{ "iaseth/readmix" | GithubLink }}.
 You can install {{ "readmix" | NpmLink }} with the following command:
 => npm i -g readmix
 
+Now you should be able to run the `readmix` command in your terminal.
+
+
+
+## Usage
+To compile your `README.rx`:
+=> readmix --compile --markdown README.rx
+
+To compile all `rx` files in the current directory:
+=> readmix --compile --markdown .
+
+To compile your `README.rx` to `HTML`:
+=> readmix --compile --html README.rx
+
 
 
 ## Features
@@ -74,7 +88,7 @@ Each `filter` is available globally.
 ### Example usage
 You can use the `File` filter to include the contents of your `LICENSE` file inside your `README`:
 
-{{ "{{ \"LICENSE\" | File }}" | CodeBlock }}
+=> {{ "LICENSE" | File }}
 
 
 
@@ -89,7 +103,7 @@ So, you can just write `giveCredit()` instead of `Rx.mixins.giveCredit()` or `mi
 ### Example usage
 You can use the `giveCredit()` mixin to include a section giving credit to `{{ appName }}`:
 
-{{ "{{ giveCredit() }}" | CodeBlock }}
+=> {{ giveCredit() }}
 
 
 

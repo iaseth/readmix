@@ -13,6 +13,26 @@ You can install [`readmix`](https://www.npmjs.com/package/readmix) with the foll
 npm i -g readmix
 ```
 
+Now you should be able to run the `readmix` command in your terminal.
+
+
+
+## Usage
+To compile your `README.rx`:
+```
+readmix --compile --markdown README.rx
+```
+
+To compile all `rx` files in the current directory:
+```
+readmix --compile --markdown .
+```
+
+To compile your `README.rx` to `HTML`:
+```
+readmix --compile --html README.rx
+```
+
 
 
 ## Features
