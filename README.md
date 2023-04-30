@@ -213,6 +213,7 @@ You can use the `giveCredit()` mixin to include a section giving credit to `Read
 | `@types/nunjucks` | `^3.2.2` |
 | `autoprefixer` | `^10.4.14` |
 | `html-color-names` | `^0.3.2` |
+| `jest` | `^29.5.0` |
 | `postcss` | `^8.4.23` |
 | `tailwindcss` | `^3.3.2` |
 
