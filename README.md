@@ -9,7 +9,9 @@ You can find the source code at [`iaseth/readmix`](https://github.com/iaseth/rea
 
 ## Installation
 You can install [`readmix`](https://www.npmjs.com/package/readmix) with the following command:
-=> npm i -g readmix
+```
+npm i -g readmix
+```
 
 
 

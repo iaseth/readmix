@@ -14,6 +14,7 @@ export function deSugarize (line: RxFileLine) : RxFileLine {
 		case "$$$$$":
 		case "$$$$$$":
 		case "=>":
+			line.text = "{{ '" + line.text.slice(3).trim() + `' | CodeBlock | Indent(${line.indent}) }}`
 		case "->":
 		default:
 	}

@@ -17,28 +17,28 @@ You can install {{ "readmix" | NpmLink }} with the following command:
 * Allows you to write comments in your `markdown` files:
 
 	* First way to add comments:
-		{{ "// This is a comment." | CodeBlock | Indent(2) }}
+		=> // This is a comment.
 
 	* Another way to add comments:
-		{{ ":: This is another comment." | CodeBlock | Indent(2) }}
+		=> :: This is another comment.
 
 * Easily insert the contents of any file inside your `README`:
 
 	* This will insert the comments of your `LICENSE` file:
-		{{ '{{ "LICENSE" | File }}' | CodeBlock | Indent(2) }}
+		=> {{ "LICENSE" | File }}
 
 	* This will insert the contents of `tsconfig.json` file into a code-block:
-		{{ '{{ "tsconfig.json" | CodeFile }}' | CodeBlock | Indent(2) }}
+		=> {{ "tsconfig.json" | CodeFile }}
 
 	* Here, `File` and `CodeFile` are filters provided by `{{ appName }}`.
 
 * Easy access to `package.json` and `package-lock.json`:
 
 	* This will print the app version:
-		{{ "{{ packageJson.version }}" | CodeBlock | Indent(2) }}
+		=> {{ packageJson.version }}
 
 	* This will print the app name:
-		{{ "{{ packageLockJson.name }}" | CodeBlock | Indent(2) }}
+		=> {{ packageLockJson.name }}
 
 	* `packageJson` and `packageLockJson` are available in every `rx` file assuming the corresponding `JSON` files are present.
 
