@@ -803,6 +803,10 @@ h6, .h6, .p6 {
   line-height: 2.25rem;
 }
 
+ol, ul {
+  list-style-type: disc;
+}
+
 .hover\:bg-blue-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));

@@ -33,48 +33,53 @@ To compile your `README.rx` to `HTML`:
 readmix --compile --html README.rx
 ```
 
+To run a preview server for all `rx` files in the current directory:
+```
+readmix --preview .
+```
+
 
 
 ## Features
 * Allows you to write comments in your `markdown` files:
 
-    * First way to add comments:
-        ```
-        // This is a comment.
-        ```
+    First way to add comments:
+    ```
+    // This is a comment.
+    ```
 
-    * Another way to add comments:
-        ```
-        :: This is another comment.
-        ```
+    Another way to add comments:
+    ```
+    :: This is another comment.
+    ```
 
 * Easily insert the contents of any file inside your `README`:
 
-    * This will insert the contents of your `LICENSE` file:
-        ```
-        {{ "LICENSE" | File }}
-        ```
+    This will insert the contents of your `LICENSE` file:
+    ```
+    {{ "LICENSE" | File }}
+    ```
 
-    * This will insert the contents of `tsconfig.json` file into a code-block:
-        ```
-        {{ "tsconfig.json" | CodeFile }}
-        ```
+    This will insert the contents of `tsconfig.json` file into a code-block:
+    ```
+    {{ "tsconfig.json" | CodeFile }}
+    ```
 
-    * Here, `File` and `CodeFile` are filters provided by `Readmix`.
+    Here, `File` and `CodeFile` are filters provided by `Readmix`.
 
 * Easy access to `package.json` and `package-lock.json`:
 
-    * This will print the app version:
-        ```
-        {{ packageJson.version }}
-        ```
+    This will print the app version:
+    ```
+    {{ packageJson.version }}
+    ```
 
-    * This will print the app name:
-        ```
-        {{ packageLockJson.name }}
-        ```
+    This will print the app name:
+    ```
+    {{ packageLockJson.name }}
+    ```
 
-    * `packageJson` and `packageLockJson` are available in every `rx` file assuming the corresponding `JSON` files are present.
+    `packageJson` and `packageLockJson` are available in every `rx` file assuming the corresponding `JSON` files are present.
 
 
 
@@ -111,7 +116,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | --- | --- |
 | `appName` | `Readmix` |
 | `commands` | `Object [8]` |
-| `filters` | `Object [17]` |
+| `filters` | `Object [13]` |
 | `flags` | `Object [17]` |
 | `helpers` | `Object [19]` |
 | `mixins` | `Object [4]` |
@@ -136,18 +141,14 @@ In addition to default filters in `nunjucks`, `Readmix` provides you with these 
 | Filter | Args |
 | --- | --- |
 | `Print` | 0 |
-| `P` | 0 |
 | `PrintPropsTable` | 0 |
 | `PrintFunctionsTable` | 0 |
 | `PrintFiltersTable` | 0 |
 | `File` | 0 |
-| `F` | 0 |
 | `CodeFile` | 0 |
 | `Table` | 0 |
-| `T` | 0 |
 | `CodeBlock` | 0 |
 | `Indent` | 0 |
-| `I` | 0 |
 | `GithubLink` | 0 |
 | `GithubRepoLink` | 0 |
 | `NpmLink` | 0 |

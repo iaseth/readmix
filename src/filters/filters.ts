@@ -13,23 +13,24 @@ const NpmLink = NpmPackageLink;
 const GithubLink = GithubRepoLink;
 
 export const filters = {
+	// P: Print,
+	// F: File,
+	// T: Table,
+	// I: Indent,
+
 	Print,
-	P: Print,
 
 	PrintPropsTable,
 	PrintFunctionsTable,
 	PrintFiltersTable,
 
 	File,
-	F: File,
 	CodeFile,
 
 	Table,
-	T: Table,
 
 	CodeBlock,
 	Indent,
-	I: Indent,
 
 	GithubLink,
 	GithubRepoLink,

@@ -25,36 +25,39 @@ To compile all `rx` files in the current directory:
 To compile your `README.rx` to `HTML`:
 => readmix --compile --html README.rx
 
+To run a preview server for all `rx` files in the current directory:
+=> readmix --preview .
+
 
 
 ## Features
 * Allows you to write comments in your `markdown` files:
 
-	* First way to add comments:
-		=> // This is a comment.
+	First way to add comments:
+	=> // This is a comment.
 
-	* Another way to add comments:
-		=> :: This is another comment.
+	Another way to add comments:
+	=> :: This is another comment.
 
 * Easily insert the contents of any file inside your `README`:
 
-	* This will insert the contents of your `LICENSE` file:
-		=> {{ "LICENSE" | File }}
+	This will insert the contents of your `LICENSE` file:
+	=> {{ "LICENSE" | File }}
 
-	* This will insert the contents of `tsconfig.json` file into a code-block:
-		=> {{ "tsconfig.json" | CodeFile }}
+	This will insert the contents of `tsconfig.json` file into a code-block:
+	=> {{ "tsconfig.json" | CodeFile }}
 
-	* Here, `File` and `CodeFile` are filters provided by `{{ appName }}`.
+	Here, `File` and `CodeFile` are filters provided by `{{ appName }}`.
 
 * Easy access to `package.json` and `package-lock.json`:
 
-	* This will print the app version:
-		=> {{ packageJson.version }}
+	This will print the app version:
+	=> {{ packageJson.version }}
 
-	* This will print the app name:
-		=> {{ packageLockJson.name }}
+	This will print the app name:
+	=> {{ packageLockJson.name }}
 
-	* `packageJson` and `packageLockJson` are available in every `rx` file assuming the corresponding `JSON` files are present.
+	`packageJson` and `packageLockJson` are available in every `rx` file assuming the corresponding `JSON` files are present.
 
 
 
