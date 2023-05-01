@@ -1,6 +1,6 @@
 import { extras } from './extras';
 import { gh } from './gh';
-import { apache2License, bsd2License, bsd3License, iscLicense, mitLicense, msplLicense, zlibLicense } from './licenses';
+import { apache2License, bsd2License, bsd3License, gnuGplLicense, gnuLgplLicense, iscLicense, mitLicense, msplLicense, zlibLicense } from './licenses';
 import { giveCredit } from './meta';
 import { npm } from './npm';
 import { dependencyTable, devDependencyTable } from './packagejson';
@@ -23,6 +23,8 @@ export const mixins = {
 	apache2License,
 	bsd2License,
 	bsd3License,
+	gnuGplLicense,
+	gnuLgplLicense,
 	iscLicense,
 	mitLicense,
 	msplLicense,
