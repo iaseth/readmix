@@ -122,10 +122,10 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | --- | --- |
 | `appName` | `Readmix` |
 | `commands` | `Object [8]` |
-| `filters` | `Object [13]` |
+| `filters` | `Object [16]` |
 | `flags` | `Object [17]` |
 | `helpers` | `Object [19]` |
-| `mixins` | `Object [4]` |
+| `mixins` | `Object [9]` |
 | `sugars` | `Object [3]` |
 | `utils` | `Object [1]` |
 | `descriptions` | `Object [4]` |

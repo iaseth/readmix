@@ -1,9 +1,11 @@
 import { CodeBlock } from './code';
+import { Extras } from './extras';
 import { CodeFile, File } from './files';
 import { GithubRepoLink } from './gh';
 import { Indent } from './indent';
 import { NpmPackageLink } from './npm';
 import { Print, PrintFiltersTable, PrintFunctionsTable, PrintPropsTable } from './print';
+import { RX } from './rx';
 import { Table } from './table';
 
 
@@ -17,6 +19,10 @@ export const filters = {
 	// F: File,
 	// T: Table,
 	// I: Indent,
+
+	RX,
+	STD: RX,
+	Extras,
 
 	Print,
 
