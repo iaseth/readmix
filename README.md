@@ -28,6 +28,11 @@ To compile all `rx` files in the current directory:
 readmix --compile --markdown .
 ```
 
+To compile all `rx` files in the current directory and all subdirectories:
+```
+readmix --compile --markdown --recursive .
+```
+
 To compile your `README.rx` to `HTML`:
 ```
 readmix --compile --html README.rx
@@ -37,22 +42,11 @@ To run a preview server for all `rx` files in the current directory:
 ```
 readmix --preview .
 ```
+Not you can open [http://127.0.0.1:1996/](http://127.0.0.1:1996/) is your browser to see how your `rx` will look after compilation.
 
 
 
 ## Features
-* Allows you to write comments in your `markdown` files:
-
-    First way to add comments:
-    ```
-    // This is a comment.
-    ```
-
-    Another way to add comments:
-    ```
-    :: This is another comment.
-    ```
-
 * Easily insert the contents of any file inside your `README`:
 
     This will insert the contents of your `LICENSE` file:
@@ -80,6 +74,18 @@ readmix --preview .
     ```
 
     `packageJson` and `packageLockJson` are available in every `rx` file assuming the corresponding `JSON` files are present.
+
+* Allows you to write comments in your `markdown` files:
+
+    First way to add comments:
+    ```
+    // This is a comment.
+    ```
+
+    Another way to add comments:
+    ```
+    :: This is another comment.
+    ```
 
 
 

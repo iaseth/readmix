@@ -1,6 +1,9 @@
 import { isDoubleFlag, isNotFlag, isSingleFlag, isTripleFlag } from "./args";
 import { isCode, isComment, isContent, isNotAComment, isSugar } from "./comment";
-import { directoryExists, fileExists, getFilesInDirectories, getFilesInDirectory, getRxFilesInDirectories, pathDoesNotExist, pathExists } from "./paths";
+import { directoryExists, fileExists,
+	getFilesInDirectories, getFilesInDirectory,
+	getRxFilesInDirectories, pathDoesNotExist,
+	pathExists } from "./paths";
 import { indentLine, sanitizeCodeLine, sanitizeRxLine } from "./sanitize";
 
 
