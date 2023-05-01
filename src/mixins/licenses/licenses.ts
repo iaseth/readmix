@@ -5,4 +5,5 @@ export { gnuGplLicense, gnuLgplLicense } from './gpl';
 export { iscLicense } from './isc';
 export { mitLicense } from "./mit";
 export { msplLicense } from './microsoft';
+export { mplLicense } from './mozilla';
 export { zlibLicense } from './zlib';
