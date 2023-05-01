@@ -1,7 +1,7 @@
 
 
 
-export function insertApache2License (name: string, year: string="") : string {
+export function apache2License (name: string, year: string="") : string {
 	const header = year ? `${year} ${name}` : name;
 	const licenseText = `Copyright ${header}
 

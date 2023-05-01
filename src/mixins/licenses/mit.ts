@@ -1,7 +1,7 @@
 
 
 
-export function insertMitLicense (name: string, year: string="") : string {
+export function mitLicense (name: string, year: string="") : string {
 	const header = year ? `${year} ${name}` : name;
 	const licenseText = `MIT License
 

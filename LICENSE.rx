@@ -1,1 +1,1 @@
-{{ insertMitLicense("Ankur Seth") }}
+{{ mitLicense("Ankur Seth") }}

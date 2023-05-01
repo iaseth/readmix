@@ -1,6 +1,6 @@
 import { extras } from './extras';
 import { gh } from './gh';
-import { insertMitLicense } from './licenses';
+import { apache2License, mitLicense } from './licenses';
 import { giveCredit } from './meta';
 import { npm } from './npm';
 import { dependencyTable, devDependencyTable } from './packagejson';
@@ -20,5 +20,6 @@ export const mixins = {
 	dependencyTable,
 	devDependencyTable,
 
-	insertMitLicense,
+	apache2License,
+	mitLicense,
 };

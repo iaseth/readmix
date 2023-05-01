@@ -1,3 +1,3 @@
 
-export { insertApache2License } from './apache';
-export { insertMitLicense } from "./mit";
+export { apache2License } from './apache';
+export { mitLicense } from "./mit";
