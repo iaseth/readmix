@@ -125,7 +125,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | `filters` | `Object [16]` |
 | `flags` | `Object [17]` |
 | `helpers` | `Object [19]` |
-| `mixins` | `Object [10]` |
+| `mixins` | `Object [21]` |
 | `sugars` | `Object [3]` |
 | `utils` | `Object [1]` |
 | `descriptions` | `Object [4]` |
@@ -181,7 +181,18 @@ In addition to props, the `Rx` object also contains a `mixins` object with the f
 | `dependencyTable()` | 0 |
 | `devDependencyTable()` | 0 |
 | `apache2License()` | 1 |
+| `bsd2License()` | 1 |
+| `bsd3License()` | 1 |
+| `cclLicense()` | 0 |
+| `epl1License()` | 0 |
+| `epl2License()` | 0 |
+| `gnuGplLicense()` | 1 |
+| `gnuLgplLicense()` | 1 |
+| `iscLicense()` | 1 |
 | `mitLicense()` | 1 |
+| `mplLicense()` | 0 |
+| `msplLicense()` | 0 |
+| `zlibLicense()` | 1 |
 
 
 Every `function` on the `Rx.mixins` object is also available globally.
