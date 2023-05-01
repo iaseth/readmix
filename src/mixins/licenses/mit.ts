@@ -1,10 +1,11 @@
 
 
 
-export function insertMitLicense (name: string) : string {
+export function insertMitLicense (name: string, year: string="") : string {
+	const header = year ? `${year} ${name}` : name;
 	const licenseText = `MIT License
 
-Copyright (c) ${name}.
+Copyright (c) ${header}.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
