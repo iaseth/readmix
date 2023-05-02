@@ -1,2 +1,0 @@
-
-export { rx } from './rxMixins';

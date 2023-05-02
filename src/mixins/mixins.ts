@@ -4,14 +4,13 @@ import { apache2License, bsd2License, bsd3License, cclLicense, epl1License, epl2
 import { giveCredit } from './meta';
 import { npm } from './npm';
 import { dependencyTable, devDependencyTable } from './packagejson';
-import { rx } from './rx';
+import { std } from './std';
 import { arrayTable, objectTable, table } from './table';
 
 
 
 export const mixins = {
-	rx,
-	std: rx,
+	std,
 	extras,
 	gh,
 	npm,

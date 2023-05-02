@@ -5,7 +5,7 @@ import { GithubRepoLink } from './gh';
 import { Indent } from './indent';
 import { NpmPackageLink } from './npm';
 import { Print, PrintFiltersTable, PrintFunctionsTable, PrintPropsTable } from './print';
-import { RX } from './rx';
+import { STD } from './std';
 import { Table } from './table';
 
 
@@ -20,8 +20,7 @@ export const filters = {
 	// T: Table,
 	// I: Indent,
 
-	RX,
-	STD: RX,
+	STD,
 	Extras,
 
 	Print,
