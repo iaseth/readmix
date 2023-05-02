@@ -1,2 +1,2 @@
 
-export { STD } from './std';
+export { Std } from './std';

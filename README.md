@@ -178,12 +178,12 @@ You can use the `File` filter to include the contents of your `LICENSE` file ins
 In addition to props, the `Rx` object also contains a `mixins` object with the following `mixins`:
 | Function | Args |
 | --- | --- |
-| `giveCredit()` | 0 |
-| `dependencyTable()` | 0 |
-| `devDependencyTable()` | 0 |
 | `arrayTable()` | 2 |
 | `objectTable()` | 1 |
 | `table()` | 0 |
+| `giveCredit()` | 0 |
+| `dependencyTable()` | 0 |
+| `devDependencyTable()` | 0 |
 | `apache2License()` | 1 |
 | `bsd2License()` | 1 |
 | `bsd3License()` | 1 |

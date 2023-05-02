@@ -1,9 +1,9 @@
-import { Readmix } from "../readmix";
-import { objectTable } from "./table";
+import { Readmix } from "../../readmix";
+import { objectTable } from "../table";
 
 
 
-export function dependencyTable () {
+function dependencyTable () {
 	if (!Readmix.packageJson) {
 		return "`packageJson` NOT Found!";
 	} else if (!Readmix.packageJson.dependencies) {
@@ -13,7 +13,7 @@ export function dependencyTable () {
 	}
 }
 
-export function devDependencyTable () {
+function devDependencyTable () {
 	if (!Readmix.packageJson) {
 		return "`packageJson` NOT Found!";
 	} else if (!Readmix.packageJson.devDependencies) {
@@ -22,3 +22,8 @@ export function devDependencyTable () {
 		return objectTable(Readmix.packageJson.devDependencies, ["`Package`", "`Version`"]);
 	}
 }
+
+export const packagejson = {
+	dependencyTable,
+	devDependencyTable,
+};

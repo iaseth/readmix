@@ -1,4 +1,4 @@
 
 
 
-export const STD = {};
+export const Std = {};
