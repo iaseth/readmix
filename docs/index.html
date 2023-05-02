@@ -58,22 +58,18 @@
 <p>To compile all <code>rx</code> files in the current directory:</p>
 <pre><code>readmix --compile --markdown .
 </code></pre>
+<p>To compile all <code>rx</code> files in the current directory and all subdirectories:</p>
+<pre><code>readmix --compile --markdown --recursive .
+</code></pre>
 <p>To compile your <code>README.rx</code> to <code>HTML</code>:</p>
 <pre><code>readmix --compile --html README.rx
 </code></pre>
 <p>To run a preview server for all <code>rx</code> files in the current directory:</p>
 <pre><code>readmix --preview .
 </code></pre>
+<p>Not you can open <a href="http://127.0.0.1:1996/">http://127.0.0.1:1996/</a> is your browser to see how your <code>rx</code> will look after compilation.</p>
 <h2 id="features">Features</h2>
 <ul>
-<li><p>Allows you to write comments in your <code>markdown</code> files:</p>
-<p>  First way to add comments:</p>
-<pre><code>// This is a comment.
-</code></pre>
-<p>  Another way to add comments:</p>
-<pre><code>:: This is another comment.
-</code></pre>
-</li>
 <li><p>Easily insert the contents of any file inside your <code>README</code>:</p>
 <p>  This will insert the contents of your <code>LICENSE</code> file:</p>
 <pre><code>{{ &quot;LICENSE&quot; | File }}
@@ -91,6 +87,14 @@
 <pre><code>{{ packageLockJson.name }}
 </code></pre>
 <p>  <code>packageJson</code> and <code>packageLockJson</code> are available in every <code>rx</code> file assuming the corresponding <code>JSON</code> files are present.</p>
+</li>
+<li><p>Allows you to write comments in your <code>markdown</code> files:</p>
+<p>  First way to add comments:</p>
+<pre><code>// This is a comment.
+</code></pre>
+<p>  Another way to add comments:</p>
+<pre><code>:: This is another comment.
+</code></pre>
 </li>
 </ul>
 <h2 id="flags">Flags</h2>
@@ -208,7 +212,7 @@
 </tr>
 <tr>
 <td><code>filters</code></td>
-<td><code>Object [13]</code></td>
+<td><code>Object [16]</code></td>
 </tr>
 <tr>
 <td><code>flags</code></td>
@@ -220,7 +224,7 @@
 </tr>
 <tr>
 <td><code>mixins</code></td>
-<td><code>Object [4]</code></td>
+<td><code>Object [24]</code></td>
 </tr>
 <tr>
 <td><code>sugars</code></td>
@@ -346,7 +350,67 @@ So, you can just write <code>appName</code> instead of <code>Rx.appName</code>.<
 <td>0</td>
 </tr>
 <tr>
-<td><code>insertMitLicense()</code></td>
+<td><code>arrayTable()</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>objectTable()</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>table()</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>apache2License()</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>bsd2License()</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>bsd3License()</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>cclLicense()</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>epl1License()</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>epl2License()</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>gnuGplLicense()</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>gnuLgplLicense()</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>iscLicense()</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>mitLicense()</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>mplLicense()</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>msplLicense()</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>zlibLicense()</code></td>
 <td>1</td>
 </tr>
 </tbody></table>
