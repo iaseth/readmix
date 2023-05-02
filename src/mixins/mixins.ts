@@ -5,6 +5,7 @@ import { giveCredit } from './meta';
 import { npm } from './npm';
 import { dependencyTable, devDependencyTable } from './packagejson';
 import { rx } from './rx';
+import { arrayTable, objectTable, table } from './table';
 
 
 
@@ -19,6 +20,10 @@ export const mixins = {
 
 	dependencyTable,
 	devDependencyTable,
+
+	arrayTable,
+	objectTable,
+	table,
 
 	apache2License,
 	bsd2License,

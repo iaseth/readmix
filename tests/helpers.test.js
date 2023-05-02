@@ -4,81 +4,87 @@ const { helpers } = readmix;
 
 
 test("isSingleFlag", () => {
-	expect(helpers.isSingleFlag("-A")).toBe(true);
-	expect(helpers.isSingleFlag("-F")).toBe(true);
-	expect(helpers.isSingleFlag("-f")).toBe(true);
+	const { isSingleFlag } = helpers;
+	expect(isSingleFlag("-A")).toBe(true);
+	expect(isSingleFlag("-F")).toBe(true);
+	expect(isSingleFlag("-f")).toBe(true);
 
-	expect(helpers.isSingleFlag("--foo")).toBe(false);
-	expect(helpers.isSingleFlag("foo")).toBe(false);
-	expect(helpers.isSingleFlag("-")).toBe(false);
+	expect(isSingleFlag("--foo")).toBe(false);
+	expect(isSingleFlag("foo")).toBe(false);
+	expect(isSingleFlag("-")).toBe(false);
 });
 
 test("isDoubleFlag", () => {
-	expect(helpers.isDoubleFlag("--preview")).toBe(true);
-	expect(helpers.isDoubleFlag("--Foo")).toBe(true);
-	expect(helpers.isDoubleFlag("--x")).toBe(true);
+	const { isDoubleFlag } = helpers;
+	expect(isDoubleFlag("--preview")).toBe(true);
+	expect(isDoubleFlag("--Foo")).toBe(true);
+	expect(isDoubleFlag("--x")).toBe(true);
 
-	expect(helpers.isDoubleFlag("-foo")).toBe(false);
-	expect(helpers.isDoubleFlag("foo")).toBe(false);
-	expect(helpers.isDoubleFlag("--")).toBe(false);
+	expect(isDoubleFlag("-foo")).toBe(false);
+	expect(isDoubleFlag("foo")).toBe(false);
+	expect(isDoubleFlag("--")).toBe(false);
 });
 
 test("isTripleFlag", () => {
-	expect(helpers.isTripleFlag("---preview")).toBe(true);
-	expect(helpers.isTripleFlag("---Foo")).toBe(true);
-	expect(helpers.isTripleFlag("---x")).toBe(true);
+	const { isTripleFlag } = helpers;
+	expect(isTripleFlag("---preview")).toBe(true);
+	expect(isTripleFlag("---Foo")).toBe(true);
+	expect(isTripleFlag("---x")).toBe(true);
 
-	expect(helpers.isTripleFlag("-foo")).toBe(false);
-	expect(helpers.isTripleFlag("--foo")).toBe(false);
-	expect(helpers.isTripleFlag("-")).toBe(false);
-	expect(helpers.isTripleFlag("--")).toBe(false);
-	expect(helpers.isTripleFlag("---")).toBe(false);
+	expect(isTripleFlag("-foo")).toBe(false);
+	expect(isTripleFlag("--foo")).toBe(false);
+	expect(isTripleFlag("-")).toBe(false);
+	expect(isTripleFlag("--")).toBe(false);
+	expect(isTripleFlag("---")).toBe(false);
 });
 
 
 
 test("isComment", () => {
-	expect(helpers.isComment({text: "// Comment"})).toBe(true);
-	expect(helpers.isComment({text: "  // Comment"})).toBe(true);
-	expect(helpers.isComment({text: "\t// Comment"})).toBe(true);
+	const { isComment } = helpers;
+	expect(isComment({text: "// Comment"})).toBe(true);
+	expect(isComment({text: "  // Comment"})).toBe(true);
+	expect(isComment({text: "\t// Comment"})).toBe(true);
 
-	expect(helpers.isComment({text: ":: Comment"})).toBe(true);
-	expect(helpers.isComment({text: "  :: Comment"})).toBe(true);
-	expect(helpers.isComment({text: "\t:: Comment"})).toBe(true);
+	expect(isComment({text: ":: Comment"})).toBe(true);
+	expect(isComment({text: "  :: Comment"})).toBe(true);
+	expect(isComment({text: "\t:: Comment"})).toBe(true);
 
-	expect(helpers.isComment({text: "  "})).toBe(false);
-	expect(helpers.isComment({text: "\t"})).toBe(false);
-	expect(helpers.isComment({text: "$"})).toBe(false);
-	expect(helpers.isComment({text: "Foo"})).toBe(false);
+	expect(isComment({text: "  "})).toBe(false);
+	expect(isComment({text: "\t"})).toBe(false);
+	expect(isComment({text: "$"})).toBe(false);
+	expect(isComment({text: "Foo"})).toBe(false);
 });
 
 test("isNotAComment", () => {
-	expect(helpers.isNotAComment({text: "// Comment"})).toBe(false);
-	expect(helpers.isNotAComment({text: "  // Comment"})).toBe(false);
-	expect(helpers.isNotAComment({text: "\t// Comment"})).toBe(false);
+	const { isNotAComment } = helpers;
+	expect(isNotAComment({text: "// Comment"})).toBe(false);
+	expect(isNotAComment({text: "  // Comment"})).toBe(false);
+	expect(isNotAComment({text: "\t// Comment"})).toBe(false);
 
-	expect(helpers.isNotAComment({text: ":: Comment"})).toBe(false);
-	expect(helpers.isNotAComment({text: "  :: Comment"})).toBe(false);
-	expect(helpers.isNotAComment({text: "\t:: Comment"})).toBe(false);
+	expect(isNotAComment({text: ":: Comment"})).toBe(false);
+	expect(isNotAComment({text: "  :: Comment"})).toBe(false);
+	expect(isNotAComment({text: "\t:: Comment"})).toBe(false);
 
-	expect(helpers.isNotAComment({text: "  "})).toBe(true);
-	expect(helpers.isNotAComment({text: "\t"})).toBe(true);
-	expect(helpers.isNotAComment({text: "$"})).toBe(true);
-	expect(helpers.isNotAComment({text: "Foo"})).toBe(true);
+	expect(isNotAComment({text: "  "})).toBe(true);
+	expect(isNotAComment({text: "\t"})).toBe(true);
+	expect(isNotAComment({text: "$"})).toBe(true);
+	expect(isNotAComment({text: "Foo"})).toBe(true);
 });
 
 test("isSugar", () => {
-	expect(helpers.isSugar({text: "// Comment"})).toBe(false);
-	expect(helpers.isSugar({text: "  // Comment"})).toBe(false);
-	expect(helpers.isSugar({text: "\t// Comment"})).toBe(false);
+	const { isSugar } = helpers;
+	expect(isSugar({text: "// Comment"})).toBe(false);
+	expect(isSugar({text: "  // Comment"})).toBe(false);
+	expect(isSugar({text: "\t// Comment"})).toBe(false);
 
-	expect(helpers.isSugar({text: ":: Comment"})).toBe(false);
-	expect(helpers.isSugar({text: "  :: Comment"})).toBe(false);
-	expect(helpers.isSugar({text: "\t:: Comment"})).toBe(false);
+	expect(isSugar({text: ":: Comment"})).toBe(false);
+	expect(isSugar({text: "  :: Comment"})).toBe(false);
+	expect(isSugar({text: "\t:: Comment"})).toBe(false);
 
-	expect(helpers.isSugar({text: " $ Foo"})).toBe(true);
-	expect(helpers.isSugar({text: " => Foo"})).toBe(true);
-	expect(helpers.isSugar({text: " -> Foo"})).toBe(true);
+	expect(isSugar({text: " $ Foo"})).toBe(true);
+	expect(isSugar({text: " => Foo"})).toBe(true);
+	expect(isSugar({text: " -> Foo"})).toBe(true);
 });
 
 

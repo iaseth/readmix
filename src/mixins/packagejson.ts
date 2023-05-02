@@ -1,5 +1,5 @@
-import { PrintPropsTable } from "../filters/print";
 import { Readmix } from "../readmix";
+import { objectTable } from "./table";
 
 
 
@@ -9,7 +9,7 @@ export function dependencyTable () {
 	} else if (!Readmix.packageJson.dependencies) {
 		return "`packageJson.dependencies` NOT Found!";
 	} else {
-		return PrintPropsTable(Readmix.packageJson.dependencies, ["Package", "Version"]);
+		return objectTable(Readmix.packageJson.dependencies, ["Package", "Version"]);
 	}
 }
 
@@ -19,6 +19,6 @@ export function devDependencyTable () {
 	} else if (!Readmix.packageJson.devDependencies) {
 		return "`packageJson.devDependencies` NOT Found!";
 	} else {
-		return PrintPropsTable(Readmix.packageJson.devDependencies, ["Package", "Version"]);
+		return objectTable(Readmix.packageJson.devDependencies, ["Package", "Version"]);
 	}
 }
