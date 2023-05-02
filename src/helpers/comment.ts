@@ -25,6 +25,13 @@ export function isContent (line: RxFileLine) : boolean {
 	return !isCode(line) && !isComment(line);
 }
 
+export function isHeading (line: RxFileLine) : boolean {
+	if (line.text.startsWith("#")) {
+		return true;
+	}
+	return false;
+}
+
 export function isSugar (line: RxFileLine) : boolean {
 	const text = line.text.trimStart();
 	for (const prefix of SUGAR_PREFIXES) {

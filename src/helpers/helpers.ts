@@ -1,5 +1,5 @@
 import { isDoubleFlag, isNotFlag, isSingleFlag, isTripleFlag } from "./args";
-import { isCode, isComment, isContent, isNotAComment, isSugar } from "./comment";
+import { isCode, isComment, isContent, isHeading, isNotAComment, isSugar } from "./comment";
 import { directoryExists, fileExists,
 	getFilesInDirectories, getFilesInDirectory,
 	getRxFilesInDirectories, pathDoesNotExist,
@@ -27,6 +27,7 @@ export const helpers = {
 	isNotAComment,
 	isCode,
 	isContent,
+	isHeading,
 	isSugar,
 
 	indentLine,

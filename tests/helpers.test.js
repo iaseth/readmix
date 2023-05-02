@@ -87,4 +87,19 @@ test("isSugar", () => {
 	expect(isSugar({text: " -> Foo"})).toBe(true);
 });
 
+test("isHeading", () => {
+	const { isHeading } = helpers;
+	expect(isHeading({text: "// Foo"})).toBe(false);
+	expect(isHeading({text: "  // Foo"})).toBe(false);
+	expect(isHeading({text: "\t// Foo"})).toBe(false);
+
+	expect(isHeading({text: ":: Foo"})).toBe(false);
+	expect(isHeading({text: "  :: Foo"})).toBe(false);
+	expect(isHeading({text: "\t:: Foo"})).toBe(false);
+
+	expect(isHeading({text: "# Foo"})).toBe(true);
+	expect(isHeading({text: "## Foo"})).toBe(true);
+	expect(isHeading({text: "###### Foo"})).toBe(true);
+});
+
 
