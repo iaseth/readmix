@@ -13,6 +13,9 @@ export const mixins = {
 	std,
 	extras,
 
+	...std,
+	...extras,
+
 	gh,
 	npm,
 
