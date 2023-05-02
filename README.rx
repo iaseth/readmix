@@ -69,9 +69,7 @@ Not you can open [http://127.0.0.1:1996/](http://127.0.0.1:1996/) is your browse
 
 The  `readmix` command accepts the following command line options:
 
-| Short | Long | Description |
-| --- | --- | --- |{% for flag in Rx.flags %}
-| `{{ flag.singleFlag }}` | `{{ flag.doubleFlag }}` | {{ flag.description }} |{% endfor %}
+{{ arrayTable(Rx.flags, {singleFlag: "`Short`", doubleFlag: "`Long`", description: "Description"}) }}
 
 
 

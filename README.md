@@ -93,25 +93,26 @@ Not you can open [http://127.0.0.1:1996/](http://127.0.0.1:1996/) is your browse
 
 The  `readmix` command accepts the following command line options:
 
-| Short | Long | Description |
-| --- | --- | --- |
-| `-A` | `--api` | Run the Readmix JSON API. |
-| `-C` | `--compile` | Compile to Markdown. |
-| `-D` | `--debug` | Turns debug mode ON. |
-| `-F` | `--force` | Force update files. |
-| `-H` | `--html` | Compile to HTML. |
-| `-I` | `--init` | Initialize readmix in directory, creates rxconfig.json with default options. |
-| `-L` | `--list` | List all input files. |
-| `-M` | `--markdown` | Compile to Markdown. |
-| `-O` | `--open` | Open live preview in default web browser. |
-| `-P` | `--preview` | Run a live preview server. |
-| `-Q` | `--quiet` | Turns quiet mode ON. |
-| `-R` | `--recursive` | Select subdirectories recursively. |
-| `-S` | `--status` | Print status. |
-| `-V` | `--version` | Print version. |
-| `-W` | `--watch` | Watch input files for changes. |
-| `-X` | `--experimental` | Turns experimental mode ON. |
-| `-Z` | `--zen` | Turns zen mode ON. |
+| `Short`   | `Long`           | Description                                                                  |
+| --------- | ---------------- | ---------------------------------------------------------------------------- |
+| `-A`      | `--api`          | Run the Readmix JSON API.                                                    |
+| `-C`      | `--compile`      | Compile to Markdown.                                                         |
+| `-D`      | `--debug`        | Turns debug mode ON.                                                         |
+| `-F`      | `--force`        | Force update files.                                                          |
+| `-H`      | `--html`         | Compile to HTML.                                                             |
+| `-I`      | `--init`         | Initialize readmix in directory, creates rxconfig.json with default options. |
+| `-L`      | `--list`         | List all input files.                                                        |
+| `-M`      | `--markdown`     | Compile to Markdown.                                                         |
+| `-O`      | `--open`         | Open live preview in default web browser.                                    |
+| `-P`      | `--preview`      | Run a live preview server.                                                   |
+| `-Q`      | `--quiet`        | Turns quiet mode ON.                                                         |
+| `-R`      | `--recursive`    | Select subdirectories recursively.                                           |
+| `-S`      | `--status`       | Print status.                                                                |
+| `-V`      | `--version`      | Print version.                                                               |
+| `-W`      | `--watch`        | Watch input files for changes.                                               |
+| `-X`      | `--experimental` | Turns experimental mode ON.                                                  |
+| `-Z`      | `--zen`          | Turns zen mode ON.                                                           |
+
 
 
 
@@ -180,7 +181,7 @@ In addition to props, the `Rx` object also contains a `mixins` object with the f
 | `giveCredit()` | 0 |
 | `dependencyTable()` | 0 |
 | `devDependencyTable()` | 0 |
-| `arrayTable()` | 1 |
+| `arrayTable()` | 2 |
 | `objectTable()` | 1 |
 | `table()` | 0 |
 | `apache2License()` | 1 |
@@ -211,32 +212,32 @@ You can use the `giveCredit()` mixin to include a section giving credit to `Read
 
 
 ## Dependencies
-| Package    | Version   |
-| ---------- | --------- |
-| `cors`     | `^2.8.5`  |
-| `express`  | `^4.18.2` |
-| `ini`      | `^4.1.0`  |
-| `js-yaml`  | `^4.1.0`  |
-| `json5`    | `^2.2.3`  |
-| `marked`   | `^4.3.0`  |
-| `nunjucks` | `^3.2.4`  |
-| `toml`     | `^3.0.0`  |
+| `Package`   | `Version`   |
+| ----------- | ----------- |
+| `cors`      | `^2.8.5`    |
+| `express`   | `^4.18.2`   |
+| `ini`       | `^4.1.0`    |
+| `js-yaml`   | `^4.1.0`    |
+| `json5`     | `^2.2.3`    |
+| `marked`    | `^4.3.0`    |
+| `nunjucks`  | `^3.2.4`    |
+| `toml`      | `^3.0.0`    |
 
 
 
 ## Dev dependencies
-| Package            | Version    |
-| ------------------ | ---------- |
-| `@types/cors`      | `^2.8.13`  |
-| `@types/express`   | `^4.17.17` |
-| `@types/marked`    | `^4.0.8`   |
-| `@types/node`      | `^18.16.0` |
-| `@types/nunjucks`  | `^3.2.2`   |
-| `autoprefixer`     | `^10.4.14` |
-| `html-color-names` | `^0.3.2`   |
-| `jest`             | `^29.5.0`  |
-| `postcss`          | `^8.4.23`  |
-| `tailwindcss`      | `^3.3.2`   |
+| `Package`          | `Version`   |
+| ------------------ | ----------- |
+| `@types/cors`      | `^2.8.13`   |
+| `@types/express`   | `^4.17.17`  |
+| `@types/marked`    | `^4.0.8`    |
+| `@types/node`      | `^18.16.0`  |
+| `@types/nunjucks`  | `^3.2.2`    |
+| `autoprefixer`     | `^10.4.14`  |
+| `html-color-names` | `^0.3.2`    |
+| `jest`             | `^29.5.0`   |
+| `postcss`          | `^8.4.23`   |
+| `tailwindcss`      | `^3.3.2`    |
 
 
 
