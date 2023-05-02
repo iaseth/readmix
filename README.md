@@ -125,7 +125,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | `commands` | `Object [8]` |
 | `filters` | `Object [16]` |
 | `flags` | `Object [17]` |
-| `helpers` | `Object [19]` |
+| `helpers` | `Object [20]` |
 | `mixins` | `Object [24]` |
 | `sugars` | `Object [3]` |
 | `utils` | `Object [1]` |

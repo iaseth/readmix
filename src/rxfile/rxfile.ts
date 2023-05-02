@@ -77,16 +77,19 @@ export class RxFile {
 		return contentText;
 	}
 
+	renderString () {
+		const outputFileText = renderString(this);
+		return outputFileText;
+	}
+
 	compileMarkdown (forceUpdate=false) {
-		console.log(`Input: ${this.inputFilepath}`);
-	
-		const outputFileText = renderString(this.contentText);
-		fs.writeFileSync(this.outputFilepath, outputFileText);
+		console.log(`Input: ${this.inputFilepath}`);	
+		fs.writeFileSync(this.outputFilepath, this.renderString());
 		console.log(`\tsaved: ${this.outputFilepath}`);
 	}
 
 	compileHtml (forceUpdate=false) {
-		const markdownText = renderString(this.contentText);
+		const markdownText = this.renderString();
 		const htmlText = marked.parse(markdownText);
 		const text = rxEnv.docpageTemplate.render({
 			entry: this,
@@ -98,7 +101,7 @@ export class RxFile {
 	}
 
 	renderMarkdownString () {
-		const markdownText = renderString(this.contentText);
+		const markdownText = this.renderString();
 		return markdownText;
 	}
 
