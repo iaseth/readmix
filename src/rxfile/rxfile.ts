@@ -92,19 +92,28 @@ export class RxFile {
 		return contentText;
 	}
 
-	renderString () {
+	renderString () : string|null {
 		const outputFileText = renderString(this);
 		return outputFileText;
 	}
 
 	compileMarkdown (forceUpdate=false) {
-		console.log(`Input: ${this.inputFilepath}`);	
-		fs.writeFileSync(this.outputFilepath, this.renderString());
-		console.log(`\tsaved: ${this.outputFilepath}`);
+		console.log(`Input: ${this.inputFilepath}`);
+		const outputFileText = this.renderString();
+		if (outputFileText) {
+			fs.writeFileSync(this.outputFilepath, outputFileText);
+			console.log(`\tsaved: ${this.outputFilepath}`);
+		} else {
+			console.log(`\tError happened while rendering!`);
+		}
 	}
 
 	compileHtml (forceUpdate=false) {
 		const markdownText = this.renderString();
+		if (markdownText === null) {
+			return;
+		}
+
 		const htmlText = marked.parse(markdownText);
 		const text = rxEnv.docpageTemplate.render({
 			entry: this,
@@ -122,6 +131,10 @@ export class RxFile {
 
 	renderHtmlString () {
 		const markdownText = this.renderMarkdownString();
+		if (markdownText === null) {
+			return "Error happened during rendering!";
+		}
+
 		const htmlText = marked.parse(markdownText);
 		return htmlText;
 	}
