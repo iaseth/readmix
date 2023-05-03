@@ -33,7 +33,7 @@ export class RxFile {
 
 		this.basepath = inputFilepath.slice(0, -3);
 		this.pageURL = `rx/${this.basepath}`;
-		this.outputFilepath = this.basepath + ".md";
+		this.outputFilepath = this.basepath;
 		this.htmlFilepath = this.basepath + ".html";
 		this.pdfFilepath = this.basepath + ".pdf";
 	}

@@ -20,9 +20,6 @@ export const filters = {
 	// T: Table,
 	// I: Indent,
 
-	Std,
-	Extras,
-
 	Print,
 
 	PrintPropsTable,
@@ -41,4 +38,8 @@ export const filters = {
 	GithubRepoLink,
 	NpmLink,
 	NpmPackageLink,
+
+	// putting most important entries at the last to ensure they are not overwritten
+	Std,
+	Extras,
 };

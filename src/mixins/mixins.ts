@@ -10,15 +10,6 @@ import { arrayTable, objectTable, table } from './table';
 
 
 export const mixins = {
-	std,
-	extras,
-
-	...std,
-	...extras,
-
-	gh,
-	npm,
-
 	arrayTable,
 	objectTable,
 	table,
@@ -26,4 +17,14 @@ export const mixins = {
 	...meta,
 	...packagejson,
 	...licenses,
+
+	...std,
+	...extras,
+
+	gh,
+	npm,
+
+	// putting most important entries at the last to ensure they are not overwritten
+	std,
+	extras,
 };
