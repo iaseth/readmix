@@ -38,6 +38,21 @@ export class RxFile {
 		this.pdfFilepath = this.basepath + ".pdf";
 	}
 
+	getInputFileMTime () {
+		return helpers.getFileMtime(this.inputFilepath);
+	}
+
+	getOutputFileMTime () {
+		return helpers.getFileMtime(this.outputFilepath);
+	}
+
+	needsUpdate () {
+		if (this.getInputFileMTime() > this.getOutputFileMTime()) {
+			return true;
+		}
+		return false;
+	}
+
 	splitFile () : RxFileLine[][] {
 		const { inputFilepath } = this;
 		if (!inputFilepath.endsWith(".rx")) {
@@ -109,5 +124,19 @@ export class RxFile {
 		const markdownText = this.renderMarkdownString();
 		const htmlText = marked.parse(markdownText);
 		return htmlText;
+	}
+
+	watch () {
+		const self = this;
+		fs.watch(this.inputFilepath, function (event, filename) {
+			if (filename) {
+				console.log('File changed on disk: ' + filename);
+				if (self.needsUpdate()) {
+					self.compileMarkdown();
+				}
+			} else {
+				console.log("Filename not provided!");
+			}
+		});
 	}
 }

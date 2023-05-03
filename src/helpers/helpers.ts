@@ -2,6 +2,7 @@ import { isDoubleFlag, isNotFlag, isSingleFlag, isTripleFlag } from "./args";
 import { isCode, isComment, isContent, isHeading, isNotAComment, isSugar } from "./comment";
 import { directoryExists, fileExists,
 	getFilesInDirectories, getFilesInDirectory,
+	getFileMtime,
 	getRxFilesInDirectories, pathDoesNotExist,
 	pathExists } from "./paths";
 import { indentLine, sanitizeCodeLine, sanitizeRxLine } from "./sanitize";
@@ -18,6 +19,7 @@ export const helpers = {
 	pathDoesNotExist,
 	fileExists,
 	directoryExists,
+	getFileMtime,
 
 	getFilesInDirectory,
 	getFilesInDirectories,

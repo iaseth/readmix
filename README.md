@@ -160,7 +160,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | `commands` | `Object [8]` |
 | `filters` | `Object [15]` |
 | `flags` | `Object [17]` |
-| `helpers` | `Object [20]` |
+| `helpers` | `Object [21]` |
 | `mixins` | `Object [23]` |
 | `sugars` | `Object [3]` |
 | `utils` | `Object [1]` |

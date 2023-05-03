@@ -33,6 +33,15 @@ export function directoryExists (pathArg: string) : boolean {
 }
 
 
+
+export function getFileMtime (filepath: string) {
+	const stat = fs.lstatSync(filepath);
+	const mtime = stat.isFile() ? stat.mtime : 0;
+	return mtime;
+}
+
+
+
 export function getFilesInDirectory (dirpath: string, recursive=false) : string[] {
 	if (pathDoesNotExist(dirpath)) {
 		return [];
