@@ -16,15 +16,15 @@ export function arrayTable (arr: ObjectType[], headerObject: ObjectType) : strin
 export function objectTable (
 	obj: ObjectType,
 	header: string[] = ["`Key`", "`Value`"],
-	index: boolean = false
-	) : string {
+) : string {
 	const rows = Object.keys(obj).map((k, idx) => {
-		if (index) {
+		if (header.length === 3) {
 			return [`${idx+1}`, k, obj[k]];
 		} else {
 			return [k, obj[k]];
 		}
 	});
+
 	return tableInternal(rows, header);
 }
 
