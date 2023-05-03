@@ -25,6 +25,6 @@ export const mixins = {
 	npm,  // npm/node mixins
 
 	// putting most important entries at the last to ensure they are not overwritten
-	std,
-	extras,
+	std,       // readmix standard mixins library
+	extras,    // readmix extras mixins library
 };
