@@ -18,10 +18,13 @@ Now you should be able to run the `readmix` command in your terminal.
 
 
 ## Usage
-To compile your `README.rx`:
+To compile your `README.rx` to `README`:
 ```
 readmix --compile --markdown README.rx
 ```
+
+If you want the output file to be called `README.md`, you should name the input file as `README.md.rx`.
+Readmix will only compile files that end with the `rx` extension.
 
 To compile all `rx` files in the current directory:
 ```
