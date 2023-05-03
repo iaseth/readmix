@@ -1,2 +1,2 @@
 
-export * from './gh';
+export { Gh } from './gh';

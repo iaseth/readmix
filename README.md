@@ -177,10 +177,10 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | --- | --- |
 | `appName` | `Readmix` |
 | `commands` | `Object [8]` |
-| `filters` | `Object [15]` |
+| `filters` | `Object [17]` |
 | `flags` | `Object [17]` |
 | `helpers` | `Object [22]` |
-| `mixins` | `Object [22]` |
+| `mixins` | `Object [23]` |
 | `sugars` | `Object [3]` |
 | `utils` | `Object [1]` |
 | `descriptions` | `Object [4]` |
@@ -211,9 +211,7 @@ In addition to default filters in `nunjucks`, `Readmix` provides you with these 
 | `CodeBlock` | 0 |
 | `Indent` | 0 |
 | `GithubLink` | 0 |
-| `GithubRepoLink` | 0 |
 | `NpmLink` | 0 |
-| `NpmPackageLink` | 0 |
 
 Each `filter` is available globally.
 

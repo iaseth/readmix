@@ -1,2 +1,2 @@
 
-export * from './npm';
+export { Npm } from './npm';
