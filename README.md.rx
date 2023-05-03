@@ -15,12 +15,40 @@ Now you should be able to run the `readmix` command in your terminal.
 
 
 
+## Getting started
+To get started with `Readmix`, create a file called `LICENSE.rx` in your current directory.
+Put the following text in that file:
+=> {{ mitLicense("Ankur Seth") }}
+Here `mitLicense` is a mixin. A `mixin` is just a `JavaScript` function that returns a `string`.
+This particular `mixin` is used to insert the `MIT License` in your name.
+`Readmix` contains similar `mixins` like `apache2License` and `gnuGplLicense` to insert any popular license in your file.
+Most of the license `mixins` accept 2 `args`, `Name` and `Year`.
+
+Now, you can compile the file with the following command:
+=> readmix --compile --markdown LICENSE.rx
+This will output a file called `LICENSE` containing the `MIT License` with your name in it.
+
+
+
+## Filename conventions
+All readmix files end with the `.rx` entension. Readmix will only compile files that end with the `.rx` extension.
+The output file will have the same filename but with the `.rx` removed.
+
+| Input Filename | Output Filename |
+| -------------- | --------------- |
+| `README.md.rx` | `README.md`     |
+| `LICENSE.rx`   | `LICENSE`       |
+
+While the main purpose of `Readmix` is to generate `markdown`, you can use it to generate almost any filetype.
+I often use `Readmix` to generate `.env`, `tex` and `css` files.
+
+
+
 ## Usage
 To compile your `README.rx` to `README`:
 => readmix --compile --markdown README.rx
 
 If you want the output file to be called `README.md`, you should name the input file as `README.md.rx`.
-Readmix will only compile files that end with the `rx` extension.
 
 To compile all `rx` files in the current directory:
 => readmix --compile --markdown .
