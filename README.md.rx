@@ -6,6 +6,10 @@
 You can find the source code at {{ "iaseth/readmix" | GithubLink }}.
 
 
+## Table of contents
+{{ tableofcontents(doc) }}
+
+
 
 ## Installation
 You can install {{ "readmix" | NpmLink }} with the following command:

@@ -6,6 +6,25 @@
 You can find the source code at [`iaseth/readmix`](https://github.com/iaseth/readmix).
 
 
+## Table of contents
+* [readmix](#readmix)
+    * [Table of contents](#table-of-contents)
+    * [Installation](#installation)
+    * [Getting started](#getting-started)
+    * [Filename conventions](#filename-conventions)
+    * [Usage](#usage)
+    * [Features](#features)
+    * [Flags](#flags)
+    * [Props](#props)
+    * [Filters](#filters)
+        * [Example usage](#example-usage)
+    * [Mixins](#mixins)
+        * [Example usage](#example-usage)
+    * [Dependencies](#dependencies)
+    * [Dev dependencies](#dev-dependencies)
+    * [License](#license)
+
+
 
 ## Installation
 You can install [`readmix`](https://www.npmjs.com/package/readmix) with the following command:
@@ -160,8 +179,8 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | `commands` | `Object [8]` |
 | `filters` | `Object [15]` |
 | `flags` | `Object [17]` |
-| `helpers` | `Object [21]` |
-| `mixins` | `Object [23]` |
+| `helpers` | `Object [22]` |
+| `mixins` | `Object [24]` |
 | `sugars` | `Object [3]` |
 | `utils` | `Object [1]` |
 | `descriptions` | `Object [4]` |
@@ -232,6 +251,7 @@ In addition to props, the `Rx` object also contains a `mixins` object with the f
 | `mplLicense()` | 0 |
 | `msplLicense()` | 0 |
 | `zlibLicense()` | 1 |
+| `tableofcontents()` | 1 |
 
 
 Every `function` on the `Rx.mixins` object is also available globally.

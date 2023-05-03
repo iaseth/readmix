@@ -32,6 +32,10 @@ export function isHeading (line: RxFileLine) : boolean {
 	return false;
 }
 
+export function isTopLevel (line: RxFileLine) : boolean {
+	return (line.indent === 0) ? true : false;
+}
+
 export function isSugar (line: RxFileLine) : boolean {
 	const text = line.text.trimStart();
 	for (const prefix of SUGAR_PREFIXES) {

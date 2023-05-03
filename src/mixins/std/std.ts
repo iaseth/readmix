@@ -1,4 +1,7 @@
+import { tableofcontents } from "./tableofcontents";
 
 
 
-export const std = {};
+export const std = {
+	tableofcontents,
+};

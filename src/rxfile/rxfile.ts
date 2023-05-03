@@ -98,6 +98,13 @@ export class RxFile {
 		return contentText;
 	}
 
+	get headers () {
+		const [codeLines, contentLines] = this.splitFile();
+		const headerLines = contentLines.filter(helpers.isTopLevel).filter(helpers.isHeading);
+		const headers = headerLines.map(h => h.text);
+		return headers;
+	}
+
 	renderString () : string|null {
 		const outputFileText = renderString(this);
 		return outputFileText;
