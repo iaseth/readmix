@@ -1,4 +1,4 @@
-import { SPACES } from "../constants";
+import { SPACES } from "../../constants";
 
 
 

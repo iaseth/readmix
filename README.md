@@ -201,13 +201,13 @@ So, you can just write `appName` instead of `Rx.appName`.
 In addition to default filters in `nunjucks`, `Readmix` provides you with these additional `filters`:
 | Filter | Args |
 | --- | --- |
+| `Table` | 0 |
 | `Print` | 0 |
 | `PrintPropsTable` | 0 |
 | `PrintFunctionsTable` | 0 |
 | `PrintFiltersTable` | 0 |
 | `File` | 0 |
 | `CodeFile` | 0 |
-| `Table` | 0 |
 | `CodeBlock` | 0 |
 | `Indent` | 0 |
 | `GithubLink` | 0 |
