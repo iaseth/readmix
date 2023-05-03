@@ -1,5 +1,6 @@
 import { extras } from './extras';
 import { gh } from './gh';
+import { git } from './git';
 import { licenses } from './licenses';
 import { meta } from './meta';
 import { npm } from './npm';
@@ -19,8 +20,9 @@ export const mixins = {
 	...std,
 	...extras,
 
-	gh,
-	npm,
+	gh,   // GitHub mixins
+	git,  // git mixins
+	npm,  // npm/node mixins
 
 	// putting most important entries at the last to ensure they are not overwritten
 	std,
