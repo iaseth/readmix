@@ -20,7 +20,7 @@ function getRowText (row: string[], columnLengths: number[], monoColumns: boolea
 
 export function tableInternal (rows: string[][], header: string[]) : string {
 	const monoColumns = header.map(h => h.startsWith("`") && h.endsWith("`"));
-	const headerengths = header.map(h => h.length);
+	const headerengths = header.map(h => Math.max(h.length, 3));
 	const columnLengthsX = headerengths.map((h, i) => {
 		for (const row of rows) {
 			if (row[i].length > h) {

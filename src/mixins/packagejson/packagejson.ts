@@ -9,7 +9,7 @@ function dependencyTable () {
 	} else if (!Readmix.packageJson.dependencies) {
 		return "`packageJson.dependencies` NOT Found!";
 	} else {
-		return objectTable(Readmix.packageJson.dependencies, ["`Package`", "`Version`"]);
+		return objectTable(Readmix.packageJson.dependencies, ["", "`Package`", "`Version`"], true);
 	}
 }
 
@@ -19,7 +19,7 @@ function devDependencyTable () {
 	} else if (!Readmix.packageJson.devDependencies) {
 		return "`packageJson.devDependencies` NOT Found!";
 	} else {
-		return objectTable(Readmix.packageJson.devDependencies, ["`Package`", "`Version`"]);
+		return objectTable(Readmix.packageJson.devDependencies, ["", "`Package`", "`Version`"], true);
 	}
 }
 

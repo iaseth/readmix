@@ -13,9 +13,17 @@ export function arrayTable (arr: ObjectType[], headerObject: ObjectType) : strin
 	return tableInternal(rows, header);
 }
 
-export function objectTable (obj: ObjectType, header: string[] = ["`Key`", "`Value`"]) : string {
-	const rows = Object.keys(obj).map(k => {
-		return [k, obj[k]];
+export function objectTable (
+	obj: ObjectType,
+	header: string[] = ["`Key`", "`Value`"],
+	index: boolean = false
+	) : string {
+	const rows = Object.keys(obj).map((k, idx) => {
+		if (index) {
+			return [`${idx+1}`, k, obj[k]];
+		} else {
+			return [k, obj[k]];
+		}
 	});
 	return tableInternal(rows, header);
 }

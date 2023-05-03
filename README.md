@@ -247,32 +247,32 @@ You can use the `giveCredit()` mixin to include a section giving credit to `Read
 
 
 ## Dependencies
-| `Package`   | `Version`   |
-| ----------- | ----------- |
-| `cors`      | `^2.8.5`    |
-| `express`   | `^4.18.2`   |
-| `ini`       | `^4.1.0`    |
-| `js-yaml`   | `^4.1.0`    |
-| `json5`     | `^2.2.3`    |
-| `marked`    | `^4.3.0`    |
-| `nunjucks`  | `^3.2.4`    |
-| `toml`      | `^3.0.0`    |
+|     | `Package`   | `Version`   |
+| --- | ----------- | ----------- |
+| 1   | `cors`      | `^2.8.5`    |
+| 2   | `express`   | `^4.18.2`   |
+| 3   | `ini`       | `^4.1.0`    |
+| 4   | `js-yaml`   | `^4.1.0`    |
+| 5   | `json5`     | `^2.2.3`    |
+| 6   | `marked`    | `^4.3.0`    |
+| 7   | `nunjucks`  | `^3.2.4`    |
+| 8   | `toml`      | `^3.0.0`    |
 
 
 
 ## Dev dependencies
-| `Package`          | `Version`   |
-| ------------------ | ----------- |
-| `@types/cors`      | `^2.8.13`   |
-| `@types/express`   | `^4.17.17`  |
-| `@types/marked`    | `^4.0.8`    |
-| `@types/node`      | `^18.16.0`  |
-| `@types/nunjucks`  | `^3.2.2`    |
-| `autoprefixer`     | `^10.4.14`  |
-| `html-color-names` | `^0.3.2`    |
-| `jest`             | `^29.5.0`   |
-| `postcss`          | `^8.4.23`   |
-| `tailwindcss`      | `^3.3.2`    |
+|     | `Package`          | `Version`   |
+| --- | ------------------ | ----------- |
+| 1   | `@types/cors`      | `^2.8.13`   |
+| 2   | `@types/express`   | `^4.17.17`  |
+| 3   | `@types/marked`    | `^4.0.8`    |
+| 4   | `@types/node`      | `^18.16.0`  |
+| 5   | `@types/nunjucks`  | `^3.2.2`    |
+| 6   | `autoprefixer`     | `^10.4.14`  |
+| 7   | `html-color-names` | `^0.3.2`    |
+| 8   | `jest`             | `^29.5.0`   |
+| 9   | `postcss`          | `^8.4.23`   |
+| 10  | `tailwindcss`      | `^3.3.2`    |
 
 
 
