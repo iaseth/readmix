@@ -3,7 +3,7 @@ import { objectTable } from "../table";
 
 
 
-function dependencyTable () {
+export function dependencyTable () {
 	if (!Readmix.packageJson) {
 		return "`packageJson` NOT Found!";
 	} else if (!Readmix.packageJson.dependencies) {
@@ -15,7 +15,7 @@ function dependencyTable () {
 	}
 }
 
-function devDependencyTable () {
+export function devDependencyTable () {
 	if (!Readmix.packageJson) {
 		return "`packageJson` NOT Found!";
 	} else if (!Readmix.packageJson.devDependencies) {
@@ -26,8 +26,3 @@ function devDependencyTable () {
 		return objectTable(Readmix.packageJson.devDependencies, ["", "`Package`", "`Version`"]);
 	}
 }
-
-export const packagejson = {
-	dependencyTable,
-	devDependencyTable,
-};

@@ -3,7 +3,6 @@ import { gh } from './gh';
 import { licenses } from './licenses';
 import { meta } from './meta';
 import { npm } from './npm';
-import { packagejson } from './packagejson';
 import { std } from './std';
 import { arrayTable, objectTable, table } from './table';
 
@@ -15,7 +14,6 @@ export const mixins = {
 	table,
 
 	...meta,
-	...packagejson,
 	...licenses,
 
 	...std,

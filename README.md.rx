@@ -148,11 +148,11 @@ You can use the `giveCredit()` mixin to include a section giving credit to `{{ a
 
 
 ## Dependencies
-{{ dependencyTable() }}
+{{ npm.dependencyTable() }}
 
 
 ## Dev dependencies
-{{ devDependencyTable() }}
+{{ npm.devDependencyTable() }}
 
 
 ## License

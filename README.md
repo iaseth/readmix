@@ -180,7 +180,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | `filters` | `Object [15]` |
 | `flags` | `Object [17]` |
 | `helpers` | `Object [22]` |
-| `mixins` | `Object [24]` |
+| `mixins` | `Object [22]` |
 | `sugars` | `Object [3]` |
 | `utils` | `Object [1]` |
 | `descriptions` | `Object [4]` |
@@ -236,8 +236,6 @@ In addition to props, the `Rx` object also contains a `mixins` object with the f
 | `objectTable()` | 1 |
 | `table()` | 0 |
 | `giveCredit()` | 0 |
-| `dependencyTable()` | 0 |
-| `devDependencyTable()` | 0 |
 | `apache2License()` | 1 |
 | `bsd2License()` | 1 |
 | `bsd3License()` | 1 |

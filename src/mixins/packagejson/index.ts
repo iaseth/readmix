@@ -1,2 +1,0 @@
-
-export { packagejson } from './packagejson';
