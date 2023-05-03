@@ -53,6 +53,12 @@ export class RxFile {
 		return false;
 	}
 
+	update () {
+		if (this.needsUpdate()) {
+			this.compileMarkdown();
+		}
+	}
+
 	splitFile () : RxFileLine[][] {
 		const { inputFilepath } = this;
 		if (!inputFilepath.endsWith(".rx")) {
@@ -100,7 +106,7 @@ export class RxFile {
 	compileMarkdown (forceUpdate=false) {
 		console.log(`Input: ${this.inputFilepath}`);
 		const outputFileText = this.renderString();
-		if (outputFileText) {
+		if (outputFileText !== null) {
 			fs.writeFileSync(this.outputFilepath, outputFileText);
 			console.log(`\tsaved: ${this.outputFilepath}`);
 		} else {
@@ -144,9 +150,7 @@ export class RxFile {
 		fs.watch(this.inputFilepath, function (event, filename) {
 			if (filename) {
 				console.log('File changed on disk: ' + filename);
-				if (self.needsUpdate()) {
-					self.compileMarkdown();
-				}
+				self.update();
 			} else {
 				console.log("Filename not provided!");
 			}

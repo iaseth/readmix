@@ -1,6 +1,6 @@
 {
   "name": "readmix",
-  "version": "0.8.39",
+  "version": "0.8.40",
   "description": "Readmix is a command-line markdown generator.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
