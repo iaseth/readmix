@@ -20,6 +20,7 @@ You can find the source code at [`iaseth/readmix`](https://github.com/iaseth/rea
         * [Example usage](#example-usage)
     * [Mixins](#mixins)
         * [Example usage](#example-usage)
+    * [Package details](#package-details)
     * [Dependencies](#dependencies)
     * [Dev dependencies](#dev-dependencies)
     * [License](#license)
@@ -259,6 +260,18 @@ You can use the `giveCredit()` mixin to include a section giving credit to `Read
 ```
 {{ giveCredit() }}
 ```
+
+
+## Package details
+| `Name`        | `Value`                                         |
+| ------------- | ----------------------------------------------- |
+| `Name`        | `readmix`                                       |
+| `Description` | `Readmix is a command-line markdown generator.` |
+| `Version`     | `0.8.45`                                        |
+| `Author`      | `iaseth`                                        |
+| `Homepage`    | `https://readmix.js.org`                        |
+| `Repository`  | `iaseth/readmix`                                |
+| `License`     | `MIT`                                           |
 
 
 

@@ -146,6 +146,9 @@ You can use the `giveCredit()` mixin to include a section giving credit to `{{ a
 => {{ giveCredit() }}
 
 
+## Package details
+{{ npm.packageDetails() }}
+
 
 ## Dependencies
 {{ npm.dependencyTable() }}
