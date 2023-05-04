@@ -33,11 +33,11 @@ function main () {
 	}
 
 	const pathArgs = args.filter(helpers.isNotFlag);
-	const goodPaths = pathArgs.filter(helpers.pathExists);
-	if (goodPaths.length === 0) {
-		goodPaths.push("."); // ensures that goodPaths is not empty
+	if (pathArgs.length === 0) {
+		pathArgs.push(".");
 	}
 
+	const goodPaths = pathArgs.filter(helpers.pathExists);
 	const rxFiles = helpers.getRxFilesInDirectories(goodPaths, cmdOptions.recursive);
 
 	if (cmdOptions.api) {
