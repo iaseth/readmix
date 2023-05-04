@@ -1,8 +1,9 @@
-import { dependencyTable, devDependencyTable } from "./packagejson";
+import { dependencyTable, devDependencyTable, packageDetails } from "./packagejson";
 
 
 
 export const npm = {
+	packageDetails,
 	dependencyTable,
 	devDependencyTable,
 };
