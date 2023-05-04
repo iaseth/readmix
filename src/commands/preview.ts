@@ -16,7 +16,7 @@ export function previewCommand (entries: RxFile[], cmdOptions: CmdOptionsType) {
 		const { url } = req;
 		if (url?.startsWith("/static/")) {
 			const staticFilepath = url.slice(8);
-			const fullpath = path.join("templates/static", staticFilepath);
+			const fullpath = path.join(rxEnv.staticDirPath, staticFilepath);
 			try {
 				res.end(fs.readFileSync(fullpath, {encoding: "utf-8"}));
 			} catch (error) {
