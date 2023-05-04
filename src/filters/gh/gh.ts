@@ -2,7 +2,9 @@
 
 
 export function RepoLink (repoName: string): string {
-	return `[\`${repoName}\`](https://github.com/${repoName})`;
+	const title = repoName.trim();
+	const name = title.toLowerCase();
+	return `[\`${title}\`](https://github.com/${name})`;
 }
 
 export const Gh = {

@@ -2,7 +2,9 @@
 
 
 function PackageLink (packageName: string): string {
-	return `[\`${packageName}\`](https://www.npmjs.com/package/${packageName})`;
+	const title = packageName.trim();
+	const name = title.toLowerCase();
+	return `[\`${title}\`](https://www.npmjs.com/package/${name})`;
 }
 
 export const Npm = {
