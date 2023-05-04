@@ -34,7 +34,7 @@
 			<h5>Prev</h5>
 		</a>
 		<section class="grow bg-firebrick-500">
-			<h2 class="py-2">README</h2>
+			<h2 class="py-2">README.md</h2>
 		</section>
 		<a href="">
 			<h4></h4>
@@ -46,15 +46,75 @@
 		<h1 id="readmix">readmix</h1>
 <p><a href="https://www.npmjs.com/package/readmix"><code>readmix</code></a> is a command-line <code>README</code> generator.</p>
 <p>You can find the source code at <a href="https://github.com/iaseth/readmix"><code>iaseth/readmix</code></a>.</p>
+<h2 id="table-of-contents">Table of contents</h2>
+<ul>
+<li><a href="#readmix">readmix</a><ul>
+<li><a href="#table-of-contents">Table of contents</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#filename-conventions">Filename conventions</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#flags">Flags</a></li>
+<li><a href="#props">Props</a></li>
+<li><a href="#filters">Filters</a><ul>
+<li><a href="#example-usage">Example usage</a></li>
+</ul>
+</li>
+<li><a href="#mixins">Mixins</a><ul>
+<li><a href="#example-usage">Example usage</a></li>
+</ul>
+</li>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#dev-dependencies">Dev dependencies</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="installation">Installation</h2>
 <p>You can install <a href="https://www.npmjs.com/package/readmix"><code>readmix</code></a> with the following command:</p>
 <pre><code>npm i -g readmix
 </code></pre>
 <p>Now you should be able to run the <code>readmix</code> command in your terminal.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>To get started with <code>Readmix</code>, create a file called <code>LICENSE.rx</code> in your current directory.
+Put the following text in that file:</p>
+<pre><code>{{ mitLicense(&quot;Ankur Seth&quot;) }}
+</code></pre>
+<p>Here <code>mitLicense</code> is a mixin. A <code>mixin</code> is just a <code>JavaScript</code> function that returns a <code>string</code>.
+This particular <code>mixin</code> is used to insert the <code>MIT License</code> in your name.
+<code>Readmix</code> contains similar <code>mixins</code> like <code>apache2License</code> and <code>gnuGplLicense</code> to insert any popular license in your file.
+Most of the license <code>mixins</code> accept 2 <code>args</code>, <code>Name</code> and <code>Year</code>.</p>
+<p>Now, you can compile the file with the following command:</p>
+<pre><code>readmix --compile --markdown LICENSE.rx
+</code></pre>
+<p>This will output a file called <code>LICENSE</code> containing the <code>MIT License</code> with your name in it.</p>
+<h2 id="filename-conventions">Filename conventions</h2>
+<p>All readmix files end with the <code>.rx</code> entension. Readmix will only compile files that end with the <code>.rx</code> extension.
+The output file will have the same filename but with the <code>.rx</code> removed.</p>
+<table>
+<thead>
+<tr>
+<th>Input Filename</th>
+<th>Output Filename</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>README.md.rx</code></td>
+<td><code>README.md</code></td>
+</tr>
+<tr>
+<td><code>LICENSE.rx</code></td>
+<td><code>LICENSE</code></td>
+</tr>
+</tbody></table>
+<p>While the main purpose of <code>Readmix</code> is to generate <code>markdown</code>, you can use it to generate almost any filetype.
+I often use <code>Readmix</code> to generate <code>.env</code>, <code>tex</code> and <code>css</code> files.</p>
 <h2 id="usage">Usage</h2>
-<p>To compile your <code>README.rx</code>:</p>
+<p>To compile your <code>README.rx</code> to <code>README</code>:</p>
 <pre><code>readmix --compile --markdown README.rx
 </code></pre>
+<p>If you want the output file to be called <code>README.md</code>, you should name the input file as <code>README.md.rx</code>.</p>
 <p>To compile all <code>rx</code> files in the current directory:</p>
 <pre><code>readmix --compile --markdown .
 </code></pre>
@@ -212,7 +272,7 @@
 </tr>
 <tr>
 <td><code>filters</code></td>
-<td><code>Object [15]</code></td>
+<td><code>Object [17]</code></td>
 </tr>
 <tr>
 <td><code>flags</code></td>
@@ -220,7 +280,7 @@
 </tr>
 <tr>
 <td><code>helpers</code></td>
-<td><code>Object [20]</code></td>
+<td><code>Object [22]</code></td>
 </tr>
 <tr>
 <td><code>mixins</code></td>
@@ -271,6 +331,10 @@ So, you can just write <code>appName</code> instead of <code>Rx.appName</code>.<
 </tr>
 </thead>
 <tbody><tr>
+<td><code>Table</code></td>
+<td>0</td>
+</tr>
+<tr>
 <td><code>Print</code></td>
 <td>0</td>
 </tr>
@@ -295,10 +359,6 @@ So, you can just write <code>appName</code> instead of <code>Rx.appName</code>.<
 <td>0</td>
 </tr>
 <tr>
-<td><code>Table</code></td>
-<td>0</td>
-</tr>
-<tr>
 <td><code>CodeBlock</code></td>
 <td>0</td>
 </tr>
@@ -311,15 +371,7 @@ So, you can just write <code>appName</code> instead of <code>Rx.appName</code>.<
 <td>0</td>
 </tr>
 <tr>
-<td><code>GithubRepoLink</code></td>
-<td>0</td>
-</tr>
-<tr>
 <td><code>NpmLink</code></td>
-<td>0</td>
-</tr>
-<tr>
-<td><code>NpmPackageLink</code></td>
 <td>0</td>
 </tr>
 </tbody></table>
@@ -351,14 +403,6 @@ So, you can just write <code>appName</code> instead of <code>Rx.appName</code>.<
 </tr>
 <tr>
 <td><code>giveCredit()</code></td>
-<td>0</td>
-</tr>
-<tr>
-<td><code>dependencyTable()</code></td>
-<td>0</td>
-</tr>
-<tr>
-<td><code>devDependencyTable()</code></td>
 <td>0</td>
 </tr>
 <tr>
@@ -413,6 +457,10 @@ So, you can just write <code>appName</code> instead of <code>Rx.appName</code>.<
 <td><code>zlibLicense()</code></td>
 <td>1</td>
 </tr>
+<tr>
+<td><code>tableofcontents()</code></td>
+<td>1</td>
+</tr>
 </tbody></table>
 <p>Every <code>function</code> on the <code>Rx.mixins</code> object is also available globally.
 So, you can just write <code>giveCredit()</code> instead of <code>Rx.mixins.giveCredit()</code> or <code>mixins.giveCredit()</code>.</p>
@@ -424,39 +472,48 @@ So, you can just write <code>giveCredit()</code> instead of <code>Rx.mixins.give
 <table>
 <thead>
 <tr>
+<th></th>
 <th><code>Package</code></th>
 <th><code>Version</code></th>
 </tr>
 </thead>
 <tbody><tr>
+<td>1</td>
 <td><code>cors</code></td>
 <td><code>^2.8.5</code></td>
 </tr>
 <tr>
+<td>2</td>
 <td><code>express</code></td>
 <td><code>^4.18.2</code></td>
 </tr>
 <tr>
+<td>3</td>
 <td><code>ini</code></td>
 <td><code>^4.1.0</code></td>
 </tr>
 <tr>
+<td>4</td>
 <td><code>js-yaml</code></td>
 <td><code>^4.1.0</code></td>
 </tr>
 <tr>
+<td>5</td>
 <td><code>json5</code></td>
 <td><code>^2.2.3</code></td>
 </tr>
 <tr>
+<td>6</td>
 <td><code>marked</code></td>
 <td><code>^4.3.0</code></td>
 </tr>
 <tr>
+<td>7</td>
 <td><code>nunjucks</code></td>
 <td><code>^3.2.4</code></td>
 </tr>
 <tr>
+<td>8</td>
 <td><code>toml</code></td>
 <td><code>^3.0.0</code></td>
 </tr>
@@ -465,47 +522,58 @@ So, you can just write <code>giveCredit()</code> instead of <code>Rx.mixins.give
 <table>
 <thead>
 <tr>
+<th></th>
 <th><code>Package</code></th>
 <th><code>Version</code></th>
 </tr>
 </thead>
 <tbody><tr>
+<td>1</td>
 <td><code>@types/cors</code></td>
 <td><code>^2.8.13</code></td>
 </tr>
 <tr>
+<td>2</td>
 <td><code>@types/express</code></td>
 <td><code>^4.17.17</code></td>
 </tr>
 <tr>
+<td>3</td>
 <td><code>@types/marked</code></td>
 <td><code>^4.0.8</code></td>
 </tr>
 <tr>
+<td>4</td>
 <td><code>@types/node</code></td>
 <td><code>^18.16.0</code></td>
 </tr>
 <tr>
+<td>5</td>
 <td><code>@types/nunjucks</code></td>
 <td><code>^3.2.2</code></td>
 </tr>
 <tr>
+<td>6</td>
 <td><code>autoprefixer</code></td>
 <td><code>^10.4.14</code></td>
 </tr>
 <tr>
+<td>7</td>
 <td><code>html-color-names</code></td>
 <td><code>^0.3.2</code></td>
 </tr>
 <tr>
+<td>8</td>
 <td><code>jest</code></td>
 <td><code>^29.5.0</code></td>
 </tr>
 <tr>
+<td>9</td>
 <td><code>postcss</code></td>
 <td><code>^8.4.23</code></td>
 </tr>
 <tr>
+<td>10</td>
 <td><code>tailwindcss</code></td>
 <td><code>^3.3.2</code></td>
 </tr>
@@ -534,7 +602,7 @@ SOFTWARE.</p>
 	</article>
 
 	<footer class="bg-slate-800 text-white px-4 py-4 text-center">
-		<h4>README.rx</h4>
+		<h4>README.md.rx</h4>
 		<h4>README.md</h4>
 	</footer>
 </section>
