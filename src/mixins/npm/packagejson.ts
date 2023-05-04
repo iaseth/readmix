@@ -26,7 +26,7 @@ export function dependencyTable () {
 	if (!Readmix.packageJson) {
 		return "`packageJson` NOT Found!";
 	} else if (!Readmix.packageJson.dependencies) {
-		return "`packageJson.dependencies` NOT Found!";
+		return "This package has no dependencies.";
 	} else if (Readmix.packageJson.dependencies.length === 0) {
 		return "This package has no dependencies.";
 	} else {
@@ -38,7 +38,7 @@ export function devDependencyTable () {
 	if (!Readmix.packageJson) {
 		return "`packageJson` NOT Found!";
 	} else if (!Readmix.packageJson.devDependencies) {
-		return "`packageJson.devDependencies` NOT Found!";
+		return "This package has no devDependencies.";
 	} else if (Readmix.packageJson.devDependencies.length === 0) {
 		return "This package has no devDependencies.";
 	} else {
