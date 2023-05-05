@@ -131,16 +131,9 @@ Not you can open [http://127.0.0.1:1996/](http://127.0.0.1:1996/) is your browse
     `packageJson` and `packageLockJson` are available in every `rx` file assuming the corresponding `JSON` files are present.
 
 * Allows you to write comments in your `markdown` files:
-
-    First way to add comments:
-    ```
-    // This is a comment.
-    ```
-
-    Another way to add comments:
-    ```
-    :: This is another comment.
-    ```
+```
+:: This is a comment.
+```
 
 
 
@@ -267,7 +260,7 @@ You can use the `giveCredit()` mixin to include a section giving credit to `Read
 | ------------- | ----------------------------------------------- |
 | `Name`        | `readmix`                                       |
 | `Description` | `Readmix is a command-line markdown generator.` |
-| `Version`     | `0.8.50`                                        |
+| `Version`     | `0.8.51`                                        |
 | `Author`      | `iaseth`                                        |
 | `Homepage`    | `https://readmix.js.org`                        |
 | `Repository`  | `iaseth/readmix`                                |
