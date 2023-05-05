@@ -91,12 +91,7 @@ Not you can open [http://127.0.0.1:1996/](http://127.0.0.1:1996/) is your browse
 	`packageJson` and `packageLockJson` are available in every `rx` file assuming the corresponding `JSON` files are present.
 
 * Allows you to write comments in your `markdown` files:
-
-	First way to add comments:
-	=> // This is a comment.
-
-	Another way to add comments:
-	=> :: This is another comment.
+=> :: This is a comment.
 
 
 

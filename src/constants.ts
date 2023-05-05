@@ -12,7 +12,6 @@ export const IGNORED_DIRS = [
 ];
 
 export const COMMENT_PREFIXES = [
-	"//", // slash comment
 	"::", // colon comment
 ];
 
