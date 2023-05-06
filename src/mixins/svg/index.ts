@@ -1,0 +1,2 @@
+
+export { svg } from './svg';
