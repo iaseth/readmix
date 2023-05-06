@@ -260,7 +260,7 @@ You can use the `giveCredit()` mixin to include a section giving credit to `Read
 | ------------- | ----------------------------------------------- |
 | `Name`        | `readmix`                                       |
 | `Description` | `Readmix is a command-line markdown generator.` |
-| `Version`     | `0.8.52`                                        |
+| `Version`     | `0.8.53`                                        |
 | `Author`      | `iaseth`                                        |
 | `Homepage`    | `https://readmix.js.org`                        |
 | `Repository`  | `iaseth/readmix`                                |

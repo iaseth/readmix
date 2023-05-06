@@ -42,7 +42,7 @@
 		</a>
 	</header>
 
-	<article class="markdown-body px-4 py-6">
+	<article class="markdown-body px-4 py-6" id="readmix-article">
 		<h1 id="readmix">readmix</h1>
 <p><a href="https://www.npmjs.com/package/readmix"><code>readmix</code></a> is a command-line <code>README</code> generator.</p>
 <p>You can find the source code at <a href="https://github.com/iaseth/readmix"><code>iaseth/readmix</code></a>.</p>
@@ -65,6 +65,7 @@
 <li><a href="#example-usage">Example usage</a></li>
 </ul>
 </li>
+<li><a href="#package-details">Package details</a></li>
 <li><a href="#dependencies">Dependencies</a></li>
 <li><a href="#dev-dependencies">Dev dependencies</a></li>
 <li><a href="#license">License</a></li>
@@ -149,14 +150,10 @@ I often use <code>Readmix</code> to generate <code>.env</code>, <code>tex</code>
 <p>  <code>packageJson</code> and <code>packageLockJson</code> are available in every <code>rx</code> file assuming the corresponding <code>JSON</code> files are present.</p>
 </li>
 <li><p>Allows you to write comments in your <code>markdown</code> files:</p>
-<p>  First way to add comments:</p>
-<pre><code>// This is a comment.
-</code></pre>
-<p>  Another way to add comments:</p>
-<pre><code>:: This is another comment.
-</code></pre>
 </li>
 </ul>
+<pre><code>:: This is a comment.
+</code></pre>
 <h2 id="flags">Flags</h2>
 <p>The  <code>readmix</code> command accepts the following command line options:</p>
 <table>
@@ -458,7 +455,7 @@ So, you can just write <code>appName</code> instead of <code>Rx.appName</code>.<
 <td>1</td>
 </tr>
 <tr>
-<td><code>tableofcontents()</code></td>
+<td><code>tableOfContents()</code></td>
 <td>1</td>
 </tr>
 </tbody></table>
@@ -468,6 +465,43 @@ So, you can just write <code>giveCredit()</code> instead of <code>Rx.mixins.give
 <p>You can use the <code>giveCredit()</code> mixin to include a section giving credit to <code>Readmix</code>:</p>
 <pre><code>{{ giveCredit() }}
 </code></pre>
+<h2 id="package-details">Package details</h2>
+<table>
+<thead>
+<tr>
+<th><code>Name</code></th>
+<th><code>Value</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Name</code></td>
+<td><code>readmix</code></td>
+</tr>
+<tr>
+<td><code>Description</code></td>
+<td><code>Readmix is a command-line markdown generator.</code></td>
+</tr>
+<tr>
+<td><code>Version</code></td>
+<td><code>0.8.52</code></td>
+</tr>
+<tr>
+<td><code>Author</code></td>
+<td><code>iaseth</code></td>
+</tr>
+<tr>
+<td><code>Homepage</code></td>
+<td><code>https://readmix.js.org</code></td>
+</tr>
+<tr>
+<td><code>Repository</code></td>
+<td><code>iaseth/readmix</code></td>
+</tr>
+<tr>
+<td><code>License</code></td>
+<td><code>MIT</code></td>
+</tr>
+</tbody></table>
 <h2 id="dependencies">Dependencies</h2>
 <table>
 <thead>
