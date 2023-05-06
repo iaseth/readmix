@@ -1,9 +1,9 @@
 
 # readmix
 
-{{ "readmix" | NpmLink }} is a command-line `README` generator.
+{{ npm.link("Readmix") }} is a command-line `README` generator.
 
-You can find the source code at {{ "iaseth/readmix" | GithubLink }}.
+You can find the source code at {{ gh.link("iaseth/readmix") }}.
 
 
 ## Table of contents

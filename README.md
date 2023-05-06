@@ -1,7 +1,7 @@
 
 # readmix
 
-[`readmix`](https://www.npmjs.com/package/readmix) is a command-line `README` generator.
+[`Readmix`](https://www.npmjs.com/package/readmix) is a command-line `README` generator.
 
 You can find the source code at [`iaseth/readmix`](https://github.com/iaseth/readmix).
 
@@ -260,7 +260,7 @@ You can use the `giveCredit()` mixin to include a section giving credit to `Read
 | ------------- | ----------------------------------------------- |
 | `Name`        | `readmix`                                       |
 | `Description` | `Readmix is a command-line markdown generator.` |
-| `Version`     | `0.8.53`                                        |
+| `Version`     | `0.8.54`                                        |
 | `Author`      | `iaseth`                                        |
 | `Homepage`    | `https://readmix.js.org`                        |
 | `Repository`  | `iaseth/readmix`                                |

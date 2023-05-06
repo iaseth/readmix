@@ -1,7 +1,7 @@
 
 default: build
 
-build: ts css
+build: ts
 
 readme:
 	@echo "Recompiling README ..."
