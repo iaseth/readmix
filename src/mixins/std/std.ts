@@ -1,7 +1,7 @@
-import { tableofcontents } from "./tableofcontents";
+import { tableOfContents } from "./tableofcontents";
 
 
 
 export const std = {
-	tableofcontents,
+	tableOfContents,
 };

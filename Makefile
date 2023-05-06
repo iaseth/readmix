@@ -5,7 +5,7 @@ build: ts css
 
 readme:
 	@echo "Recompiling README ..."
-	@./cli.js --compile --markdown README.rx
+	@./cli.js --compile --markdown README.md.rx
 	@echo "    Done."
 
 publish: build readme

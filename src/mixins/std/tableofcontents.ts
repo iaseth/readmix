@@ -3,7 +3,7 @@ import { RxFile } from "../../rxfile";
 
 
 
-export function tableofcontents (doc: RxFile) {
+export function tableOfContents (doc: RxFile) {
 	const headers = doc.headers;
 	const text = headers.map(headerText => {
 		const spaceIndex = headerText.indexOf(" ");

@@ -241,7 +241,7 @@ In addition to props, the `Rx` object also contains a `mixins` object with the f
 | `mplLicense()` | 0 |
 | `msplLicense()` | 0 |
 | `zlibLicense()` | 1 |
-| `tableofcontents()` | 1 |
+| `tableOfContents()` | 1 |
 
 
 Every `function` on the `Rx.mixins` object is also available globally.
@@ -260,7 +260,7 @@ You can use the `giveCredit()` mixin to include a section giving credit to `Read
 | ------------- | ----------------------------------------------- |
 | `Name`        | `readmix`                                       |
 | `Description` | `Readmix is a command-line markdown generator.` |
-| `Version`     | `0.8.51`                                        |
+| `Version`     | `0.8.52`                                        |
 | `Author`      | `iaseth`                                        |
 | `Homepage`    | `https://readmix.js.org`                        |
 | `Repository`  | `iaseth/readmix`                                |
