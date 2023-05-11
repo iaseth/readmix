@@ -19,6 +19,9 @@ export function packageDetails () {
 	if (pj.repository) rows.push(["Repository", pj.repository]);
 	if (pj.license) rows.push(["License", pj.license]);
 
+	const dependenciesCount = pj.dependencies ? Object.keys(pj.dependencies).length : 0;
+	rows.push(["Dependencies", dependenciesCount]);
+
 	return tableInternal(rows, ["`Name`", "`Value`"]);
 }
 

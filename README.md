@@ -174,7 +174,7 @@ Every `rx` file has access to the global `Rx` object with the following properti
 | `filters` | `Object [17]` |
 | `flags` | `Object [17]` |
 | `helpers` | `Object [22]` |
-| `mixins` | `Object [23]` |
+| `mixins` | `Object [24]` |
 | `sugars` | `Object [3]` |
 | `utils` | `Object [1]` |
 | `descriptions` | `Object [4]` |
@@ -256,15 +256,16 @@ You can use the `giveCredit()` mixin to include a section giving credit to `Read
 
 
 ## Package details
-| `Name`        | `Value`                                         |
-| ------------- | ----------------------------------------------- |
-| `Name`        | `readmix`                                       |
-| `Description` | `Readmix is a command-line markdown generator.` |
-| `Version`     | `0.8.54`                                        |
-| `Author`      | `iaseth`                                        |
-| `Homepage`    | `https://readmix.js.org`                        |
-| `Repository`  | `iaseth/readmix`                                |
-| `License`     | `MIT`                                           |
+| `Name`         | `Value`                                         |
+| -------------- | ----------------------------------------------- |
+| `Name`         | `readmix`                                       |
+| `Description`  | `Readmix is a command-line markdown generator.` |
+| `Version`      | `0.9.0`                                         |
+| `Author`       | `iaseth`                                        |
+| `Homepage`     | `https://readmix.js.org`                        |
+| `Repository`   | `iaseth/readmix`                                |
+| `License`      | `MIT`                                           |
+| `Dependencies` | `8`                                             |
 
 
 
